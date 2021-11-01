@@ -1,0 +1,103 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "HandyControl/3.2.0": {
+        "runtime": {
+          "lib/net5.0/HandyControl.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ca-ES/HandyControl.resources.dll": {
+            "locale": "ca-ES"
+          },
+          "lib/net5.0/en/HandyControl.resources.dll": {
+            "locale": "en"
+          },
+          "lib/net5.0/fa/HandyControl.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/net5.0/fr/HandyControl.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net5.0/ko-KR/HandyControl.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net5.0/pl/HandyControl.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net5.0/pt-BR/HandyControl.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net5.0/ru/HandyControl.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net5.0/tr/HandyControl.resources.dll": {
+            "locale": "tr"
+          }
+        }
+      },
+      "MvvmLightLibs/5.4.1.1": {
+        "runtime": {
+          "lib/net45/GalaSoft.MvvmLight.Extras.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          },
+          "lib/net45/GalaSoft.MvvmLight.Platform.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          },
+          "lib/net45/GalaSoft.MvvmLight.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          },
+          "lib/net45/System.Windows.Interactivity.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "3.0.40218.0"
+          }
+        }
+      },
+      "System.Windows.Interactivity.WPF/2.0.20525": {
+        "runtime": {
+          "lib/net40/Microsoft.Expression.Interactions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "2.0.20525.0"
+          },
+          "lib/net40/System.Windows.Interactivity.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "2.0.20525.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HandyControl/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0uN4zMV+2Tj9Bvx3PeEBd0gem0Zj3m2pgHfVDL7N+9Vtorm2TDEJ3Z6c3JTSrPiFeXy17/ydNvPauzuX6LGU+g==",
+      "path": "handycontrol/3.2.0",
+      "hashPath": "handycontrol.3.2.0.nupkg.sha512"
+    },
+    "MvvmLightLibs/5.4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
+      "path": "mvvmlightlibs/5.4.1.1",
+      "hashPath": "mvvmlightlibs.5.4.1.1.nupkg.sha512"
+    },
+    "System.Windows.Interactivity.WPF/2.0.20525": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0r+Le4E7hCm4zToUvBzjSUyTcuU3rFeoPa7JyTdWIzR/F7wH6+O/pWkjHIG40hIA0z1wvRdZayvoizA4wcK1dg==",
+      "path": "system.windows.interactivity.wpf/2.0.20525",
+      "hashPath": "system.windows.interactivity.wpf.2.0.20525.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "HandyControl/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/HandyControl.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/HandyControl.dll": {}
+        },
+        "resource": {
+          "lib/net5.0/ca-ES/HandyControl.resources.dll": {
+            "locale": "ca-ES"
+          },
+          "lib/net5.0/en/HandyControl.resources.dll": {
+            "locale": "en"
+          },
+          "lib/net5.0/fa/HandyControl.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/net5.0/fr/HandyControl.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net5.0/ko-KR/HandyControl.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net5.0/pl/HandyControl.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net5.0/pt-BR/HandyControl.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net5.0/ru/HandyControl.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net5.0/tr/HandyControl.resources.dll": {
+            "locale": "tr"
+          }
+        }
+      },
+      "MvvmLightLibs/5.4.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/net45/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/net45/GalaSoft.MvvmLight.dll": {},
+          "lib/net45/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/net45/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/net45/GalaSoft.MvvmLight.Platform.dll": {},
+          "lib/net45/GalaSoft.MvvmLight.dll": {},
+          "lib/net45/System.Windows.Interactivity.dll": {}
+        }
+      },
+      "System.Windows.Interactivity.WPF/2.0.20525": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Expression.Interactions.dll": {},
+          "lib/net40/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Expression.Interactions.dll": {},
+          "lib/net40/System.Windows.Interactivity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HandyControl/3.2.0": {
+      "sha512": "0uN4zMV+2Tj9Bvx3PeEBd0gem0Zj3m2pgHfVDL7N+9Vtorm2TDEJ3Z6c3JTSrPiFeXy17/ydNvPauzuX6LGU+g==",
+      "type": "package",
+      "path": "handycontrol/3.2.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "handycontrol.3.2.0.nupkg.sha512",
+        "handycontrol.nuspec",
+        "icon.png",
+        "lib/net40/HandyControl.dll",
+        "lib/net40/HandyControl.xml",
+        "lib/net40/ca-ES/HandyControl.resources.dll",
+        "lib/net40/en/HandyControl.resources.dll",
+        "lib/net40/fa/HandyControl.resources.dll",
+        "lib/net40/fr/HandyControl.resources.dll",
+        "lib/net40/ko-KR/HandyControl.resources.dll",
+        "lib/net40/pl/HandyControl.resources.dll",
+        "lib/net40/pt-BR/HandyControl.resources.dll",
+        "lib/net40/ru/HandyControl.resources.dll",
+        "lib/net40/tr/HandyControl.resources.dll",
+        "lib/net45/HandyControl.dll",
+        "lib/net45/HandyControl.xml",
+        "lib/net45/ca-ES/HandyControl.resources.dll",
+        "lib/net45/en/HandyControl.resources.dll",
+        "lib/net45/fa/HandyControl.resources.dll",
+        "lib/net45/fr/HandyControl.resources.dll",
+        "lib/net45/ko-KR/HandyControl.resources.dll",
+        "lib/net45/pl/HandyControl.resources.dll",
+        "lib/net45/pt-BR/HandyControl.resources.dll",
+        "lib/net45/ru/HandyControl.resources.dll",
+        "lib/net45/tr/HandyControl.resources.dll",
+        "lib/net451/HandyControl.dll",
+        "lib/net451/HandyControl.xml",
+        "lib/net451/ca-ES/HandyControl.resources.dll",
+        "lib/net451/en/HandyControl.resources.dll",
+        "lib/net451/fa/HandyControl.resources.dll",
+        "lib/net451/fr/HandyControl.resources.dll",
+        "lib/net451/ko-KR/HandyControl.resources.dll",
+        "lib/net451/pl/HandyControl.resources.dll",
+        "lib/net451/pt-BR/HandyControl.resources.dll",
+        "lib/net451/ru/HandyControl.resources.dll",
+        "lib/net451/tr/HandyControl.resources.dll",
+        "lib/net452/HandyControl.dll",
+        "lib/net452/HandyControl.xml",
+        "lib/net452/ca-ES/HandyControl.resources.dll",
+        "lib/net452/en/HandyControl.resources.dll",
+        "lib/net452/fa/HandyControl.resources.dll",
+        "lib/net452/fr/HandyControl.resources.dll",
+        "lib/net452/ko-KR/HandyControl.resources.dll",
+        "lib/net452/pl/HandyControl.resources.dll",
+        "lib/net452/pt-BR/HandyControl.resources.dll",
+        "lib/net452/ru/HandyControl.resources.dll",
+        "lib/net452/tr/HandyControl.resources.dll",
+        "lib/net46/HandyControl.dll",
+        "lib/net46/HandyControl.xml",
+        "lib/net46/ca-ES/HandyControl.resources.dll",
+        "lib/net46/en/HandyControl.resources.dll",
+        "lib/net46/fa/HandyControl.resources.dll",
+        "lib/net46/fr/HandyControl.resources.dll",
+        "lib/net46/ko-KR/HandyControl.resources.dll",
+        "lib/net46/pl/HandyControl.resources.dll",
+        "lib/net46/pt-BR/HandyControl.resources.dll",
+        "lib/net46/ru/HandyControl.resources.dll",
+        "lib/net46/tr/HandyControl.resources.dll",
+        "lib/net461/HandyControl.dll",
+        "lib/net461/HandyControl.xml",
+        "lib/net461/ca-ES/HandyControl.resources.dll",
+        "lib/net461/en/HandyControl.resources.dll",
+        "lib/net461/fa/HandyControl.resources.dll",
+        "lib/net461/fr/HandyControl.resources.dll",
+        "lib/net461/ko-KR/HandyControl.resources.dll",
+        "lib/net461/pl/HandyControl.resources.dll",
+        "lib/net461/pt-BR/HandyControl.resources.dll",
+        "lib/net461/ru/HandyControl.resources.dll",
+        "lib/net461/tr/HandyControl.resources.dll",
+        "lib/net462/HandyControl.dll",
+        "lib/net462/HandyControl.xml",
+        "lib/net462/ca-ES/HandyControl.resources.dll",
+        "lib/net462/en/HandyControl.resources.dll",
+        "lib/net462/fa/HandyControl.resources.dll",
+        "lib/net462/fr/HandyControl.resources.dll",
+        "lib/net462/ko-KR/HandyControl.resources.dll",
+        "lib/net462/pl/HandyControl.resources.dll",
+        "lib/net462/pt-BR/HandyControl.resources.dll",
+        "lib/net462/ru/HandyControl.resources.dll",
+        "lib/net462/tr/HandyControl.resources.dll",
+        "lib/net47/HandyControl.dll",
+        "lib/net47/HandyControl.xml",
+        "lib/net47/ca-ES/HandyControl.resources.dll",
+        "lib/net47/en/HandyControl.resources.dll",
+        "lib/net47/fa/HandyControl.resources.dll",
+        "lib/net47/fr/HandyControl.resources.dll",
+        "lib/net47/ko-KR/HandyControl.resources.dll",
+        "lib/net47/pl/HandyControl.resources.dll",
+        "lib/net47/pt-BR/HandyControl.resources.dll",
+        "lib/net47/ru/HandyControl.resources.dll",
+        "lib/net47/tr/HandyControl.resources.dll",
+        "lib/net471/HandyControl.dll",
+        "lib/net471/HandyControl.xml",
+        "lib/net471/ca-ES/HandyControl.resources.dll",
+        "lib/net471/en/HandyControl.resources.dll",
+        "lib/net471/fa/HandyControl.resources.dll",
+        "lib/net471/fr/HandyControl.resources.dll",
+        "lib/net471/ko-KR/HandyControl.resources.dll",
+        "lib/net471/pl/HandyControl.resources.dll",
+        "lib/net471/pt-BR/HandyControl.resources.dll",
+        "lib/net471/ru/HandyControl.resources.dll",
+        "lib/net471/tr/HandyControl.resources.dll",
+        "lib/net472/HandyControl.dll",
+        "lib/net472/HandyControl.xml",
+        "lib/net472/ca-ES/HandyControl.resources.dll",
+        "lib/net472/en/HandyControl.resources.dll",
+        "lib/net472/fa/HandyControl.resources.dll",
+        "lib/net472/fr/HandyControl.resources.dll",
+        "lib/net472/ko-KR/HandyControl.resources.dll",
+        "lib/net472/pl/HandyControl.resources.dll",
+        "lib/net472/pt-BR/HandyControl.resources.dll",
+        "lib/net472/ru/HandyControl.resources.dll",
+        "lib/net472/tr/HandyControl.resources.dll",
+        "lib/net48/HandyControl.dll",
+        "lib/net48/HandyControl.xml",
+        "lib/net48/ca-ES/HandyControl.resources.dll",
+        "lib/net48/en/HandyControl.resources.dll",
+        "lib/net48/fa/HandyControl.resources.dll",
+        "lib/net48/fr/HandyControl.resources.dll",
+        "lib/net48/ko-KR/HandyControl.resources.dll",
+        "lib/net48/pl/HandyControl.resources.dll",
+        "lib/net48/pt-BR/HandyControl.resources.dll",
+        "lib/net48/ru/HandyControl.resources.dll",
+        "lib/net48/tr/HandyControl.resources.dll",
+        "lib/net5.0/HandyControl.deps.json",
+        "lib/net5.0/HandyControl.dll",
+        "lib/net5.0/HandyControl.xml",
+        "lib/net5.0/ca-ES/HandyControl.resources.dll",
+        "lib/net5.0/en/HandyControl.resources.dll",
+        "lib/net5.0/fa/HandyControl.resources.dll",
+        "lib/net5.0/fr/HandyControl.resources.dll",
+        "lib/net5.0/ko-KR/HandyControl.resources.dll",
+        "lib/net5.0/pl/HandyControl.resources.dll",
+        "lib/net5.0/pt-BR/HandyControl.resources.dll",
+        "lib/net5.0/ref/HandyControl.dll",
+        "lib/net5.0/ru/HandyControl.resources.dll",
+        "lib/net5.0/tr/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/HandyControl.deps.json",
+        "lib/netcoreapp3.0/HandyControl.dll",
+        "lib/netcoreapp3.0/HandyControl.xml",
+        "lib/netcoreapp3.0/ca-ES/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/en/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/fa/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/fr/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/ko-KR/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/pl/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/pt-BR/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/ru/HandyControl.resources.dll",
+        "lib/netcoreapp3.0/tr/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/HandyControl.deps.json",
+        "lib/netcoreapp3.1/HandyControl.dll",
+        "lib/netcoreapp3.1/HandyControl.xml",
+        "lib/netcoreapp3.1/ca-ES/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/en/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/fa/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/fr/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/ko-KR/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/pl/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/pt-BR/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/ru/HandyControl.resources.dll",
+        "lib/netcoreapp3.1/tr/HandyControl.resources.dll",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "MvvmLightLibs/5.4.1.1": {
+      "sha512": "xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
+      "type": "package",
+      "path": "mvvmlightlibs/5.4.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.dll",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.xml",
+        "lib/SL5/GalaSoft.MvvmLight.dll",
+        "lib/SL5/GalaSoft.MvvmLight.pdb",
+        "lib/SL5/GalaSoft.MvvmLight.xml",
+        "lib/SL5/System.Windows.Interactivity.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.pdb",
+        "lib/net35/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net35/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net35/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net35/GalaSoft.MvvmLight.dll",
+        "lib/net35/GalaSoft.MvvmLight.pdb",
+        "lib/net35/GalaSoft.MvvmLight.xml",
+        "lib/net35/System.Windows.Interactivity.dll",
+        "lib/net35/System.Windows.Interactivity.xml",
+        "lib/net40/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net40/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net40/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net40/GalaSoft.MvvmLight.dll",
+        "lib/net40/GalaSoft.MvvmLight.pdb",
+        "lib/net40/GalaSoft.MvvmLight.xml",
+        "lib/net40/System.Windows.Interactivity.dll",
+        "lib/net40/System.Windows.Interactivity.xml",
+        "lib/net45/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net45/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net45/GalaSoft.MvvmLight.Platform.dll",
+        "lib/net45/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Platform.xml",
+        "lib/net45/GalaSoft.MvvmLight.dll",
+        "lib/net45/GalaSoft.MvvmLight.pdb",
+        "lib/net45/GalaSoft.MvvmLight.xml",
+        "lib/net45/System.Windows.Interactivity.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.XML",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.pdb",
+        "lib/uap10.0/GalaSoft.MvvmLight.Extras.dll",
+        "lib/uap10.0/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/uap10.0/GalaSoft.MvvmLight.Extras.xml",
+        "lib/uap10.0/GalaSoft.MvvmLight.Platform.dll",
+        "lib/uap10.0/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/uap10.0/GalaSoft.MvvmLight.Platform.pri",
+        "lib/uap10.0/GalaSoft.MvvmLight.Platform.xml",
+        "lib/uap10.0/GalaSoft.MvvmLight.dll",
+        "lib/uap10.0/GalaSoft.MvvmLight.pdb",
+        "lib/uap10.0/GalaSoft.MvvmLight.xml",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.xml",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.pri",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.xml",
+        "lib/windows81/GalaSoft.MvvmLight.dll",
+        "lib/windows81/GalaSoft.MvvmLight.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.xml",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.xml",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.xml",
+        "lib/wp8/GalaSoft.MvvmLight.dll",
+        "lib/wp8/GalaSoft.MvvmLight.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.xml",
+        "lib/wp8/System.Windows.Interactivity.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.xml",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.xml",
+        "lib/wp81/GalaSoft.MvvmLight.dll",
+        "lib/wp81/GalaSoft.MvvmLight.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.xml",
+        "lib/wp81/System.Windows.Interactivity.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.pri",
+        "lib/wpa81/GalaSoft.MvvmLight.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.pdb",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.pdb",
+        "mvvmlightlibs.5.4.1.1.nupkg.sha512",
+        "mvvmlightlibs.nuspec"
+      ]
+    },
+    "System.Windows.Interactivity.WPF/2.0.20525": {
+      "sha512": "0r+Le4E7hCm4zToUvBzjSUyTcuU3rFeoPa7JyTdWIzR/F7wH6+O/pWkjHIG40hIA0z1wvRdZayvoizA4wcK1dg==",
+      "type": "package",
+      "path": "system.windows.interactivity.wpf/2.0.20525",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.Expression.Interactions.dll",
+        "lib/net40/Microsoft.Expression.Interactions.xml",
+        "lib/net40/System.Windows.Interactivity.dll",
+        "lib/net40/System.Windows.Interactivity.xml",
+        "system.windows.interactivity.wpf.2.0.20525.nupkg.sha512",
+        "system.windows.interactivity.wpf.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "HandyControl >= 3.2.0",
+      "MvvmLightLibs >= 5.4.1.1",
+      "System.Windows.Interactivity.WPF >= 2.0.20525"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Machu\\.nuget\\packages\\": {},
+    "D:\\DevelopmentSoftware\\visualStudio\\SDK\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\WareHoues\\ModernBoxes\\ModernBoxes\\ModernBoxes.csproj",
+      "projectName": "ModernBoxes",
+      "projectPath": "D:\\WareHoues\\ModernBoxes\\ModernBoxes\\ModernBoxes.csproj",
+      "packagesPath": "C:\\Users\\Machu\\.nuget\\packages\\",
+      "outputPath": "D:\\WareHoues\\ModernBoxes\\ModernBoxes\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\DevelopmentSoftware\\visualStudio\\SDK\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Machu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "HandyControl": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
+          "MvvmLightLibs": {
+            "target": "Package",
+            "version": "[5.4.1.1, )"
+          },
+          "System.Windows.Interactivity.WPF": {
+            "target": "Package",
+            "version": "[2.0.20525, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.11, 5.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“net5.0-windows7.0”还原包“MvvmLightLibs 5.4.1.1”。此包可能与项目不完全兼容。",
+      "libraryId": "MvvmLightLibs",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“net5.0-windows7.0”还原包“System.Windows.Interactivity.WPF 2.0.20525”。此包可能与项目不完全兼容。",
+      "libraryId": "System.Windows.Interactivity.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}
