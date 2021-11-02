@@ -8,6 +8,10 @@
              xmlns:hc="https://handyorg.github.io/handycontrol"
              d:DesignHeight="450" d:DesignWidth="800">
     <hc:TransitioningContentControl>
-        
+        <RichTextBox Margin="10" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <FlowDocument>
+                
+            </FlowDocument>
+        </RichTextBox>
     </hc:TransitioningContentControl>
 </UserControl>

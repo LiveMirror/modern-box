@@ -10,6 +10,12 @@
     <Compile Update="View\AddMenuDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\BaseDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SelfControl\UCAddApplicationDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\UCnotes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +40,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\BaseDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\UCAddApplicationDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\UCnotes.xaml">

@@ -64,17 +64,28 @@ namespace ModernBoxes.ViewModel
                         //获取旧数据
                         String path = $"{Environment.CurrentDirectory}\\MenuConfig.json";
                         String oldJson = await FileHelper.ReadFile(path);
-                        JArray array = JArray.Parse(oldJson);
-                        IList<JToken> jTokens = array.Children().ToList();
-                        foreach (JToken jToken in jTokens)
+                        if (oldJson.Length>8)
                         {
-                            Menus.Add(jToken.ToObject<MenuModel>());
+                            JArray array = JArray.Parse(oldJson);
+                            IList<JToken> jTokens = array.Children().ToList();
+                            foreach (JToken jToken in jTokens)
+                            {
+                                Menus.Add(jToken.ToObject<MenuModel>());
+                            }
+                            //添加新数据
+                            Menus.Add(Menu);
+                            //的到新的json
                         }
-                        //添加新数据
-                        Menus.Add(Menu);
-                        //的到新的json
+                        else
+                        {
+                            //添加新数据
+                            Menus.Add(Menu);
+                        }
                         String newJson = JsonConvert.SerializeObject(Menus);
                         FileHelper.WriteFile(path, newJson);
+                        //刷新数据
+                        MainViewModel.DoRefershMenu();
+                        //关闭对话框
                         Messenger.Default.Send<Boolean>(true, "IsCloseDialog");
                     }
                     else

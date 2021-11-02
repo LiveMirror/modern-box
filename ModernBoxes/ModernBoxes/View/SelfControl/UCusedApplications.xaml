@@ -8,8 +8,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <hc:TransitioningContentControl>
-        
+        <Border  Background="Transparent">
+            <Border.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="添加应用" Command="{Binding OpenAddApplicationDialog}"/>
+                    <Separator/>
+                    <MenuItem Header="管理应用" Command="{Binding ManagerApplication}"/>
+                </ContextMenu>
+            </Border.ContextMenu>
+        </Border>
     </hc:TransitioningContentControl>
-
-        
 </UserControl>

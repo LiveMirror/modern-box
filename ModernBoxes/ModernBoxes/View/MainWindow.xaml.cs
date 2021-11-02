@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using ModernBoxes.Tool;
 using ModernBoxes.View;
 using ModernBoxes.ViewModel;
 using System;
@@ -31,6 +32,14 @@ namespace ModernBoxes
         public MainWindow()
         {
             InitializeComponent();
+            if (ConfigHelper.getConfig("x")!=String.Empty)
+            {
+                //按照上一次固定的位置显示程序
+                this.WindowStartupLocation = WindowStartupLocation.Manual;
+                this.Left = Convert.ToInt32(ConfigHelper.getConfig("x"));
+                this.Top = Convert.ToInt32(ConfigHelper.getConfig("y"));
+
+            }
             this.DataContext = new MainViewModel();
             this.window.MouseLeftButtonDown += Window_MouseLeftButtonDown;
             this.Height = SystemParameters.PrimaryScreenHeight-70;
@@ -90,6 +99,9 @@ namespace ModernBoxes
             }
             else
             {
+                //固定后记录程序的位置
+                ConfigHelper.setConfig("x", this.Left);
+                ConfigHelper.setConfig("y", this.Top);
                 this.window.MouseLeftButtonDown -= Window_MouseLeftButtonDown;
                 btn_fixed.IsChecked = true;
             }

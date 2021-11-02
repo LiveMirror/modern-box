@@ -11,8 +11,8 @@ namespace ModernBoxes.Tool
     {
 
 
-        private Configuration configuration = null;
-        public Configuration MyConfiguration
+        private static Configuration configuration = null;
+        public static Configuration MyConfiguration
         {
             get
             {
@@ -27,7 +27,7 @@ namespace ModernBoxes.Tool
         }
 
 
-        public void setConfig(String key, Object value)
+        public static void setConfig(String key, Object value)
         {
             if (MyConfiguration.AppSettings.Settings[key]!=null)
             {
@@ -37,13 +37,13 @@ namespace ModernBoxes.Tool
             {
                 MyConfiguration.AppSettings.Settings.Add(key, value.ToString());
             }
-            configuration.Save(ConfigurationSaveMode.Modified);
+            MyConfiguration.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
         }
 
-        public String getConfig(String key)
+        public static String getConfig(String key)
         {
-            if (MyConfiguration.AppSettings.Settings[key].Value!=null)
+            if (MyConfiguration.AppSettings.Settings[key]!=null)
             {
                 return MyConfiguration.AppSettings.Settings[key].Value;
             }

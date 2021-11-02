@@ -15,8 +15,11 @@ using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
+    public delegate void RefreshMenu();
     public class MainViewModel : ViewModelBase
     {
+
+        public static event RefreshMenu RefreshMenuEvent;
 
         /// <summary>
         /// 主菜单集合
@@ -78,8 +81,25 @@ namespace ModernBoxes.ViewModel
 
         public MainViewModel()
         {
+            RefreshMenuEvent += MainViewModel_RefreshMenuEvent;
             loadMenu();
             loadCardContent();
+        }
+
+        /// <summary>
+        /// 添加菜单后刷新界面
+        /// </summary>
+        /// <param name="bol"></param>
+        private void MainViewModel_RefreshMenuEvent()
+        {
+           MenuList.Clear();
+           loadMenu();
+        }
+
+        public static void DoRefershMenu()
+        {
+            
+            RefreshMenuEvent();
         }
 
         /// <summary>

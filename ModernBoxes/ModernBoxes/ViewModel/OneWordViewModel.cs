@@ -50,5 +50,6 @@ namespace ModernBoxes.ViewModel
                 OneWord = JsonConvert.DeserializeObject<OneWordModel>(response.Content);
             }
         }
+        
     }
 }
