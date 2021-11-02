@@ -2,7 +2,9 @@
 using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
+using ModernBoxes.View;
 using ModernBoxes.View.SelfControl;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -58,6 +60,21 @@ namespace ModernBoxes.ViewModel
             }
         }
 
+        /// <summary>
+        /// 打开添加主菜单的对话框
+        /// </summary>
+        public RelayCommand AddMenuDialog
+        {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    AddMenuDialog addmenuDialog = new AddMenuDialog();
+                    addmenuDialog.ShowDialog();
+                }, x => true);
+            }
+        }
+
 
         public MainViewModel()
         {
@@ -81,17 +98,17 @@ namespace ModernBoxes.ViewModel
         /// 加载主菜单项
         /// </summary>
         /// <exception cref="NotImplementedException"></exception>
-        private void loadMenu()
+        private async void loadMenu()
         {
-            MenuList.Add(new MenuModel() { MenuName = "QQ" });
-            MenuList.Add(new MenuModel() { MenuName = "Visual Studio" });
-            MenuList.Add(new MenuModel() { MenuName = "Android Studio" });
-            MenuList.Add(new MenuModel() { MenuName = "Visual Studio Code" });
-            MenuList.Add(new MenuModel() { MenuName = "Azure Studio" });
-            MenuList.Add(new MenuModel() { MenuName = "Typora" });
-            MenuList.Add(new MenuModel() { MenuName = "WeChat" });
-            MenuList.Add(new MenuModel() { MenuName = "MMSM" });
-            MenuList.Add(new MenuModel() { MenuName = "组件应用" });
+            String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\MenuConfig.json");
+            JArray array = JArray.Parse(json);
+            IList<JToken> temp = array.Children().ToList();
+            foreach (JToken tempItem in temp)
+            {
+                if (tempItem!=null)
+                    MenuList.Add(tempItem.ToObject<MenuModel>());
+            }
+            
         }
     }
 }

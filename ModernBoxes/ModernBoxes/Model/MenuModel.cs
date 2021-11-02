@@ -10,7 +10,7 @@ namespace ModernBoxes.Model
     {
 
 
-        private String menuName;
+        private String menuName ="";
 
         public String MenuName
         {
@@ -19,13 +19,22 @@ namespace ModernBoxes.Model
         }
 
 
-        private String icon;
+        private String icon = "";
 
         public String Icon
         {
             get { return icon; }
             set { icon = value; }
         }
+
+        private String target = "";
+
+        public String Target
+        {
+            get { return target; }
+            set { target = value; }
+        }
+
 
 
 

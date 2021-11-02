@@ -9,8 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MenuConfig.json" />
     <None Remove="Resource\iconfont.ttf" />
     <None Remove="Resource\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="MenuConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +35,11 @@
   <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.2.0" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="106.13.0" />
     <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties menuconfig_1json__JsonSchema="https://appsemble.app/api.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

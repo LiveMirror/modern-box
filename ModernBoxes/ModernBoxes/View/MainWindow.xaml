@@ -8,6 +8,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="Transparent"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         WindowStyle="None"        
         xmlns:hc="https://handyorg.github.io/handycontrol"
         AllowsTransparency="True"
@@ -17,7 +18,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resource/MainWindowResource.xaml" />
+                <ResourceDictionary Source="/Resource/dictionary/MainWindowResource.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -73,7 +74,13 @@
 
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
-
+                                <TextBlock ToolTip="添加"  Text="&#xe7c4;" FontFamily="/Resource/#iconfont" HorizontalAlignment="Center" FontSize="25" Margin="0 10 0 0" Foreground="DarkGray">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                                            <i:InvokeCommandAction Command="{Binding AddMenuDialog}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBlock>
                             </StackPanel>
 
                             <StackPanel Grid.Row="1">

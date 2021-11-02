@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\AddMenuDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\UCnotes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,7 +24,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Resource\MainWindowResource.xaml">
+    <Page Update="Resource\dictionary\AddMenuDialogDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\dictionary\MainWindowResource.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddMenuDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">
