@@ -9,10 +9,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="70" Height="70" CornerRadius="5" x:Name="border" Margin="7">
-                        <Grid>
-                            <Image Margin="0 0 0 5" Source="/Resource/logo.ico" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40"/>
-                            <TextBlock Margin="0 5 0 5" MaxWidth="40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="{Binding AppPath}" TextWrapping="NoWrap"/>
-                        </Grid>
+                        <DockPanel>
+                            <Image DockPanel.Dock="Top" Margin="0 5 0 5" Source="{Binding Icon}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40"/>
+                            <TextBlock Margin="0 0 0 5" DockPanel.Dock="Bottom" MaxWidth="60" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="{Binding FileName}" TextWrapping="NoWrap"/>
+                        </DockPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -34,5 +34,20 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <ControlTemplate x:Key="ListBoxTemplate1" TargetType="{x:Type ListBox}">
+        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+            <hc:ToggleBlock HorizontalContentAlignment="Stretch" IsChecked="{Binding HasItems, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" VerticalContentAlignment="Stretch">
+                <hc:ToggleBlock.CheckedContent>
+                    <hc:ScrollViewer Focusable="false">
+                        <ItemsPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </hc:ScrollViewer>
+                </hc:ToggleBlock.CheckedContent>
+                <hc:ToggleBlock.UnCheckedContent>
+                    <hc:Empty/>
+                </hc:ToggleBlock.UnCheckedContent>
+            </hc:ToggleBlock>
+        </Border>
+    </ControlTemplate>
     
 </ResourceDictionary>

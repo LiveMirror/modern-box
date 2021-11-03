@@ -17,7 +17,7 @@
     <hc:TransitioningContentControl>
         <Border  Background="Transparent">
 
-            <hc:ScrollViewer >
+            <!--<hc:ScrollViewer >
                 <ItemsControl ItemsSource="{Binding Apps}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -26,7 +26,9 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Button Style="{DynamicResource ApplicationItemStyle}">
+                            <Button Style="{DynamicResource ApplicationItemStyle}" 
+                                    CommandParameter="{Binding AppPath}" 
+                                    Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=DataContext.RunApplication}">
                                 <Button.ContextMenu>
                                     <ContextMenu>
                                         <MenuItem Header="修改"/>
@@ -44,7 +46,23 @@
                         </ControlTemplate>
                     </ItemsControl.Template>
                 </ItemsControl>
-            </hc:ScrollViewer>
+            </hc:ScrollViewer>-->
+
+            <ListBox Margin="2" Template="{DynamicResource ListBoxTemplate1}" ItemsSource="{Binding Apps}" Style="{StaticResource WrapPanelHorizontalListBox}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Style="{DynamicResource ApplicationItemStyle}" 
+                                    CommandParameter="{Binding AppPath}" 
+                                    Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=DataContext.RunApplication}">
+                            <Button.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             
             <Border.ContextMenu>
                 <ContextMenu>

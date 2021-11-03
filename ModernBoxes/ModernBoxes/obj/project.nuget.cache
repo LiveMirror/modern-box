@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "HA3XfD3Q85eCvTddxIU3KnkDcKwK/2mbiViBJPlmW2i+1835nPF0cBVQWcFNUz6xHSTGFVIOs9sGYeBD4NHvGw==",
+  "dgSpecHash": "W4EUvCnQrwFBzBAnBm3KECP9jMn0b4Prdt0zLWY8XNCma/w9GwKMarWow0tEakfyDuSmkOb6wToeJAD+VW5vnQ==",
   "success": true,
   "projectFilePath": "D:\\WareHoues\\modern-box\\ModernBoxes\\ModernBoxes\\ModernBoxes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Machu\\.nuget\\packages\\handycontrol\\3.2.0\\handycontrol.3.2.0.nupkg.sha512",
+    "C:\\Users\\Machu\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Machu\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Machu\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\Machu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Machu\\.nuget\\packages\\restsharp\\106.13.0\\restsharp.106.13.0.nupkg.sha512",
+    "C:\\Users\\Machu\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512",
     "C:\\Users\\Machu\\.nuget\\packages\\system.windows.interactivity.wpf\\2.0.20525\\system.windows.interactivity.wpf.2.0.20525.nupkg.sha512",
     "C:\\Users\\Machu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.11\\microsoft.netcore.app.host.win-x64.5.0.11.nupkg.sha512",
     "C:\\Users\\Machu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",

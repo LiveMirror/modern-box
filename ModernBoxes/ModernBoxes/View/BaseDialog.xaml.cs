@@ -68,11 +68,30 @@ namespace ModernBoxes.View.SelfControl
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        public void setWidth(int width,int height)
+        public void setDialogSize(int width,int height)
         {
             this.Width = width;
             this.Height = height;
         }
+
+        /// <summary>
+        /// 设置对话框的宽
+        /// </summary>
+        /// <param name="width"></param>
+        public void SetWidth(int width)
+        {
+            this.Width = width;
+        }
+
+        /// <summary>
+        /// 设置对话框的高
+        /// </summary>
+        /// <param name="height"></param>
+        public void SetHeight(int height)
+        {
+            this.Height= height;
+        }
+
 
         /// <summary>
         /// 关闭对话框
