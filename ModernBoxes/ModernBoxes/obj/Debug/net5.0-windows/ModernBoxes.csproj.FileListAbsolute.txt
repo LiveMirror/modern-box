@@ -110,3 +110,4 @@ D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ref\Mod
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.pdb
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.genruntimeconfig.cache
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\App.config
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\Resource\dictionary\UCusedApplicationDictionary.baml

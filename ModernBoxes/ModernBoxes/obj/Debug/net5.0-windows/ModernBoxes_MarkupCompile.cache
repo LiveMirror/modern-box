@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\App.xaml
-10-2066125777
+112094025698
 31430405686
 252051217580
 2012042260963
-Resource\dictionary\AddMenuDialogDictionary.xaml;Resource\dictionary\MainWindowResource.xaml;View\AddMenuDialog.xaml;View\BaseDialog.xaml;View\MainWindow.xaml;View\SelfControl\UCAddApplicationDialog.xaml;View\SelfControl\UCnotes.xaml;View\SelfControl\UCOneWord.xaml;View\SelfControl\UCtempDirectory.xaml;View\SelfControl\UCusedApplications.xaml;
+Resource\dictionary\AddMenuDialogDictionary.xaml;Resource\dictionary\MainWindowResource.xaml;Resource\dictionary\UCusedApplicationDictionary.xaml;View\AddMenuDialog.xaml;View\BaseDialog.xaml;View\MainWindow.xaml;View\SelfControl\UCAddApplicationDialog.xaml;View\SelfControl\UCnotes.xaml;View\SelfControl\UCOneWord.xaml;View\SelfControl\UCtempDirectory.xaml;View\SelfControl\UCusedApplications.xaml;
 
 False
 

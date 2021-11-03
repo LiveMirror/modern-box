@@ -21,7 +21,7 @@
                 Text="{Binding AppModel.AppPath}"
                 Style="{StaticResource TextBoxExtend}" 
                 Margin="10,0,10,0"/>
-                <Button Content="选择"  Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource ButtonPrimary}"/>
+                <Button Content="选择" Command="{Binding ChoseApplicationPath}" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource ButtonPrimary}"/>
             </Grid>
             <Grid Margin="0 10 0 10">
                 <Grid.ColumnDefinitions>
@@ -30,12 +30,12 @@
                 </Grid.ColumnDefinitions>
                 <TextBox 
                 hc:InfoElement.TitleWidth="140" 
-                hc:InfoElement.Placeholder="应用路径" 
+                hc:InfoElement.Placeholder="图标路径(非必须)" 
                 hc:InfoElement.Necessary="True" 
                 Text="{Binding AppModel.Icon}"
                 Style="{StaticResource TextBoxExtend}" 
                 Margin="10,0,10,0"/>
-                <Button Content="选择"  Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource ButtonPrimary}"/>
+                <Button Content="选择" Command="{Binding ChosePhotoPath}"  Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource ButtonPrimary}"/>
             </Grid>
 
             <Button Content="确定" Command="{Binding AddApplication}" Style="{StaticResource ButtonPrimary}" HorizontalAlignment="Center" Margin="10"/>

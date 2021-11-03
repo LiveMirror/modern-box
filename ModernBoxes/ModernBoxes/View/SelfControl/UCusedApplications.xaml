@@ -7,8 +7,45 @@
              xmlns:hc="https://handyorg.github.io/handycontrol"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/dictionary/UCusedApplicationDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <hc:TransitioningContentControl>
         <Border  Background="Transparent">
+
+            <hc:ScrollViewer >
+                <ItemsControl ItemsSource="{Binding Apps}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Style="{DynamicResource ApplicationItemStyle}">
+                                <Button.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="修改"/>
+                                        <MenuItem Header="删除"/>
+                                    </ContextMenu>
+                                </Button.ContextMenu>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.Template>
+                        <ControlTemplate>
+                            <hc:ScrollViewer x:Name="ScrollViewer">
+                                <ItemsPresenter/>
+                            </hc:ScrollViewer>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                </ItemsControl>
+            </hc:ScrollViewer>
+            
             <Border.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="添加应用" Command="{Binding OpenAddApplicationDialog}"/>

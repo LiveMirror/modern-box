@@ -76,6 +76,42 @@ namespace ModernBoxes.ViewModel
             }
         }
 
+        /// <summary>
+        /// 选择应用路径
+        /// </summary>
+        public RelayCommand ChoseApplicationPath
+        {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+                    openFileDialog.Filter = "可执行程序|*.exe";
+                    if (openFileDialog.ShowDialog() == true)
+                    {
+                        AppModel.AppPath = openFileDialog.FileName;
+                    }
+                },x=>true);
+            }
+        }
+
+        /// <summary>
+        /// 选择图标路径
+        /// </summary>
+        public RelayCommand ChosePhotoPath {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+                    openFileDialog.Filter = "图标文件|*.icon";
+                    if (openFileDialog.ShowDialog() == true)
+                    {
+                        AppModel.Icon = openFileDialog.FileName;
+                    }
+                }, x => true);
+            }
+        }
         public UCAddApplicationDialogViewModel()
         {
 

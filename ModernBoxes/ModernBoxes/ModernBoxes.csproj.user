@@ -36,6 +36,9 @@
     <Page Update="Resource\dictionary\MainWindowResource.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resource\dictionary\UCusedApplicationDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddMenuDialog.xaml">
       <SubType>Designer</SubType>
     </Page>

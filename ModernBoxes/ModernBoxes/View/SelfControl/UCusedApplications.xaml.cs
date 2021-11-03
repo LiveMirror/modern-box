@@ -26,5 +26,6 @@ namespace ModernBoxes.View.SelfControl
             InitializeComponent();
             this.DataContext = new UCusedApplicationViewModel();
         }
+       
     }
 }

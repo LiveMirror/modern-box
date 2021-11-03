@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
-    public class ApplicationModel
+    public class ApplicationModel : ViewModelBase
     {
         private String appPath;
 
         public String AppPath
         {
             get { return appPath; }
-            set { appPath = value; }
+            set { appPath = value;RaisePropertyChanged("AppPath"); }
         }
 
         private String icon;
@@ -21,7 +22,7 @@ namespace ModernBoxes.Model
         public String Icon
         {
             get { return icon; }
-            set { icon = value; }
+            set { icon = value; RaisePropertyChanged("Icon"); }
         }
 
 

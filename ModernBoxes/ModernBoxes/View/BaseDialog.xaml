@@ -8,6 +8,7 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         AllowsTransparency="True"
         Background="Transparent"
