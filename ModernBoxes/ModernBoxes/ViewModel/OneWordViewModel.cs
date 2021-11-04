@@ -38,13 +38,13 @@ namespace ModernBoxes.ViewModel
             loadOneNote();
         }
 
-        private void loadOneNote()
+        private async void loadOneNote()
         {
             var client = new RestClient("https://api.muxiaoguo.cn/api/yiyan");
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
             request.AddHeader("Cookie", "__yjs_duid=1_c7c57d75a2a44f7fb435906e302ceb061635836089220; PHPSESSID=cv64br18t9sdfid1ec96u87pn9");
-            IRestResponse response = client.Execute(request);
+            IRestResponse response =await client.ExecuteAsync(request);
             if (response != null)
             {
                 OneWord = JsonConvert.DeserializeObject<OneWordModel>(response.Content);
