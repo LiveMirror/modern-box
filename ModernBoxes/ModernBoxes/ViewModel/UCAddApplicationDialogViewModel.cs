@@ -11,6 +11,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Drawing.Drawing2D;
 using System.Drawing;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace ModernBoxes.ViewModel
 {
@@ -64,18 +65,12 @@ namespace ModernBoxes.ViewModel
                             }
                             if (AppModel.Icon==String.Empty||AppModel.Icon==null)
                             {
-
                                 //采用默认的可执行文件图标
-                                String iconPath = $"{Environment.CurrentDirectory}\\icons\\{Convert.ToString(DateTime.Now.Year) + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second}.ico";
-                                Icon icon = System.Drawing.Icon.ExtractAssociatedIcon(AppModel.AppPath);
-                                if (!Directory.Exists($"{Environment.CurrentDirectory}\\icons"))
-                                {
-                                    Directory.CreateDirectory($"{Environment.CurrentDirectory}\\icons");
-                                }
-                                FileStream stream = new FileStream(iconPath, FileMode.Create);
-                                AppModel.Icon = iconPath;
-                                icon.Save(stream);
-                                stream.Close();
+                                String iconPath = $"{Environment.CurrentDirectory}\\icons\\";
+                                String FileName = $"{Convert.ToString(DateTime.Now.Year) + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second}.ico";
+                                //Bitmap bitmap = System.Drawing.Icon.ExtractAssociatedIcon(AppModel.AppPath).ToBitmap();
+                                GetIcon.getFileIcon(AppModel.AppPath,iconPath,FileName);
+                                AppModel.Icon = iconPath+FileName;
                             }
                             String newJson = JsonConvert.SerializeObject(UsedList);
                             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\UsedApplicationConfig.json", newJson);
@@ -121,7 +116,7 @@ namespace ModernBoxes.ViewModel
                 return new RelayCommand((o) =>
                 {
                     Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-                    openFileDialog.Filter = "图标文件|*.icon|*.png|*.jpg";
+                    openFileDialog.Filter = "图标文件|*.ico|*.png|*.jpg";
                     if (openFileDialog.ShowDialog() == true)
                     {
                         AppModel.Icon = openFileDialog.FileName;

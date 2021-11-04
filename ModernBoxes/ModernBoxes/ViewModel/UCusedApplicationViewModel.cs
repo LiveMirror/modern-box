@@ -76,7 +76,6 @@ namespace ModernBoxes.ViewModel
                     Process process = new Process();
                     process.StartInfo.FileName = o.ToString();
                     process.Start();
-                    process.WaitForExit();
                 }, x => true);
             }
         }

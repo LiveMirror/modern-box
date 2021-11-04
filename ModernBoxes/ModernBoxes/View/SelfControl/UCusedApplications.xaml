@@ -17,7 +17,7 @@
     <hc:TransitioningContentControl>
         <Border  Background="Transparent">
 
-            <!--<hc:ScrollViewer >
+            <hc:ScrollViewer >
                 <ItemsControl ItemsSource="{Binding Apps}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -31,8 +31,7 @@
                                     Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=DataContext.RunApplication}">
                                 <Button.ContextMenu>
                                     <ContextMenu>
-                                        <MenuItem Header="修改"/>
-                                        <MenuItem Header="删除"/>
+                                        <MenuItem Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
                                     </ContextMenu>
                                 </Button.ContextMenu>
                             </Button>
@@ -46,9 +45,9 @@
                         </ControlTemplate>
                     </ItemsControl.Template>
                 </ItemsControl>
-            </hc:ScrollViewer>-->
+            </hc:ScrollViewer>
 
-            <ListBox Margin="2" Template="{DynamicResource ListBoxTemplate1}" ItemsSource="{Binding Apps}" Style="{StaticResource WrapPanelHorizontalListBox}">
+            <!--<ListBox Margin="3" Template="{DynamicResource ListBoxTemplate1}" ItemsSource="{Binding Apps}" Style="{StaticResource WrapPanelHorizontalListBox}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Button Style="{DynamicResource ApplicationItemStyle}" 
@@ -62,13 +61,12 @@
                         </Button>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>
+            </ListBox>-->
             
             <Border.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="添加应用" Command="{Binding OpenAddApplicationDialog}"/>
                     <Separator/>
-                    <MenuItem Header="管理应用" Command="{Binding ManagerApplication}"/>
                 </ContextMenu>
             </Border.ContextMenu>
         </Border>
