@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
@@ -13,7 +15,19 @@
     <Compile Update="View\BaseDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SelfControl\dialog\AddTempDirDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SelfControl\dialog\DirInformationDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SelfControl\dialog\UCSetDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\UCAddApplicationDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SelfControl\UcCompotent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\SelfControl\UCnotes.xaml.cs">
@@ -33,7 +47,13 @@
     <Page Update="Resource\dictionary\AddMenuDialogDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resource\dictionary\AddTempDirDialogDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resource\dictionary\MainWindowResource.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resource\dictionary\TempDirectoryDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resource\dictionary\UCusedApplicationDictionary.xaml">
@@ -48,7 +68,19 @@
     <Page Update="View\BaseDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\SelfControl\dialog\AddTempDirDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\dialog\DirInformationDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\dialog\UCSetDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\SelfControl\UCAddApplicationDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\UcCompotent.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\UCnotes.xaml">

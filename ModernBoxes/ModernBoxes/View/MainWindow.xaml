@@ -14,7 +14,7 @@
         AllowsTransparency="True"
         x:Name="window"
         xmlns:tool="clr-namespace:ModernBoxes.Tool"
-        Title="MainWindow" Height="1000" Width="600">
+        Title="MainWindow" Height="1000" Width="1000">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -24,9 +24,23 @@
     </Window.Resources>
     <hc:TransitioningContentControl>
         <Border>
-            <StackPanel Orientation="Horizontal">
-                <Grid Margin="10" HorizontalAlignment="Left">
-                    <hc:Card hc:BorderElement.CornerRadius="16" Width="{Binding ElementName=Toggle,Path=IsChecked,Converter={StaticResource toconvert}}"   Background="White" Effect="{StaticResource EffectShadow1}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <!--左侧显示-->
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <!--右侧显示-->
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--中间部分的主窗体-->
+                <Grid Margin="10"  Grid.Column="1" >
+                    <!--左侧内容-->
+                    <hc:Card 
+                        hc:BorderElement.CornerRadius="16" 
+                        Name="MiddleWindow" 
+                        Width="{Binding ElementName=Toggle,Path=IsChecked,Converter={StaticResource toconvert}}"   
+                        Background="White" Effect="{StaticResource EffectShadow1}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -84,48 +98,49 @@
                             </StackPanel>
 
                             <StackPanel Grid.Row="1">
-                                <TextBlock Text="&#xe6de;" HorizontalAlignment="Center" Margin="16" FontFamily="/Resource/#iconfont" Foreground="Gray" FontSize="20"/>
+                                <TextBlock 
+                                    Text="&#xe6de;" 
+                                    HorizontalAlignment="Center" 
+                                    Margin="16" 
+                                    FontFamily="/Resource/#iconfont" 
+                                    Foreground="Gray" 
+                                    FontSize="20">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                                            <i:InvokeCommandAction Command="{Binding OpenSetDialog}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBlock>
                             </StackPanel>
                         </Grid>
                     </hc:Card>
                     <!--托盘图标-->
-                    <hc:NotifyIcon x:Name="NotifyIconContextContent" Text="木函" Visibility="Visible" Icon="/Resource/logo.ico">
-                        <hc:NotifyIcon.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Command="hc:ControlCommands.ShutdownApp" Header="退出程序"/>
-                            </ContextMenu>
-                        </hc:NotifyIcon.ContextMenu>
-                        <hc:Interaction.Triggers>
-                            <hc:EventTrigger EventName="Click">
-                                <hc:EventToCommand Command="hc:ControlCommands.PushMainWindow2Top"/>
-                            </hc:EventTrigger>
-                        </hc:Interaction.Triggers>
-                    </hc:NotifyIcon>
+                   
                 </Grid>
-                <!--右侧内容区-->
-                <Grid Margin="10" Width="260"  Background="Transparent">
-                    <ItemsControl ItemsSource="{Binding CardContents}" Name="CardApplication" Visibility="Collapsed">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
 
-                        <ItemsControl.ItemTemplate>
-                            <!--内容区数据模板-->
-                            <DataTemplate>
-                                <hc:Card hc:BorderElement.CornerRadius="16" Margin="0 0 0 10" >
-                                    <hc:Card.Header>
-                                        <TextBlock Margin="11" Text="{Binding CardName}"/>
-                                    </hc:Card.Header>
-                                    <!--卡片内容-->
-                                    <ContentControl  Content="{Binding CardContent}" Height="200"/>
-                                </hc:Card>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </Grid>
-            </StackPanel>
+                <!--左侧内容区-->
+                <hc:TransitioningContentControl Margin="10" Width="420" Grid.Column="0" Name="compontentLayoutLeft" Visibility="Hidden">
+                    <ContentControl x:Name="LeftContent"/>
+                </hc:TransitioningContentControl>
+
+                    <!--右侧内容区-->
+                <hc:TransitioningContentControl Margin="10" Width="420" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
+                    <ContentControl x:Name="RightContent"/>
+                </hc:TransitioningContentControl>
+                
+                <hc:NotifyIcon x:Name="NotifyIconContextContent" Text="木函" Visibility="Visible" Icon="/Resource/logo.ico">
+                    <hc:NotifyIcon.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Icon="&#xe600;" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Resource/#iconfont" Command="hc:ControlCommands.ShutdownApp" Header="退出程序"/>
+                        </ContextMenu>
+                    </hc:NotifyIcon.ContextMenu>
+                    <hc:Interaction.Triggers>
+                        <hc:EventTrigger EventName="Click">
+                            <hc:EventToCommand Command="hc:ControlCommands.PushMainWindow2Top"/>
+                        </hc:EventTrigger>
+                    </hc:Interaction.Triggers>
+                </hc:NotifyIcon>
+            </Grid>
         </Border>
     </hc:TransitioningContentControl>
 

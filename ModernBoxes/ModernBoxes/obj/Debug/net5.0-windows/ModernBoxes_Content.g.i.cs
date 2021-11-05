@@ -11,5 +11,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app.config")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("menuconfig.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("usedapplicationconfig.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tempdirconfig.json")]
 
 

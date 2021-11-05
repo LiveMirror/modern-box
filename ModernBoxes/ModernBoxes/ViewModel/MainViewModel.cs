@@ -4,6 +4,7 @@ using ModernBoxes.Model;
 using ModernBoxes.Tool;
 using ModernBoxes.View;
 using ModernBoxes.View.SelfControl;
+using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -32,17 +33,17 @@ namespace ModernBoxes.ViewModel
             set { menus = value; RaisePropertyChanged("MenuList"); }
         }
 
-        /// <summary>
-        /// 卡片内容集合
-        /// </summary>
+        ///// <summary>
+        ///// 卡片内容集合
+        ///// </summary>
 
-        private ObservableCollection<CardContentModel> cardContents = new ObservableCollection<CardContentModel>();
+        //private ObservableCollection<CardContentModel> cardContents = new ObservableCollection<CardContentModel>();
 
-        public ObservableCollection<CardContentModel> CardContents
-        {
-            get { return cardContents; }
-            set { cardContents = value;RaisePropertyChanged("CardContents"); }
-        }
+        //public ObservableCollection<CardContentModel> CardContents
+        //{
+        //    get { return cardContents; }
+        //    set { cardContents = value;RaisePropertyChanged("CardContents"); }
+        //}
 
         /// <summary>
         /// 点击菜单加载命令
@@ -78,12 +79,30 @@ namespace ModernBoxes.ViewModel
             }
         }
 
+        /// <summary>
+        /// 打开设置对话框
+        /// </summary>
+        public RelayCommand OpenSetDialog
+        {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    BaseDialog dialog = new BaseDialog();
+                    dialog.SetTitle("设置");
+                    dialog.setDialogSize(560, 800);
+                    dialog.SetContent(new UCSetDialog());
+                    dialog.ShowDialog();
+                }, x => true);
+            }
+        }
+
 
         public MainViewModel()
         {
             RefreshMenuEvent += MainViewModel_RefreshMenuEvent;
             loadMenu();
-            loadCardContent();
+         //   loadCardContent();
         }
 
         /// <summary>
@@ -102,17 +121,17 @@ namespace ModernBoxes.ViewModel
             RefreshMenuEvent();
         }
 
-        /// <summary>
-        /// 加载卡片内容
-        /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
-        private void loadCardContent()
-        {
-            CardContents.Add(new CardContentModel() {CardName="每日一言" ,CardContent = new UCOneWord()});
-            CardContents.Add(new CardContentModel() { CardName = "日常应用", CardContent = new UCusedApplications() });
-            CardContents.Add(new CardContentModel() { CardName = "临时文件夹", CardContent = new UCtempDirectory() });
-            CardContents.Add(new CardContentModel() { CardName = "便签", CardContent = new UCnotes() });
-        }
+        ///// <summary>
+        ///// 加载卡片内容
+        ///// </summary>
+        ///// <exception cref="NotImplementedException"></exception>
+        //private void loadCardContent()
+        //{
+        //    CardContents.Add(new CardContentModel() {CardName="每日一言" ,CardContent = new UCOneWord()});
+        //    CardContents.Add(new CardContentModel() { CardName = "日常应用", CardContent = new UCusedApplications() });
+        //    CardContents.Add(new CardContentModel() { CardName = "临时文件夹", CardContent = new UCtempDirectory() });
+        //    CardContents.Add(new CardContentModel() { CardName = "便签", CardContent = new UCnotes() });
+        //}
 
         /// <summary>
         /// 加载主菜单项

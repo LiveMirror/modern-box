@@ -1,6 +1,10 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using ModernBoxes.View.SelfControl.dialog;
+using ModernBoxes.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +27,27 @@ namespace ModernBoxes.View.SelfControl
         public UCtempDirectory()
         {
             InitializeComponent();
+            this.DataContext = new UCTempDirectoryViewModel();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Type type = sender.GetType();
+            PropertyInfo? propertyInfo = type.GetProperty("CommandParameter");
+            String v = propertyInfo.GetValue(sender).ToString();
+            Messenger.Default.Send( v,"detempdir");
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Type type = sender.GetType();
+            PropertyInfo? propertyInfo = type.GetProperty("CommandParameter");
+            String v = propertyInfo.GetValue(sender).ToString();
+            BaseDialog baseDialog = new BaseDialog();
+            baseDialog.SetTitle("文件夹属性");
+            baseDialog.SetHeight(500);
+            baseDialog.SetContent(new DirInformationDialog(v.ToString()) );
+            baseDialog.Show();
         }
     }
 }

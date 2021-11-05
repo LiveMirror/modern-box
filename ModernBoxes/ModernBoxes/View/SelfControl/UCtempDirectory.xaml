@@ -7,8 +7,64 @@
              xmlns:local="clr-namespace:ModernBoxes.View.SelfControl"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resource/dictionary/TempDirectoryDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <hc:TransitioningContentControl>
-        
+        <Border Background="Transparent">
+            <hc:ScrollViewer>
+                <ItemsControl ItemsSource="{Binding TempDirs}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <hc:TransitioningContentControl TransitionMode="Bottom2Top">
+                                <Button 
+                                Style="{StaticResource TempDirStyle}" 
+                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenDir}" 
+                                CommandParameter="{Binding TempDirPath}">
+                                    <Button.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem 
+                                                Icon="&#xe617;" 
+                                                VerticalAlignment="Center" 
+                                                Click="MenuItem_Click"
+                                                CommandParameter="{Binding TempDirPath}"
+                                                VerticalContentAlignment="Center" 
+                                                FontFamily="/Resource/#iconfont" 
+                                                Header="删除"/>
+                                            <MenuItem 
+                                                Icon="&#xe728;" 
+                                                Click="MenuItem_Click_1"
+                                                CommandParameter="{Binding TempDirPath}"
+                                                VerticalAlignment="Center" 
+                                                VerticalContentAlignment="Center" 
+                                                FontFamily="/Resource/#iconfont" 
+                                                Header="属性"/>
+                                        </ContextMenu>
+                                    </Button.ContextMenu>
+                                </Button>
+                            </hc:TransitioningContentControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </hc:ScrollViewer>
+            <Border.ContextMenu>
+                <ContextMenu>
+                    <MenuItem VerticalContentAlignment="Center"
+                              Command="{Binding AddTempDir}"
+                              Header="添加" 
+                              Icon="&#xeb2e;" 
+                              FontFamily="/Resource/#iconfont"/>
+                </ContextMenu>
+            </Border.ContextMenu>
+        </Border>
     </hc:TransitioningContentControl>
-   
 </UserControl>

@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using ModernBoxes.MyEnum;
 using ModernBoxes.Tool;
 using ModernBoxes.View;
+using ModernBoxes.View.SelfControl;
 using ModernBoxes.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -26,13 +28,44 @@ namespace ModernBoxes
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
+
+    public delegate void CloseCompontentLayoutHandler();
+    /// <summary>
+    /// 获取或设置主窗体的宽高
+    /// </summary>
+    /// <returns></returns>
+    public delegate Double getMainWindowHeightHandler();
+    public delegate void SetMainWidnowHeightHandler(Double value);
+    /// <summary>
+    /// 获取或设置卡片的宽高
+    /// </summary>
+    /// <returns></returns>
+    public delegate Double getCompontentWidthHandler();
+    public delegate void SetCompontentWidthHandler(Double value);
     public partial class MainWindow : Window
     {
+
+        public static event CloseCompontentLayoutHandler CloseCompontentLayoutEvent;
+        public static event getMainWindowHeightHandler GetMainWindowHeightEvent;
+        public static event SetMainWidnowHeightHandler SetMainWindowHeightEvent;
+        public static event getCompontentWidthHandler GetCompontentWidthEvent;
+        public static event SetCompontentWidthHandler SetCompontentWidthEvent;
+        /// <summary>
+        /// 布局方向
+        /// </summary>
+        CommentLayout commentLayout = CommentLayout.right;
 
         public MainWindow()
         {
             InitializeComponent();
-            if (ConfigHelper.getConfig("x")!=String.Empty)
+            initConfig();
+            CloseCompontentLayoutEvent += MainWindow_CloseCompontentLayoutEvent;
+            GetMainWindowHeightEvent += MainWindow_GetMainWindowHeightEvent;
+            SetMainWindowHeightEvent += MainWindow_SetMainWindowHeightEvent;
+            GetCompontentWidthEvent += MainWindow_GetCompontentWidthEvent;
+            SetCompontentWidthEvent += MainWindow_SetCompontentWidthEvent;
+
+            if (ConfigHelper.getConfig("x") != String.Empty)
             {
                 //按照上一次固定的位置显示程序
                 this.WindowStartupLocation = WindowStartupLocation.Manual;
@@ -42,11 +75,49 @@ namespace ModernBoxes
             }
             this.DataContext = new MainViewModel();
             this.window.MouseLeftButtonDown += Window_MouseLeftButtonDown;
-            this.Height = SystemParameters.PrimaryScreenHeight-70;
+            this.Height = SystemParameters.PrimaryScreenHeight - 70;
             //应用图标不显示在任务栏上
             this.ShowInTaskbar = false;
             //ViewModel注册消息
             Messenger.Default.Register<Boolean>(this, "isShow", ShowCardApplaction);
+
+            loadComment();
+
+        }
+
+       
+
+
+
+        /// <summary>
+        /// 初始化配置文件
+        /// </summary>
+        private void initConfig()
+        {
+            if ((ConfigHelper.getConfig("isFirst")) == String.Empty)
+            {
+                ConfigHelper.setConfig("isFirst", "true");
+                //默认展开的地方在右侧
+                ConfigHelper.setConfig("compontentLayout", CommentLayout.right);
+            }
+
+        }
+
+        /// <summary>
+        /// 加载组件应用
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
+        private void loadComment()
+        {
+            commentLayout = (CommentLayout)Enum.Parse(typeof(CommentLayout), ConfigHelper.getConfig("compontentLayout"));
+            if (commentLayout == CommentLayout.left)
+            {
+                compontentLayoutLeft.Content = new UcCompotent();
+            }
+            else
+            {
+                compontentLayoutRight.Content = new UcCompotent();
+            }
         }
 
         /// <summary>
@@ -55,35 +126,37 @@ namespace ModernBoxes
         /// <param name="isShow"></param>
         public void ShowCardApplaction(Boolean isShow)
         {
-            if (CardApplication.Visibility == Visibility.Visible)
+            if (commentLayout == CommentLayout.right)
             {
-                CardApplication.Visibility = Visibility.Collapsed;
+                compontentLayoutRight.Visibility = (compontentLayoutRight.Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible);
             }
             else
             {
-                CardApplication.Visibility = Visibility.Visible;
+                compontentLayoutLeft.Visibility = (compontentLayoutLeft.Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible);
             }
         }
 
-        /// <summary>
-        /// 关闭窗口
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MenuItem_Click_To_CloseWindow(object sender, RoutedEventArgs e)
+        private void MainWindow_CloseCompontentLayoutEvent()
         {
-            this.Close();
-            
+            CloseCompontentLayout();
         }
-        /// <summary>
-        /// 重写关闭方法
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnClosing(CancelEventArgs e)
+
+        public static void DoCloseCompontentLayout()
         {
-            this.Hide();
-            e.Cancel = true;
+            CloseCompontentLayoutEvent();
         }
+
+        /// <summary>
+        /// 在设置中更换布局位置后隐藏组件布局
+        /// </summary>
+        public void CloseCompontentLayout()
+        {
+            compontentLayoutLeft.Visibility = Visibility.Hidden;
+            compontentLayoutRight.Visibility = Visibility.Hidden;
+            //根据配置文件中的布局参数重新加载
+            loadComment();
+        }
+       
 
         /// <summary>
         /// 控制窗体固定
@@ -139,24 +212,78 @@ namespace ModernBoxes
             this.Topmost = false;
         }
 
-       
+
+        /// <summary>
+        /// 设置主界面的高
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        private void MainWindow_SetMainWindowHeightEvent(double value)
+        {
+            this.Height = value;
+        }
+        public static void DoSetMainWindowHeight(Double value)
+        {
+            SetMainWindowHeightEvent(value);
+        }
+        /// <summary>
+        /// 获取主界面的高
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        private double MainWindow_GetMainWindowHeightEvent()
+        {
+            return this.Height;
+        }
+        public static Double DoGetMainWindowHeight()
+        {
+            return GetMainWindowHeightEvent();
+        }
+
+        /// <summary>
+        /// 获取或设置组件应用的宽
+        /// </summary>
+        /// <param name="value"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void MainWindow_SetCompontentWidthEvent(double value)
+        {
+            compontentLayoutLeft.Width = value;
+            compontentLayoutRight.Width = value;
+        }
+        public static void DoSetCompontentWidth(Double value)
+        {
+            SetCompontentWidthEvent(value);
+        }
+
+        private double MainWindow_GetCompontentWidthEvent()
+        {
+            return compontentLayoutLeft.Width;
+        }
+        public static Double DoGetCompontentWidth()
+        {
+            return GetCompontentWidthEvent();
+        }
 
 
-        //[DllImport("user32.dll")]
-        //public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        /// <summary>
+        /// 关闭窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItem_Click_To_CloseWindow(object sender, RoutedEventArgs e)
+        {
+            this.Close();
 
-        //public const UInt32 SWP_NOSIZE = 0x0001;
-        //public const UInt32 SWP_NOMOVE = 0x0002;
-        //public const UInt32 SWP_NOACTIVATE = 0x0010;
-        //public static readonly IntPtr HWND_BOTTOM = new IntPtr(1);
-
-        //private void SetBottom(Window window)
-        //{
-        //    IntPtr hWnd = new WindowInteropHelper(window).Handle;
-        //    SetWindowPos(hWnd, HWND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-        //    SetBottom(this);
-        //}
-
-
+        }
+        /// <summary>
+        /// 重写关闭方法
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

@@ -8,7 +8,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="70" Height="70" CornerRadius="5" x:Name="border" Margin="7">
+                    <Border Width="70" Height="70" CornerRadius="5" x:Name="border" Margin="6">
                         <DockPanel>
                             <Image DockPanel.Dock="Top" Margin="0 5 0 5" Source="{Binding Icon}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40"/>
                             <TextBlock Margin="0 0 0 5" DockPanel.Dock="Bottom" MaxWidth="60" VerticalAlignment="Bottom" HorizontalAlignment="Center" Text="{Binding FileName}" TextWrapping="NoWrap"/>
