@@ -61,6 +61,25 @@ namespace ModernBoxes.ViewModel
             }
         }
 
+        /// <summary>
+        /// 新建文件夹
+        /// </summary>
+        public RelayCommand NewTempDir
+        {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    BaseDialog dialog = new BaseDialog();
+                    dialog.SetTitle("新建文件夹");
+                    AddTempDirDialog addTempDirDialog = new AddTempDirDialog();
+                    addTempDirDialog.ChangeToNewDirUI();
+                    dialog.SetContent(addTempDirDialog);
+                    dialog.ShowDialog();
+                }, x => true);
+            }
+        }
+
 
         public UCTempDirectoryViewModel()
         {

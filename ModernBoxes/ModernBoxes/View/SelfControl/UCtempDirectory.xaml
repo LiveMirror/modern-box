@@ -60,6 +60,7 @@
             </hc:ScrollViewer>
             <Border.ContextMenu>
                 <ContextMenu>
+                    <MenuItem Header="新建" Command="{Binding NewTempDir}" Icon="&#xe67a;" FontFamily="/Resource/#iconfont" VerticalAlignment="Center" />
                     <MenuItem VerticalContentAlignment="Center"
                               Command="{Binding AddTempDir}"
                               Header="添加" 

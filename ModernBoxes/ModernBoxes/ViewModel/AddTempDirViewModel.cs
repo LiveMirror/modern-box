@@ -57,6 +57,8 @@ namespace ModernBoxes.ViewModel
                 {
                     if (DirModel.TempDirPath != String.Empty && DirModel.TempDirPath != null)
                     {
+                        ToggleButton? TB_DirRef = o as ToggleButton;
+                        //添加模式
                         //获取文件夹类型的信息
                         if (dirKind[0])
                             DirModel.TempDirImportantKind = MyEnum.DirEnum.dirDanger;
@@ -67,14 +69,23 @@ namespace ModernBoxes.ViewModel
                         if (dirKind[3])
                             DirModel.TempDirImportantKind = MyEnum.DirEnum.dirSecondary;
 
-                        //获取文件夹是否引用
-                        ToggleButton? TB_DirRef = o as ToggleButton;
-                        if (!(bool)TB_DirRef.IsChecked && TB_DirRef!= null)
+                        if (TB_DirRef.Visibility == System.Windows.Visibility.Collapsed)
                         {
-                            //将目标文件夹移动至文件夹缓存区
-                            
-                             FileHelper.CopyFolder(DirModel.TempDirPath, $"{Environment.CurrentDirectory}\\DirCache");
-                             DirModel.TempDirPath = $"{Environment.CurrentDirectory}\\DirCache\\" + DirModel.TempDirPath.Substring(DirModel.TempDirPath.LastIndexOf('\\') + 1);
+                            //新建文件夹模式
+                            //获取文件新建文件夹地址
+                            DirModel.TempDirPath = $"{Environment.CurrentDirectory}\\DirCache\\{DirModel.TempDirPath}";
+                            Directory.CreateDirectory(DirModel.TempDirPath);
+                        }
+                        else
+                        {
+                            //获取文件夹是否引用
+                            if (!(bool)TB_DirRef.IsChecked && TB_DirRef != null)
+                            {
+                                //将目标文件夹移动至文件夹缓存区
+
+                                FileHelper.CopyFolder(DirModel.TempDirPath, $"{Environment.CurrentDirectory}\\DirCache");
+                                DirModel.TempDirPath = $"{Environment.CurrentDirectory}\\DirCache\\" + DirModel.TempDirPath.Substring(DirModel.TempDirPath.LastIndexOf('\\') + 1);
+                            }
                         }
 
                         String oldJson = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempDirConfig.json");
@@ -84,7 +95,7 @@ namespace ModernBoxes.ViewModel
                             IList<JToken> jTokens = jArray.Children().ToList();
                             foreach (JToken jToken in jTokens)
                             {
-                                if (jToken!=null)
+                                if (jToken != null)
                                 {
                                     TempDirs.Add(jToken.ToObject<TempDirModel>());
                                 }
@@ -96,6 +107,7 @@ namespace ModernBoxes.ViewModel
                         await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempDirConfig.json", newJson);
                         UCTempDirectoryViewModel.DoRefershData();
                         Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
+
                     }
                 }, x => true);
             }

@@ -1,4 +1,5 @@
-﻿using ModernBoxes.ViewModel;
+﻿using HandyControl.Controls;
+using ModernBoxes.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,14 @@ namespace ModernBoxes.View.SelfControl.dialog
             InitializeComponent();
             this.DataContext = new AddTempDirViewModel(DirPath);
         }
-      
+
+        public void ChangeToNewDirUI()
+        {
+            SP_isRef.Visibility = Visibility.Collapsed;
+            TB_DirRef.Visibility = Visibility.Collapsed;
+            InfoElement.SetPlaceholder(TB_DirPath, "文件夹名称");
+            btn_ChooseDirPath.Visibility = Visibility.Collapsed;
+        }
+
     }
 }

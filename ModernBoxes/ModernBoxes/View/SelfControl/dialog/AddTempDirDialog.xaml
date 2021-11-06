@@ -25,6 +25,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBox 
+                    x:Name="TB_DirPath"
                     Grid.Column="0"
                     VerticalAlignment="Center"
                     Text="{Binding DirModel.TempDirPath,Mode=TwoWay}"
@@ -33,9 +34,9 @@
                     hc:InfoElement.Necessary="True" 
                     Style="{StaticResource TextBoxExtend}" 
                     Margin="5,0,5,0"/>
-                <Button Grid.Column="1" Command="{Binding ChoseDir}" Margin="5 0 5 0" Content="选择" VerticalAlignment="Center" Style="{DynamicResource ButtonPrimary}"/>
+                <Button x:Name="btn_ChooseDirPath" Grid.Column="1" Command="{Binding ChoseDir}" Margin="5 0 5 0" Content="选择" VerticalAlignment="Center" Style="{DynamicResource ButtonPrimary}"/>
             </Grid>
-            <StackPanel Margin="10 10 10 0" Orientation="Horizontal">
+            <StackPanel Margin="10 10 10 0" Orientation="Horizontal" Name="SP_isRef">
                 <TextBlock Text="是否引用" VerticalAlignment="Center"/>
                 <ToggleButton x:Name="TB_DirRef" Margin="26 0 0 0" IsChecked="True" HorizontalAlignment="Center" Style="{StaticResource ToggleButtonSwitch}"/>
                 <TextBlock Text="&#xe8ac;"  FontFamily="/Resource/#iconfont" FontSize="18" Foreground="LightGray" VerticalAlignment="Center" Margin="30 0 0 0">

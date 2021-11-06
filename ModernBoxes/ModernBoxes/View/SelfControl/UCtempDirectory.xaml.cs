@@ -64,5 +64,8 @@ namespace ModernBoxes.View.SelfControl
             baseDialog.SetContent(new AddTempDirDialog(dirPath));
             baseDialog.ShowDialog();
         }
+
+
+       
     }
 }
