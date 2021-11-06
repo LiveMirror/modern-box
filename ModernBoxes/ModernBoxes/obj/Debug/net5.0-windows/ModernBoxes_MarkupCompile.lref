@@ -10,6 +10,7 @@ FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\MainWindow.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\dialog\AddTempDirDialog.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\dialog\AddTempFileDialog.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\dialog\DirInformationDialog.xaml;;
+FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\dialog\FilePropertyDialog.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\dialog\UCSetDialog.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\UCAddApplicationDialog.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\UcCompotent.xaml;;
@@ -18,5 +19,4 @@ FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\UCOneWord.xaml
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\UCtempDirectory.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\UcTempFile.xaml;;
 FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\UCusedApplications.xaml;;
-FD:\WareHoues\modern-box\ModernBoxes\ModernBoxes\View\SelfControl\dialog\FilePropertyDialog.xaml;;
 

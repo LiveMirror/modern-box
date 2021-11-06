@@ -151,6 +151,6 @@ D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\Resourc
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\Resource\image\word.png
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\Resource\image\wps.png
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\Resource\image\zip.png
-D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.csproj.AssemblyReference.cache
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\View\SelfControl\dialog\FilePropertyDialog.g.cs
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\View\SelfControl\dialog\FilePropertyDialog.baml
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.csproj.AssemblyReference.cache

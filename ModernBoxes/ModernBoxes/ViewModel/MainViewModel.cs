@@ -33,18 +33,6 @@ namespace ModernBoxes.ViewModel
             set { menus = value; RaisePropertyChanged("MenuList"); }
         }
 
-        ///// <summary>
-        ///// 卡片内容集合
-        ///// </summary>
-
-        //private ObservableCollection<CardContentModel> cardContents = new ObservableCollection<CardContentModel>();
-
-        //public ObservableCollection<CardContentModel> CardContents
-        //{
-        //    get { return cardContents; }
-        //    set { cardContents = value;RaisePropertyChanged("CardContents"); }
-        //}
-
         /// <summary>
         /// 点击菜单加载命令
         /// </summary>
@@ -121,18 +109,6 @@ namespace ModernBoxes.ViewModel
             RefreshMenuEvent();
         }
 
-        ///// <summary>
-        ///// 加载卡片内容
-        ///// </summary>
-        ///// <exception cref="NotImplementedException"></exception>
-        //private void loadCardContent()
-        //{
-        //    CardContents.Add(new CardContentModel() {CardName="每日一言" ,CardContent = new UCOneWord()});
-        //    CardContents.Add(new CardContentModel() { CardName = "日常应用", CardContent = new UCusedApplications() });
-        //    CardContents.Add(new CardContentModel() { CardName = "临时文件夹", CardContent = new UCtempDirectory() });
-        //    CardContents.Add(new CardContentModel() { CardName = "便签", CardContent = new UCnotes() });
-        //}
-
         /// <summary>
         /// 加载主菜单项
         /// </summary>
@@ -140,12 +116,15 @@ namespace ModernBoxes.ViewModel
         private async void loadMenu()
         {
             String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\MenuConfig.json");
-            JArray array = JArray.Parse(json);
-            IList<JToken> temp = array.Children().ToList();
-            foreach (JToken tempItem in temp)
+            if (json.Length>8)
             {
-                if (tempItem!=null)
-                    MenuList.Add(tempItem.ToObject<MenuModel>());
+                JArray array = JArray.Parse(json);
+                IList<JToken> temp = array.Children().ToList();
+                foreach (JToken tempItem in temp)
+                {
+                    if (tempItem != null)
+                        MenuList.Add(tempItem.ToObject<MenuModel>());
+                }
             }
             
         }
