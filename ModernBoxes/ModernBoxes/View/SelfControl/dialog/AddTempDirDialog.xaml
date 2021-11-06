@@ -10,7 +10,6 @@
              xmlns:hc="https://handyorg.github.io/handycontrol"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-       
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="\Resource\dictionary\AddTempDirDialogDictionary.xaml"/>

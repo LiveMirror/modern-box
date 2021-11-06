@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="ModernBoxes.View.SelfControl.dialog.FilePropertyDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:tool="clr-namespace:ModernBoxes.Tool.convert"
+             xmlns:local="clr-namespace:ModernBoxes.View.SelfControl.dialog"
+             mc:Ignorable="d" 
+             Margin="10"
+             Background="{DynamicResource RegionBrush}"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <tool:FileIconTypeConvert x:Key="iconConvert"/>
+        <tool:GetDirNameFrompathConvert x:Key="getFileName"/>
+    </UserControl.Resources>
+    <hc:TransitioningContentControl>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Image Width="100" Height="100" VerticalAlignment="Center" Source="{Binding FileInformation.FilePath,Converter={StaticResource iconConvert}}"  HorizontalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" Text="{Binding  FileInformation.FilePath,Converter={StaticResource getFileName}}" HorizontalAlignment="Center" Margin="5" FontSize="20" Style="{DynamicResource TextBlockTitleBold}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Grid Margin="0 30 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="位置" FontSize="18" Margin="10 10 15 10" Grid.Row ="0"/>
+                    <TextBlock Text="大小" ToolTip="包含文件夹数量，文件数量" FontSize="18" Margin="10 10 15 10" Grid.Row="1"/>
+                    <TextBlock Text="创建" ToolTip="创建时间" FontSize="18" Margin="10 10 15 10" Grid.Row="2"/>
+                    <TextBlock Text="修改" ToolTip="修改时间" FontSize="18" Margin="10 10 15 10" Grid.Row="3"/>
+                    <TextBox   
+                        Text="{Binding FileInformation.FilePath,Mode=OneWay}" 
+                        TextWrapping="NoWrap"  
+                        Grid.Column="1"
+                        ToolTip="{Binding FileInformation.FilePath}" 
+                        FontSize="17"  
+                        Margin="30 0 0 0" 
+                        VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding FileInformation.Size}" FontSize="17" Grid.Row ="1" Grid.Column="1" Margin="30 0 0 0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding FileInformation.CreateTime}" FontSize="17" Grid.Row ="2" Grid.Column="1" Margin="30 0 0 0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding FileInformation.ChangeTime}" FontSize="17" Grid.Row ="3" Grid.Column="1" Margin="30 0 0 0" VerticalAlignment="Center"/>
+                </Grid>
+
+                <Button Click="Button_Click" Content="关闭" Style="{DynamicResource ButtonPrimary}" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+            </StackPanel>
+        </Grid>
+    </hc:TransitioningContentControl>
+</UserControl>

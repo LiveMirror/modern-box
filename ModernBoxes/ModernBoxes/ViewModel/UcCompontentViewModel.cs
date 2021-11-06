@@ -41,9 +41,10 @@ namespace ModernBoxes.ViewModel
         /// <exception cref="NotImplementedException"></exception>
         private void loadCardContent()
         {
-            CardContents.Add(new CardContentModel() { CardName = "每日一言", CardContent = new UCOneWord() });
-            CardContents.Add(new CardContentModel() { CardName = "日常应用", CardContent = new UCusedApplications() });
-            CardContents.Add(new CardContentModel() { CardName = "临时文件夹", CardContent = new UCtempDirectory() });
+            CardContents.Add(new CardContentModel() { CardName = "一言", CardContent = new UCOneWord() });
+            CardContents.Add(new CardContentModel() { CardName = "应用", CardContent = new UCusedApplications() });
+            CardContents.Add(new CardContentModel() { CardName = "文件夹", CardContent = new UCtempDirectory() });
+            CardContents.Add(new CardContentModel() { CardName = "文件", CardContent = new UcTempFile() });
             CardContents.Add(new CardContentModel() { CardName = "便签", CardContent = new UCnotes() });
         }
     }

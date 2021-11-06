@@ -81,5 +81,15 @@ namespace ModernBoxes.Tool
                 CopyFolder(strZiPath, strToPath + "\\" + strFolderName);
             }
         }
+
+        public static long getFileSize(String FilePath)
+        {
+            long size = 0;
+            if (File.Exists(FilePath))
+            {
+                size = new FileInfo(FilePath).Length;
+            }
+            return size;
+        }
     }
 }

@@ -18,7 +18,13 @@
     <Compile Update="View\SelfControl\dialog\AddTempDirDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SelfControl\dialog\AddTempFileDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\dialog\DirInformationDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SelfControl\dialog\FilePropertyDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\SelfControl\dialog\UCSetDialog.xaml.cs">
@@ -39,6 +45,9 @@
     <Compile Update="View\SelfControl\UCtempDirectory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SelfControl\UcTempFile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\UCusedApplications.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -56,6 +65,9 @@
     <Page Update="Resource\dictionary\TempDirectoryDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resource\dictionary\tempFileDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resource\dictionary\UCusedApplicationDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -71,7 +83,13 @@
     <Page Update="View\SelfControl\dialog\AddTempDirDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\SelfControl\dialog\AddTempFileDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\SelfControl\dialog\DirInformationDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\dialog\FilePropertyDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\dialog\UCSetDialog.xaml">
@@ -90,6 +108,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\UCtempDirectory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\UcTempFile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\UCusedApplications.xaml">

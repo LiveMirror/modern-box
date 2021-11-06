@@ -37,9 +37,7 @@
                     <TextBlock Text="位置" FontSize="18" Margin="10 10 15 10" Grid.Row ="0"/>
                     <TextBlock Text="包含" ToolTip="包含文件夹数量，文件数量" FontSize="18" Margin="10 10 15 10" Grid.Row="1"/>
                     <TextBlock Text="时间" ToolTip="创建时间" FontSize="18" Margin="10 10 15 10" Grid.Row="2"/>
-                    <hc:ScrollViewer   IsInertiaEnabled="True" Grid.Row ="0" Grid.Column="1" Orientation="Horizontal">
-                        <TextBlock Text="{Binding DirInfo.Path}" ToolTip="{Binding DirInfo.Path}" FontSize="17"  Margin="30 0 0 0" VerticalAlignment="Center"/>
-                    </hc:ScrollViewer>
+                    <TextBox Text="{Binding DirInfo.Path}" Grid.Column="1"  ToolTip="{Binding DirInfo.Path}" FontSize="17"  Margin="30 0 0 0" VerticalAlignment="Center"/>
                     <TextBlock Text="{Binding DirInfo.Include}" FontSize="17" Grid.Row ="1" Grid.Column="1" Margin="30 0 0 0" VerticalAlignment="Center"/>
                     <TextBlock Text="{Binding DirInfo.CreateTime}" FontSize="17" Grid.Row ="2" Grid.Column="1" Margin="30 0 0 0" VerticalAlignment="Center"/>
                 </Grid>

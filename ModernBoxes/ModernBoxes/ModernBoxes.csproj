@@ -12,8 +12,29 @@
     <None Remove="App.config" />
     <None Remove="MenuConfig.json" />
     <None Remove="Resource\iconfont.ttf" />
+    <None Remove="Resource\image\3d.png" />
+    <None Remove="Resource\image\config.png" />
+    <None Remove="Resource\image\db.png" />
+    <None Remove="Resource\image\dir.png" />
+    <None Remove="Resource\image\email.png" />
+    <None Remove="Resource\image\excel.png" />
+    <None Remove="Resource\image\exe.png" />
+    <None Remove="Resource\image\gif.png" />
+    <None Remove="Resource\image\image.png" />
+    <None Remove="Resource\image\link.png" />
+    <None Remove="Resource\image\music.png" />
+    <None Remove="Resource\image\normal.png" />
+    <None Remove="Resource\image\pdf.png" />
+    <None Remove="Resource\image\ppt.png" />
+    <None Remove="Resource\image\program.png" />
+    <None Remove="Resource\image\txt.png" />
+    <None Remove="Resource\image\video.png" />
+    <None Remove="Resource\image\word.png" />
+    <None Remove="Resource\image\wps.png" />
+    <None Remove="Resource\image\zip.png" />
     <None Remove="Resource\logo.ico" />
     <None Remove="TempDirConfig.json" />
+    <None Remove="TempFileConfig.json" />
     <None Remove="UsedApplicationConfig.json" />
   </ItemGroup>
 
@@ -37,6 +58,69 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MenuConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\3d.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\config.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\db.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\dir.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\email.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\excel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\exe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\gif.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\image.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\link.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\music.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\pdf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\ppt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\program.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\txt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\video.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\word.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\wps.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\image\zip.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TempFileConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
