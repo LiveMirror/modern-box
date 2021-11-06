@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 
 namespace ModernBoxes.ViewModel
 {
@@ -45,6 +46,7 @@ namespace ModernBoxes.ViewModel
         }
 
 
+
         /// <summary>
         /// 添加文件夹
         /// </summary>
@@ -55,6 +57,7 @@ namespace ModernBoxes.ViewModel
                 {
                     if (DirModel.TempDirPath != String.Empty && DirModel.TempDirPath != null)
                     {
+                        //获取文件夹类型的信息
                         if (dirKind[0])
                             DirModel.TempDirImportantKind = MyEnum.DirEnum.dirDanger;
                         if (dirKind[1])
@@ -63,6 +66,16 @@ namespace ModernBoxes.ViewModel
                             DirModel.TempDirImportantKind = MyEnum.DirEnum.dirPrimary;
                         if (dirKind[3])
                             DirModel.TempDirImportantKind = MyEnum.DirEnum.dirSecondary;
+
+                        //获取文件夹是否引用
+                        ToggleButton? TB_DirRef = o as ToggleButton;
+                        if (!(bool)TB_DirRef.IsChecked && TB_DirRef!= null)
+                        {
+                            //将目标文件夹移动至文件夹缓存区
+                            
+                             FileHelper.CopyFolder(DirModel.TempDirPath, $"{Environment.CurrentDirectory}\\DirCache");
+                             DirModel.TempDirPath = $"{Environment.CurrentDirectory}\\DirCache\\" + DirModel.TempDirPath.Substring(DirModel.TempDirPath.LastIndexOf('\\') + 1);
+                        }
 
                         String oldJson = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempDirConfig.json");
                         if (oldJson.Length > 8)
@@ -113,6 +126,11 @@ namespace ModernBoxes.ViewModel
         public AddTempDirViewModel()
         {
 
+        }
+
+        public AddTempDirViewModel(String DirPath)
+        {
+            DirModel.TempDirPath = DirPath;
         }
     }
 }

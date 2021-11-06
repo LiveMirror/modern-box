@@ -49,5 +49,20 @@ namespace ModernBoxes.View.SelfControl
             baseDialog.SetContent(new DirInformationDialog(v.ToString()) );
             baseDialog.Show();
         }
+
+        private void UserControl_DragEnter(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void UserControl_Drop(object sender, DragEventArgs e)
+        {
+            String? dirPath = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
+            BaseDialog baseDialog = new BaseDialog();
+            baseDialog.SetTitle("添加文件夹");
+            baseDialog.SetHeight(255);
+            baseDialog.SetContent(new AddTempDirDialog(dirPath));
+            baseDialog.ShowDialog();
+        }
     }
 }

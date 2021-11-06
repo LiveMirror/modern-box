@@ -19,12 +19,25 @@ namespace ModernBoxes.View.SelfControl.dialog
     /// <summary>
     /// AddTempDirDialog.xaml 的交互逻辑
     /// </summary>
+    /// 
+
+
+
     public partial class AddTempDirDialog : UserControl
     {
+        
+
         public AddTempDirDialog()
         {
             InitializeComponent();
             this.DataContext = new AddTempDirViewModel();
         }
+
+        public AddTempDirDialog(String DirPath)
+        {
+            InitializeComponent();
+            this.DataContext = new AddTempDirViewModel(DirPath);
+        }
+      
     }
 }

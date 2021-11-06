@@ -7,6 +7,7 @@ using ModernBoxes.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -99,6 +100,9 @@ namespace ModernBoxes
                 ConfigHelper.setConfig("isFirst", "true");
                 //默认展开的地方在右侧
                 ConfigHelper.setConfig("compontentLayout", CommentLayout.right);
+                //首次使用创建缓存文件夹
+                Directory.CreateDirectory($"{Environment.CurrentDirectory}\\DirCache");
+                Directory.CreateDirectory($"{Environment.CurrentDirectory}\\FileCache");
             }
 
         }

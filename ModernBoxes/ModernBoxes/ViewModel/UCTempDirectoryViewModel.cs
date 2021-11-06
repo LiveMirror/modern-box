@@ -41,7 +41,7 @@ namespace ModernBoxes.ViewModel
                     BaseDialog baseDialog = new BaseDialog();
                     baseDialog.SetContent(new AddTempDirDialog());
                     baseDialog.SetTitle("添加文件夹");
-                    baseDialog.SetHeight(200);
+                    baseDialog.SetHeight(255);
                     baseDialog.ShowDialog();
                 }, x => true);
             }
