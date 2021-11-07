@@ -36,7 +36,7 @@ namespace ModernBoxes.Tool.convert
                 case "xml":
                 case "xaml":
                 case "cpp":
-                    return "/image/program.png";
+                    return new BitmapImage(new Uri(@"\Resource\image\program.png", UriKind.Relative));
                 case "html":
                     return new BitmapImage(new Uri(@"\Resource\image\link.png", UriKind.Relative));
                 case "png":
