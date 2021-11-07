@@ -9,10 +9,12 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
@@ -86,7 +88,11 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo(o.ToString());
+                    Process process = new Process();
+                    process.StartInfo = processStartInfo;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
                 }, x => true);
             }
         }

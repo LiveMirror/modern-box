@@ -80,7 +80,7 @@ namespace ModernBoxes.ViewModel
                     dialog.SetTitle("设置");
                     dialog.setDialogSize(560, 800);
                     dialog.SetContent(new UCSetDialog());
-                    dialog.ShowDialog();
+                    dialog.ShowDialog();   
                 }, x => true);
             }
         }

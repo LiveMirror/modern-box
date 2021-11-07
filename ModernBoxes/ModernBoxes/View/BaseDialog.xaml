@@ -21,7 +21,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <hc:TransitioningContentControl >
-        <hc:Card Margin="10" hc:BorderElement.CornerRadius="16">
+        <hc:Card Margin="10" hc:BorderElement.CornerRadius="16" Effect="{StaticResource EffectShadow1}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
