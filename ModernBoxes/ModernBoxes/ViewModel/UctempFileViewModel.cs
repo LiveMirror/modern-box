@@ -104,6 +104,11 @@ namespace ModernBoxes.ViewModel
             init();
         }
 
+
+        /// <summary>
+        /// 删除文件
+        /// </summary>
+        /// <param name="FilePath"></param>
         public async void DoDeleteFile(String FilePath)
         {
             TempFileModel? tempFileModel = TempFiles.FirstOrDefault(o => o.FilePath == FilePath);
@@ -112,7 +117,7 @@ namespace ModernBoxes.ViewModel
                 TempFiles.Remove(tempFileModel);
                 File.Delete(FilePath);
                 String json = JsonConvert.SerializeObject(TempFiles);
-                File.Delete($"{Environment.CurrentDirectory}\\TempDirConfig.json");
+                File.Delete($"{Environment.CurrentDirectory}\\TempFileConfig.json");
                 await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", json);
             }
         }
@@ -136,8 +141,11 @@ namespace ModernBoxes.ViewModel
         private async void init()
         {
             String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempFileConfig.json");
-            JArray jArray = JArray.Parse(json);
-            jArray.Children().ToList().ForEach(x => TempFiles.Add(x.ToObject<TempFileModel>()));
+            if (json.Length>8)
+            {
+                JArray jArray = JArray.Parse(json);
+                jArray.Children().ToList().ForEach(x => TempFiles.Add(x.ToObject<TempFileModel>()));
+            }
         }
     }
 }
