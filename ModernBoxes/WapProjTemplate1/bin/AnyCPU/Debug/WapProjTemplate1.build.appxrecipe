@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>HUI</Machine>
+    <WindowsUser>hui</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>419c3a0e-6c2a-4d95-9a31-021aa8e10096</PackageIdentityName>
+    <PackageIdentityPublisher>CN=hui</PackageIdentityPublisher>
+    <IntermediateOutputPath>D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\obj\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType></RemoteDeploymentType>
+    <PackageRegistrationPath></PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath></WindowsSdkPath>
+    <LayoutDir>D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\bin\AnyCPU\Debug\AppX</LayoutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\bin\AnyCPU\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\SplashScreen.scale-200.png">
+      <PackagePath>Images\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\LockScreenLogo.scale-200.png">
+      <PackagePath>Images\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\Square150x150Logo.scale-200.png">
+      <PackagePath>Images\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\Square44x44Logo.scale-200.png">
+      <PackagePath>Images\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\StoreLogo.png">
+      <PackagePath>Images\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\Images\Wide310x150Logo.scale-200.png">
+      <PackagePath>Images\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\WapProjTemplate1\bin\AnyCPU\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\HandyControl.dll">
+      <PackagePath>ModernBoxes\HandyControl.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll">
+      <PackagePath>ModernBoxes\GalaSoft.MvvmLight.Extras.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll">
+      <PackagePath>ModernBoxes\GalaSoft.MvvmLight.Platform.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll">
+      <PackagePath>ModernBoxes\GalaSoft.MvvmLight.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\mvvmlightlibs\5.4.1.1\lib\net45\System.Windows.Interactivity.dll">
+      <PackagePath>ModernBoxes\System.Windows.Interactivity.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>ModernBoxes\Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\restsharp\106.13.0\lib\netstandard2.0\RestSharp.dll">
+      <PackagePath>ModernBoxes\RestSharp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Converters.Wpf.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Converters.Wpf.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Core.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Css.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Css.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Dom.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Dom.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Model.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Model.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Rendering.Gdi.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Rendering.Gdi.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Rendering.Wpf.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Rendering.Wpf.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\sharpvectors\1.7.6\lib\net5.0-windows\SharpVectors.Runtime.Wpf.dll">
+      <PackagePath>ModernBoxes\SharpVectors.Runtime.Wpf.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\system.drawing.common\5.0.2\lib\netcoreapp3.0\System.Drawing.Common.dll">
+      <PackagePath>ModernBoxes\System.Drawing.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\system.windows.interactivity.wpf\2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll">
+      <PackagePath>ModernBoxes\Microsoft.Expression.Interactions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\ca-ES\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\ca-ES\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\en\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\en\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\fa\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\fa\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\fr\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\fr\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\ko-KR\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\ko-KR\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\pl\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\pl\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\pt-BR\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\pt-BR\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\ru\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\ru\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\handycontrol\3.2.0\lib\net5.0\tr\HandyControl.resources.dll">
+      <PackagePath>ModernBoxes\tr\HandyControl.resources.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\system.drawing.common\5.0.2\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll">
+      <PackagePath>ModernBoxes\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Machu\.nuget\packages\system.drawing.common\5.0.2\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll">
+      <PackagePath>ModernBoxes\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.deps.json">
+      <PackagePath>ModernBoxes\ModernBoxes.deps.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.runtimeconfig.dev.json">
+      <PackagePath>ModernBoxes\ModernBoxes.runtimeconfig.dev.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\MenuConfig.json">
+      <PackagePath>ModernBoxes\MenuConfig.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\3d.png">
+      <PackagePath>ModernBoxes\Resource\image\3d.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\config.png">
+      <PackagePath>ModernBoxes\Resource\image\config.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\db.png">
+      <PackagePath>ModernBoxes\Resource\image\db.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\dir.png">
+      <PackagePath>ModernBoxes\Resource\image\dir.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\email.png">
+      <PackagePath>ModernBoxes\Resource\image\email.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\excel.png">
+      <PackagePath>ModernBoxes\Resource\image\excel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\exe.png">
+      <PackagePath>ModernBoxes\Resource\image\exe.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\gif.png">
+      <PackagePath>ModernBoxes\Resource\image\gif.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\image.png">
+      <PackagePath>ModernBoxes\Resource\image\image.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\link.png">
+      <PackagePath>ModernBoxes\Resource\image\link.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\music.png">
+      <PackagePath>ModernBoxes\Resource\image\music.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\normal.png">
+      <PackagePath>ModernBoxes\Resource\image\normal.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\pdf.png">
+      <PackagePath>ModernBoxes\Resource\image\pdf.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\ppt.png">
+      <PackagePath>ModernBoxes\Resource\image\ppt.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\program.png">
+      <PackagePath>ModernBoxes\Resource\image\program.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\txt.png">
+      <PackagePath>ModernBoxes\Resource\image\txt.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\video.png">
+      <PackagePath>ModernBoxes\Resource\image\video.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\word.png">
+      <PackagePath>ModernBoxes\Resource\image\word.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\wps.png">
+      <PackagePath>ModernBoxes\Resource\image\wps.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\zip.png">
+      <PackagePath>ModernBoxes\Resource\image\zip.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\TempFileConfig.json">
+      <PackagePath>ModernBoxes\TempFileConfig.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\UsedApplicationConfig.json">
+      <PackagePath>ModernBoxes\UsedApplicationConfig.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\TempDirConfig.json">
+      <PackagePath>ModernBoxes\TempDirConfig.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\apphost.exe">
+      <PackagePath>ModernBoxes\ModernBoxes.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.runtimeconfig.json">
+      <PackagePath>ModernBoxes\ModernBoxes.runtimeconfig.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.dll">
+      <PackagePath>ModernBoxes\ModernBoxes.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.dll.config">
+      <PackagePath>ModernBoxes\ModernBoxes.dll.config</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

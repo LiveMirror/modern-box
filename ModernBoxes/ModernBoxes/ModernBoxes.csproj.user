@@ -39,6 +39,9 @@
     <Compile Update="View\SelfControl\UcCompotent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SelfControl\UcManagerCardApplication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\UCnotes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -105,6 +108,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\UcCompotent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\UcManagerCardApplication.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\UCnotes.xaml">

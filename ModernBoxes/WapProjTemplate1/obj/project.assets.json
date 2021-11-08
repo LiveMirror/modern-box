@@ -1,0 +1,424 @@
+{
+  "version": 3,
+  "targets": {
+    "UAP,Version=v10.0.14393": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-arm": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-arm-aot": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-arm64-aot": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-x64": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-x64-aot": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-x86": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    },
+    "UAP,Version=v10.0.14393/win10-x86-aot": {
+      "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Windows.SDK.BuildTools.props": {},
+          "build/Microsoft.Windows.SDK.BuildTools.targets": {}
+        }
+      },
+      "ModernBoxes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModernBoxes.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Windows.SDK.BuildTools/10.0.22000.194": {
+      "sha512": "4L0P3zqut466SIqT3VBeLTNUQTxCBDOrTRymRuROCRJKazcK7ibLz9yAO1nKWRt50ttCj39oAa2Iuz9ZTDmLlg==",
+      "type": "package",
+      "path": "microsoft.windows.sdk.buildtools/10.0.22000.194",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bin/10.0.22000.0/arm/AccChecker/Microsoft.Diagnostics.Tracing.EventSource.dll",
+        "bin/10.0.22000.0/arm/DeployUtil.exe",
+        "bin/10.0.22000.0/arm64/AccChecker/Microsoft.Diagnostics.Tracing.EventSource.dll",
+        "bin/10.0.22000.0/arm64/DeployUtil.exe",
+        "bin/10.0.22000.0/x64/AccChecker/Microsoft.Diagnostics.Tracing.EventSource.dll",
+        "bin/10.0.22000.0/x64/ComparePackage.exe",
+        "bin/10.0.22000.0/x64/DeployUtil.exe",
+        "bin/10.0.22000.0/x64/MakeCert.exe",
+        "bin/10.0.22000.0/x64/Microsoft.ComparePackage.Lib.dll",
+        "bin/10.0.22000.0/x64/Microsoft.Diagnostics.Tracing.EventSource.dll",
+        "bin/10.0.22000.0/x64/Microsoft.PackageEditor.Lib.dll",
+        "bin/10.0.22000.0/x64/Microsoft.Tools.Connectivity.dll",
+        "bin/10.0.22000.0/x64/Microsoft.Tools.Deploy.dll",
+        "bin/10.0.22000.0/x64/Microsoft.Windows.Build.Appx.AppxPackaging.dll.manifest",
+        "bin/10.0.22000.0/x64/Microsoft.Windows.Build.Appx.AppxSip.dll.manifest",
+        "bin/10.0.22000.0/x64/Microsoft.Windows.Build.Appx.OpcServices.dll.manifest",
+        "bin/10.0.22000.0/x64/Microsoft.Windows.Build.Signing.mssign32.dll.manifest",
+        "bin/10.0.22000.0/x64/Microsoft.Windows.Build.Signing.wintrust.dll.manifest",
+        "bin/10.0.22000.0/x64/PackageEditor.exe",
+        "bin/10.0.22000.0/x64/SirepClient.assembly.manifest",
+        "bin/10.0.22000.0/x64/SirepClient.dll",
+        "bin/10.0.22000.0/x64/SirepInterop.dll",
+        "bin/10.0.22000.0/x64/SshClient.dll",
+        "bin/10.0.22000.0/x64/WinAppDeployCmd.exe",
+        "bin/10.0.22000.0/x64/WinAppDeployCommon.dll",
+        "bin/10.0.22000.0/x64/appxpackaging.dll",
+        "bin/10.0.22000.0/x64/appxsip.dll",
+        "bin/10.0.22000.0/x64/en-US/AppxPackaging.dll.mui",
+        "bin/10.0.22000.0/x64/en/Microsoft.Tools.Deploy.resources.dll",
+        "bin/10.0.22000.0/x64/en/WinAppDeployCmd.resources.dll",
+        "bin/10.0.22000.0/x64/ipoverusb.discoverpartners.dll",
+        "bin/10.0.22000.0/x64/makeappx.exe",
+        "bin/10.0.22000.0/x64/makecat.exe",
+        "bin/10.0.22000.0/x64/makecat.exe.manifest",
+        "bin/10.0.22000.0/x64/makepri.exe",
+        "bin/10.0.22000.0/x64/mc.exe",
+        "bin/10.0.22000.0/x64/mdmerge.exe",
+        "bin/10.0.22000.0/x64/midl.exe",
+        "bin/10.0.22000.0/x64/midlc.exe",
+        "bin/10.0.22000.0/x64/midlrt.exe",
+        "bin/10.0.22000.0/x64/midlrtmd.dll",
+        "bin/10.0.22000.0/x64/mrmsupport.dll",
+        "bin/10.0.22000.0/x64/msisip.dll",
+        "bin/10.0.22000.0/x64/mssign32.dll",
+        "bin/10.0.22000.0/x64/mt.exe",
+        "bin/10.0.22000.0/x64/mt.exe.config",
+        "bin/10.0.22000.0/x64/opcservices.dll",
+        "bin/10.0.22000.0/x64/rc.exe",
+        "bin/10.0.22000.0/x64/rcdll.dll",
+        "bin/10.0.22000.0/x64/signtool.exe",
+        "bin/10.0.22000.0/x64/signtool.exe.manifest",
+        "bin/10.0.22000.0/x64/tracewpp.exe",
+        "bin/10.0.22000.0/x64/winmdidl.exe",
+        "bin/10.0.22000.0/x64/wintrust.dll",
+        "bin/10.0.22000.0/x64/wintrust.dll.ini",
+        "bin/10.0.22000.0/x86/AccChecker/Microsoft.Diagnostics.Tracing.EventSource.dll",
+        "bin/10.0.22000.0/x86/ComparePackage.exe",
+        "bin/10.0.22000.0/x86/DeployUtil.exe",
+        "bin/10.0.22000.0/x86/MakeCert.exe",
+        "bin/10.0.22000.0/x86/Microsoft.ComparePackage.Lib.dll",
+        "bin/10.0.22000.0/x86/Microsoft.Diagnostics.Tracing.EventSource.dll",
+        "bin/10.0.22000.0/x86/Microsoft.PackageEditor.Lib.dll",
+        "bin/10.0.22000.0/x86/Microsoft.Tools.Connectivity.dll",
+        "bin/10.0.22000.0/x86/Microsoft.Tools.Deploy.dll",
+        "bin/10.0.22000.0/x86/Microsoft.Windows.Build.Appx.AppxPackaging.dll.manifest",
+        "bin/10.0.22000.0/x86/Microsoft.Windows.Build.Appx.AppxSip.dll.manifest",
+        "bin/10.0.22000.0/x86/Microsoft.Windows.Build.Appx.OpcServices.dll.manifest",
+        "bin/10.0.22000.0/x86/Microsoft.Windows.Build.Signing.mssign32.dll.manifest",
+        "bin/10.0.22000.0/x86/Microsoft.Windows.Build.Signing.wintrust.dll.manifest",
+        "bin/10.0.22000.0/x86/PackageEditor.exe",
+        "bin/10.0.22000.0/x86/SirepClient.assembly.manifest",
+        "bin/10.0.22000.0/x86/SirepClient.dll",
+        "bin/10.0.22000.0/x86/SirepInterop.dll",
+        "bin/10.0.22000.0/x86/SshClient.dll",
+        "bin/10.0.22000.0/x86/WinAppDeployCmd.exe",
+        "bin/10.0.22000.0/x86/WinAppDeployCommon.dll",
+        "bin/10.0.22000.0/x86/appxpackaging.dll",
+        "bin/10.0.22000.0/x86/appxsip.dll",
+        "bin/10.0.22000.0/x86/en-US/AppxPackaging.dll.mui",
+        "bin/10.0.22000.0/x86/en/Microsoft.Tools.Deploy.resources.dll",
+        "bin/10.0.22000.0/x86/en/WinAppDeployCmd.resources.dll",
+        "bin/10.0.22000.0/x86/ipoverusb.discoverpartners.dll",
+        "bin/10.0.22000.0/x86/makeappx.exe",
+        "bin/10.0.22000.0/x86/makecat.exe",
+        "bin/10.0.22000.0/x86/makecat.exe.manifest",
+        "bin/10.0.22000.0/x86/makepri.exe",
+        "bin/10.0.22000.0/x86/mc.exe",
+        "bin/10.0.22000.0/x86/mdmerge.exe",
+        "bin/10.0.22000.0/x86/midl.exe",
+        "bin/10.0.22000.0/x86/midlc.exe",
+        "bin/10.0.22000.0/x86/midlrt.exe",
+        "bin/10.0.22000.0/x86/midlrtmd.dll",
+        "bin/10.0.22000.0/x86/mrmsupport.dll",
+        "bin/10.0.22000.0/x86/msisip.dll",
+        "bin/10.0.22000.0/x86/mssign32.dll",
+        "bin/10.0.22000.0/x86/mt.exe",
+        "bin/10.0.22000.0/x86/mt.exe.config",
+        "bin/10.0.22000.0/x86/opcservices.dll",
+        "bin/10.0.22000.0/x86/rc.exe",
+        "bin/10.0.22000.0/x86/rcdll.dll",
+        "bin/10.0.22000.0/x86/signtool.exe",
+        "bin/10.0.22000.0/x86/signtool.exe.manifest",
+        "bin/10.0.22000.0/x86/tracewpp.exe",
+        "bin/10.0.22000.0/x86/winmdidl.exe",
+        "bin/10.0.22000.0/x86/wintrust.dll",
+        "bin/10.0.22000.0/x86/wintrust.dll.ini",
+        "build/Microsoft.Windows.SDK.BuildTools.props",
+        "build/Microsoft.Windows.SDK.BuildTools.targets",
+        "microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
+        "microsoft.windows.sdk.buildtools.nuspec",
+        "schemas/10.0.22000.0/winrt/AppxManifestSchema.xsd",
+        "schemas/10.0.22000.0/winrt/AppxManifestSchema2010_v2.xsd",
+        "schemas/10.0.22000.0/winrt/AppxManifestSchema2013.xsd",
+        "schemas/10.0.22000.0/winrt/FoundationManifestSchema.xsd",
+        "schemas/10.0.22000.0/winrt/FoundationManifestSchema_v2.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v10.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v11.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v12.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v13.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v2.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v3.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v4.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v5.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v6.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v7.xsd",
+        "schemas/10.0.22000.0/winrt/UapManifestSchema_v8.xsd"
+      ]
+    },
+    "ModernBoxes/1.0.0": {
+      "type": "project",
+      "path": "../ModernBoxes/ModernBoxes.csproj",
+      "msbuildProject": "../ModernBoxes/ModernBoxes.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "UAP,Version=v10.0.14393": [
+      "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
+      "ModernBoxes >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Machu\\.nuget\\packages\\": {},
+    "D:\\DevelopmentSoftware\\visualStudio\\SDK\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\WareHoues\\modern-box\\ModernBoxes\\WapProjTemplate1\\WapProjTemplate1.wapproj",
+      "projectName": "WapProjTemplate1",
+      "projectPath": "D:\\WareHoues\\modern-box\\ModernBoxes\\WapProjTemplate1\\WapProjTemplate1.wapproj",
+      "packagesPath": "C:\\Users\\Machu\\.nuget\\packages\\",
+      "outputPath": "D:\\WareHoues\\modern-box\\ModernBoxes\\WapProjTemplate1\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\DevelopmentSoftware\\visualStudio\\SDK\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Machu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "uap10.0.14393"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "uap10.0.14393": {
+          "targetAlias": "net451",
+          "projectReferences": {
+            "D:\\WareHoues\\modern-box\\ModernBoxes\\ModernBoxes\\ModernBoxes.csproj": {
+              "projectPath": "D:\\WareHoues\\modern-box\\ModernBoxes\\ModernBoxes\\ModernBoxes.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "noWarn": [
+          "NU1702"
+        ]
+      }
+    },
+    "frameworks": {
+      "uap10.0.14393": {
+        "targetAlias": "net451",
+        "dependencies": {
+          "Microsoft.Windows.SDK.BuildTools": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[10.0.22000.194, )"
+          }
+        },
+        "imports": [
+          "netcoreapp3.1",
+          "netcoreapp3.0",
+          "netcoreapp2.0",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net6.0-windows10.0.22000"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win10-arm": {
+        "#import": []
+      },
+      "win10-arm-aot": {
+        "#import": []
+      },
+      "win10-arm64-aot": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
+      },
+      "win10-x64-aot": {
+        "#import": []
+      },
+      "win10-x86": {
+        "#import": []
+      },
+      "win10-x86-aot": {
+        "#import": []
+      }
+    }
+  }
+}

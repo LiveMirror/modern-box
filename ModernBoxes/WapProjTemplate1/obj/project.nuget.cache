@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lB9AwRbY4CXzJ7RNQ+jmSh7YBJlPHnDxTXU8wsOEfzOLc4MXnUgpS8kh79j2vi3KhBawgEm7FZRmSJSqPZg4gw==",
+  "success": true,
+  "projectFilePath": "D:\\WareHoues\\modern-box\\ModernBoxes\\WapProjTemplate1\\WapProjTemplate1.wapproj",
+  "expectedPackageFiles": [
+    "D:\\DevelopmentSoftware\\visualStudio\\SDK\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512"
+  ],
+  "logs": []
+}

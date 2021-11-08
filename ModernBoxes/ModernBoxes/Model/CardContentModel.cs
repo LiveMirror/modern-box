@@ -8,6 +8,15 @@ namespace ModernBoxes.Model
 {
     public class CardContentModel
     {
+        private int cardId;
+
+        public int CardID
+        {
+            get { return cardId; }
+            set { cardId = value; }
+        }
+
+
         /// <summary>
         /// 卡片名称
         /// </summary>
@@ -28,6 +37,17 @@ namespace ModernBoxes.Model
         {
             get { return cardContent; }
             set { cardContent = value; }
+        }
+
+        /// <summary>
+        /// 卡片高度
+        /// </summary>
+        private Double cardHeight = 200;
+
+        public Double CardHeight
+        {
+            get { return cardHeight; }
+            set { cardHeight = value; }
         }
 
 

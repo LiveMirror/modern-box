@@ -15,14 +15,13 @@ namespace ModernBoxes.Tool.convert
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            ObservableCollection<ApplicationModel> list = value as ObservableCollection<ApplicationModel>;
-            if (list != null && list.Count > 0)
+            if (value.ToString()=="组件应用")
             {
-                return Visibility.Collapsed;
+                return Visibility.Visible;
             }
             else
             {
-                return Visibility.Visible;
+                return Visibility.Collapsed;
             }
         }
 

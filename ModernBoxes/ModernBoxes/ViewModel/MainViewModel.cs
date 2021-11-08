@@ -99,6 +99,8 @@ namespace ModernBoxes.ViewModel
         }
 
 
+
+
         public MainViewModel()
         {
             RefreshMenuEvent += MainViewModel_RefreshMenuEvent;

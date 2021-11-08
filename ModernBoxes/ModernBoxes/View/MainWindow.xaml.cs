@@ -103,6 +103,8 @@ namespace ModernBoxes
                 //首次使用创建缓存文件夹
                 Directory.CreateDirectory($"{Environment.CurrentDirectory}\\DirCache");
                 Directory.CreateDirectory($"{Environment.CurrentDirectory}\\FileCache");
+                //默认设置不自启动
+                ConfigHelper.setConfig("autoOpen", false);
             }
 
         }
@@ -288,6 +290,31 @@ namespace ModernBoxes
         {
             this.Hide();
             e.Cancel = true;
+        }
+
+        /// <summary>
+        /// 打开添加卡片应用的对话框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddCardApp_Click(object sender, RoutedEventArgs e)
+        {
+            BaseDialog baseDialog = new BaseDialog();
+            baseDialog.SetTitle("添加卡片应用");
+            baseDialog.setDialogSize(600, 800);
+            baseDialog.SetContent(new UcManagerCardApplication());
+            baseDialog.ShowDialog();
+        }
+
+
+        /// <summary>
+        /// 打开管理卡片的对话框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ManagerCardApp_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

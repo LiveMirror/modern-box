@@ -12,7 +12,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <hc:TransitioningContentControl>
         <StackPanel Orientation="Vertical">
-            <Expander Header="UI界面" Margin="10">
+            <Expander Header="主题" Margin="10">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal" Margin="10">
                         <TextBlock />
@@ -95,6 +95,18 @@
                 </StackPanel>
                
             </Expander>
+            <Expander Header="通用" Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <TextBlock />
+                        <TextBlock Text="开机自启?" Style="{StaticResource TextBlockTitle}"/>
+                        <StackPanel Orientation="Horizontal" Margin="50 0 0 0">
+                            <RadioButton Content="是" Click="RadioButton_Click" Name="RB_AutoOpen"/>
+                            <RadioButton Content="否" Margin="10 0 0 0" Click="RadioButton_Click_1" Name="RB_NotAutoOpen" IsChecked="True"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                </Expander>
         </StackPanel>
     </hc:TransitioningContentControl>
 </UserControl>

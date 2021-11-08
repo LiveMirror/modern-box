@@ -2,11 +2,13 @@
                     xmlns:hc="https://handyorg.github.io/handycontrol"
                     xmlns:convert="clr-namespace:ModernBoxes.Tool.convert"
                     xmlns:tool="clr-namespace:ModernBoxes.Tool"
+                    xmlns:local="clr-namespace:ModernBoxes.View"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <tool:BoolleanToWidthConvert x:Key="toconvert"/>
     <tool:LevelConvert x:Key="levelConvert"/>
     <convert:MenuIconEnumptyConvert x:Key="menuConvert"/>
+    <convert:ContentEmptyBackgroundImageConvert x:Key="IsShowContextMenu"/>
 
     <!--主按钮悬浮样式-->
     <Style x:Key="MainButtonStyle" TargetType="TextBlock">

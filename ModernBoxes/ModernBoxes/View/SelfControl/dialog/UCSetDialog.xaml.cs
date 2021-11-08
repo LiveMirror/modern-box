@@ -1,19 +1,11 @@
-﻿using ModernBoxes.MyEnum;
+﻿using Microsoft.Win32;
+using ModernBoxes.MyEnum;
 using ModernBoxes.Tool;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using IWshRuntimeLibrary;
 
 namespace ModernBoxes.View.SelfControl.dialog
 {
@@ -44,6 +36,16 @@ namespace ModernBoxes.View.SelfControl.dialog
 
             S_CompontentWidth.Maximum = 420;
             S_CompontentWidth.Value = MainWindow.DoGetCompontentWidth();
+
+            if (Boolean.Parse(ConfigHelper.getConfig("autoOpen")))
+            {
+                RB_AutoOpen.IsChecked = true;
+            }
+            else
+            {
+                RB_NotAutoOpen.IsChecked = true;
+
+            }
         }
 
         /// <summary>
@@ -72,7 +74,7 @@ namespace ModernBoxes.View.SelfControl.dialog
         /// <param name="bol"></param>
         public void ChangeTheme(Boolean bol)
         {
-           if (bol)
+            if (bol)
             {
 
                 Application.Current.Resources.MergedDictionaries.Remove(Application.Current.Resources.MergedDictionaries.FirstOrDefault(o =>
@@ -127,5 +129,31 @@ namespace ModernBoxes.View.SelfControl.dialog
         {
             MainWindow.DoSetCompontentWidth(S_CompontentWidth.Value);
         }
+
+        /// <summary>
+        /// 启用自启动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            AutoOpenSoftware autoOpenSoftware = new AutoOpenSoftware();
+            autoOpenSoftware.SetAutoStart(true);
+            ConfigHelper.setConfig("autoOpen", true);
+        }
+
+
+        /// <summary>
+        /// 停用自启动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            AutoOpenSoftware autoOpenSoftware = new AutoOpenSoftware();
+            autoOpenSoftware.SetAutoStart(false);
+            ConfigHelper.setConfig("autoOpen", false);
+        }
+      
     }
 }

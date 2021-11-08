@@ -32,9 +32,9 @@
                     <!--右侧显示-->
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <!--中间部分的主窗体-->
-                <Grid Margin="10"  Grid.Column="1" >
+                <Grid Margin="5"  Grid.Column="1" >
                     <!--左侧内容-->
                     <hc:Card 
                         hc:BorderElement.CornerRadius="16" 
@@ -62,7 +62,7 @@
 
                                 <hc:ScrollViewer Orientation="Vertical">
                                     <!--菜单选项-->
-                                    <ItemsControl ItemsSource="{Binding MenuList}" >
+                                    <ItemsControl ItemsSource="{Binding MenuList}" Name="items">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
                                                 <StackPanel Orientation="Vertical"/>
@@ -75,15 +75,22 @@
                                                     <!--<TextBlock FontFamily="/Resource/#iconfont" Text="&#xe652;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="6 6 16 6"/>
                                             <TextBlock Grid.Column="1" Text="{Binding MenuName}" VerticalAlignment="Center" Margin="10 0 0 0"/>-->
                                                     <RadioButton
-                                                    Width="200"
-                                                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenApp}"
-                                                    CommandParameter="{Binding Target}"
-                                                    HorizontalAlignment="Center" 
-                                                    Style="{StaticResource MenuStyle}"
-                                                    VerticalContentAlignment="Center" 
-                                                    GroupName="menu"
-                                                    Content="{Binding MenuName}" 
-                                                    ToolTip="{Binding MenuName}"/>
+                                                         Width="200"
+                                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenApp}"
+                                                         CommandParameter="{Binding Target}"
+                                                         HorizontalAlignment="Center" 
+                                                         Style="{StaticResource MenuStyle}"
+                                                         VerticalContentAlignment="Center" 
+                                                         GroupName="menu"
+                                                         Content="{Binding MenuName}" 
+                                                         ToolTip="{Binding MenuName}"/>
+                                                    <StackPanel.ContextMenu>
+                                                        <ContextMenu>
+                                                            <MenuItem Header="删除"/>
+                                                            <MenuItem Header="添加卡片应用" Name="AddCardApp" Click="AddCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}"/>
+                                                            <MenuItem Header="管理卡片应用" Name="ManagerCardApp" Click="ManagerCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}"/>
+                                                        </ContextMenu>
+                                                    </StackPanel.ContextMenu>
                                                 </StackPanel>
                                             </DataTemplate>
 
@@ -117,7 +124,7 @@
                         </Grid>
                     </hc:Card>
                     <!--托盘图标-->
-                   
+
                 </Grid>
 
                 <!--左侧内容区-->
@@ -125,11 +132,11 @@
                     <ContentControl x:Name="LeftContent"/>
                 </hc:TransitioningContentControl>
 
-                    <!--右侧内容区-->
+                <!--右侧内容区-->
                 <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
                     <ContentControl x:Name="RightContent"/>
                 </hc:TransitioningContentControl>
-                
+
                 <hc:NotifyIcon x:Name="NotifyIconContextContent" Text="木函" Visibility="Visible" Icon="/Resource/logo.ico">
                     <hc:NotifyIcon.ContextMenu>
                         <ContextMenu>
