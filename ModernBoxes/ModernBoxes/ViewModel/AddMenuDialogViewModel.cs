@@ -2,10 +2,13 @@
 using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
+using ModernBoxes.View.SelfControl;
+using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +37,9 @@ namespace ModernBoxes.ViewModel
         }
 
 
-
+        /// <summary>
+        /// 关闭对话框
+        /// </summary>
         public RelayCommand CloseDialog
         {
             get
@@ -61,41 +66,60 @@ namespace ModernBoxes.ViewModel
                 {
                     if (Menu.MenuName!=String.Empty&&Menu.MenuName!=null&&Menu.Target!=String.Empty)
                     {
-                        //获取旧数据
-                        String path = $"{Environment.CurrentDirectory}\\MenuConfig.json";
-                        String oldJson = await FileHelper.ReadFile(path);
-                        if (oldJson.Length>8)
+                        if (File.Exists(Menu.Target)||Directory.Exists(Menu.Target))
                         {
-                            JArray array = JArray.Parse(oldJson);
-                            IList<JToken> jTokens = array.Children().ToList();
-                            foreach (JToken jToken in jTokens)
+                            //获取旧数据
+                            String path = $"{Environment.CurrentDirectory}\\MenuConfig.json";
+                            String oldJson = await FileHelper.ReadFile(path);
+                            if (Menu.Target == "组件应用" || Menu.MenuName == "组件应用")
                             {
-                                Menus.Add(jToken.ToObject<MenuModel>());
+                                Menu.Icon = "组件应用";
                             }
-                            //添加新数据
-                            Menus.Add(Menu);
-                            //的到新的json
+                            if (oldJson.Length > 8)
+                            {
+                                JArray array = JArray.Parse(oldJson);
+                                IList<JToken> jTokens = array.Children().ToList();
+                                foreach (JToken jToken in jTokens)
+                                {
+                                    Menus.Add(jToken.ToObject<MenuModel>());
+                                }
+                                //添加新数据
+                                Menus.Add(Menu);
+                            }
+                            else
+                            {
+                                //添加新数据
+                                Menus.Add(Menu);
+                            }
+                            String newJson = JsonConvert.SerializeObject(Menus);
+                            FileHelper.WriteFile(path, newJson);
+                            //刷新数据
+                            MainViewModel.DoRefershMenu();
+                            //关闭对话框
+                            Messenger.Default.Send<Boolean>(true, "IsCloseDialog");
                         }
                         else
                         {
-                            //添加新数据
-                            Menus.Add(Menu);
+                            BaseDialog baseDialog = new BaseDialog();
+                            baseDialog.SetTitle("提示");
+                            baseDialog.SetContent(new UcMessageDialog("路径所指向的文件或文件夹不存在", MyEnum.MessageDialogState.waring));
+                            baseDialog.ShowDialog();
                         }
-                        String newJson = JsonConvert.SerializeObject(Menus);
-                        FileHelper.WriteFile(path, newJson);
-                        //刷新数据
-                        MainViewModel.DoRefershMenu();
-                        //关闭对话框
-                        Messenger.Default.Send<Boolean>(true, "IsCloseDialog");
                     }
                     else
                     {
-
+                        BaseDialog baseDialog = new BaseDialog();
+                        baseDialog.SetTitle("提示");
+                        baseDialog.SetContent(new UcMessageDialog("路径和名称不能为空", MyEnum.MessageDialogState.waring));
+                        baseDialog.ShowDialog();
                     }
                 }, x => true);
             }
         }
 
+        /// <summary>
+        /// 选择文件
+        /// </summary>
         public RelayCommand ChooseFilePath
         {
             get
@@ -108,11 +132,25 @@ namespace ModernBoxes.ViewModel
                     if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         Menu.Target = openFileDialog.FileName;
+                        if (Menu.Target.Substring(Menu.Target.LastIndexOf('.')+1)=="exe")
+                        {
+                            String iconPath = $"{Environment.CurrentDirectory}\\icons\\";
+                            String FileName = $"{Convert.ToString(DateTime.Now.Year) + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second}.ico";
+                            GetIcon.getFileIcon(Menu.Target, iconPath, FileName);
+                            Menu.Icon = $"{Environment.CurrentDirectory}\\icons\\{FileName}";
+                        }
+                        else
+                        {
+                            Menu.Icon = Menu.Target.Substring(Menu.Target.LastIndexOf('.') + 1);
+                        }
                     }
                 },x => true);
             }
         }
 
+        /// <summary>
+        /// 选择文件夹
+        /// </summary>
         public RelayCommand ChooseDirPath
         {
             get
@@ -123,6 +161,7 @@ namespace ModernBoxes.ViewModel
                     if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         Menu.Target = dialog.SelectedPath;
+                        Menu.Icon = dialog.SelectedPath;
                     }
                 }, x => true);
             }

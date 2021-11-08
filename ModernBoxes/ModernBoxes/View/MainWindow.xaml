@@ -14,7 +14,7 @@
         AllowsTransparency="True"
         x:Name="window"
         xmlns:tool="clr-namespace:ModernBoxes.Tool"
-        Title="MainWindow" Height="1000" Width="1000">
+        Title="MainWindow" Height="1000" Width="1400">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -60,20 +60,21 @@
                                     </ToggleButton.ContextMenu>
                                 </ToggleButton>
 
-                                <!--菜单选项-->
-                                <ItemsControl ItemsSource="{Binding MenuList}" >
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Vertical"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
+                                <hc:ScrollViewer Orientation="Vertical">
+                                    <!--菜单选项-->
+                                    <ItemsControl ItemsSource="{Binding MenuList}" >
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Vertical"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
 
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal"  Margin="0 6 0 0">
-                                                <!--<TextBlock FontFamily="/Resource/#iconfont" Text="&#xe652;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="6 6 16 6"/>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal"  Margin="0 6 0 0">
+                                                    <!--<TextBlock FontFamily="/Resource/#iconfont" Text="&#xe652;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="6 6 16 6"/>
                                             <TextBlock Grid.Column="1" Text="{Binding MenuName}" VerticalAlignment="Center" Margin="10 0 0 0"/>-->
-                                                <RadioButton
+                                                    <RadioButton
                                                     Width="200"
                                                     Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenApp}"
                                                     CommandParameter="{Binding Target}"
@@ -83,11 +84,12 @@
                                                     GroupName="menu"
                                                     Content="{Binding MenuName}" 
                                                     ToolTip="{Binding MenuName}"/>
-                                            </StackPanel>
-                                        </DataTemplate>
+                                                </StackPanel>
+                                            </DataTemplate>
 
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </hc:ScrollViewer>
                                 <TextBlock ToolTip="添加"  Text="&#xe7c4;" FontFamily="/Resource/#iconfont" HorizontalAlignment="Center" FontSize="25" Margin="0 10 0 0" Foreground="DarkGray">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="MouseLeftButtonDown">
@@ -119,12 +121,12 @@
                 </Grid>
 
                 <!--左侧内容区-->
-                <hc:TransitioningContentControl Margin="10" Width="420" Grid.Column="0" Name="compontentLayoutLeft" Visibility="Hidden">
+                <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="0" Name="compontentLayoutLeft" Visibility="Hidden">
                     <ContentControl x:Name="LeftContent"/>
                 </hc:TransitioningContentControl>
 
                     <!--右侧内容区-->
-                <hc:TransitioningContentControl Margin="10" Width="420" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
+                <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
                     <ContentControl x:Name="RightContent"/>
                 </hc:TransitioningContentControl>
                 

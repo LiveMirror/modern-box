@@ -22,6 +22,7 @@
     <None Remove="Resource\image\gif.png" />
     <None Remove="Resource\image\image.png" />
     <None Remove="Resource\image\link.png" />
+    <None Remove="Resource\image\menu.png" />
     <None Remove="Resource\image\music.png" />
     <None Remove="Resource\image\normal.png" />
     <None Remove="Resource\image\pdf.png" />
@@ -138,6 +139,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resource\image\menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resource\logo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

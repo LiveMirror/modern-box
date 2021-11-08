@@ -68,7 +68,6 @@ namespace ModernBoxes.ViewModel
                                 //采用默认的可执行文件图标
                                 String iconPath = $"{Environment.CurrentDirectory}\\icons\\";
                                 String FileName = $"{Convert.ToString(DateTime.Now.Year) + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second}.ico";
-                                //Bitmap bitmap = System.Drawing.Icon.ExtractAssociatedIcon(AppModel.AppPath).ToBitmap();
                                 GetIcon.getFileIcon(AppModel.AppPath,iconPath,FileName);
                                 AppModel.Icon = iconPath+FileName;
                             }
