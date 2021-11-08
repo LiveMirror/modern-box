@@ -76,7 +76,7 @@
                                                 <RadioButton
                                                     Width="200"
                                                     Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenApp}"
-                                                    CommandParameter="{Binding MenuName}"
+                                                    CommandParameter="{Binding Target}"
                                                     HorizontalAlignment="Center" 
                                                     Style="{StaticResource MenuStyle}"
                                                     VerticalContentAlignment="Center" 

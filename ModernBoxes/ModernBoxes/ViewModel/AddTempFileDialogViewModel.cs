@@ -2,6 +2,8 @@
 using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
+using ModernBoxes.View.SelfControl;
+using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -66,57 +68,69 @@ namespace ModernBoxes.ViewModel
                 {
                     if (TempFile.FilePath != String.Empty && TempFile.FilePath != null)
                     {
-                        ToggleButton? TB_DirRef = o as ToggleButton;
-                        //添加模式
-                        //获取文件夹类型的信息
-                        if (FileKind[0])
-                            TempFile.FileKind = MyEnum.DirEnum.dirDanger;
-                        if (FileKind[1])
-                            TempFile.FileKind = MyEnum.DirEnum.dirWaring;
-                        if (FileKind[2])
-                            TempFile.FileKind = MyEnum.DirEnum.dirPrimary;
-                        if (FileKind[3])
-                            TempFile.FileKind = MyEnum.DirEnum.dirSecondary;
+                        try
+                        {
+                            ToggleButton? TB_DirRef = o as ToggleButton;
+                            //添加模式
+                            //获取文件夹类型的信息
+                            if (FileKind[0])
+                                TempFile.FileKind = MyEnum.DirEnum.dirDanger;
+                            if (FileKind[1])
+                                TempFile.FileKind = MyEnum.DirEnum.dirWaring;
+                            if (FileKind[2])
+                                TempFile.FileKind = MyEnum.DirEnum.dirPrimary;
+                            if (FileKind[3])
+                                TempFile.FileKind = MyEnum.DirEnum.dirSecondary;
 
-                        if (TB_DirRef.Visibility == System.Windows.Visibility.Collapsed)
-                        {
-                            //新建文件夹模式
-                            //获取文件新建文件夹地址
-                            TempFile.FilePath = $"{Environment.CurrentDirectory}\\FileCache\\{TempFile.FilePath}";
-                            File.Create(TempFile.FilePath);
-                        }
-                        else
-                        {
-                            //获取文件夹是否引用
-                            if (!(bool)TB_DirRef.IsChecked && TB_DirRef != null)
+                            if (TB_DirRef.Visibility == System.Windows.Visibility.Collapsed)
                             {
-                                //将目标文件夹移动至文件夹缓存区
-                                File.Move(TempFile.FilePath, $"{Environment.CurrentDirectory}\\FileCache\\{TempFile.FilePath.Substring(TempFile.FilePath.LastIndexOf('\\')+1)}");
-                                //FileHelper.CopyFolder(TempFile.FilePath, $"{Environment.CurrentDirectory}\\FileCache");
-                                TempFile.FilePath = $"{Environment.CurrentDirectory}\\FileCache\\" + TempFile.FilePath.Substring(TempFile.FilePath.LastIndexOf('\\') + 1);
+                                //新建文件夹模式
+                                //获取文件新建文件夹地址
+                                TempFile.FilePath = $"{Environment.CurrentDirectory}\\FileCache\\{TempFile.FilePath}";
+                                File.Create(TempFile.FilePath);
                             }
-                        }
-
-                        String oldJson = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempFileConfig.json");
-                        if (oldJson.Length > 8)
-                        {
-                            JArray jArray = JArray.Parse(oldJson);
-                            IList<JToken> jTokens = jArray.Children().ToList();
-                            foreach (JToken jToken in jTokens)
+                            else
                             {
-                                if (jToken != null)
+                                //获取文件夹是否引用
+                                if (!(bool)TB_DirRef.IsChecked && TB_DirRef != null)
                                 {
-                                    tempFiles.Add(jToken.ToObject<TempFileModel>());
+                                    //将目标文件夹移动至文件夹缓存区
+                                    File.Move(TempFile.FilePath, $"{Environment.CurrentDirectory}\\FileCache\\{TempFile.FilePath.Substring(TempFile.FilePath.LastIndexOf('\\') + 1)}");
+                                    //FileHelper.CopyFolder(TempFile.FilePath, $"{Environment.CurrentDirectory}\\FileCache");
+                                    TempFile.FilePath = $"{Environment.CurrentDirectory}\\FileCache\\" + TempFile.FilePath.Substring(TempFile.FilePath.LastIndexOf('\\') + 1);
                                 }
                             }
 
+                            String oldJson = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempFileConfig.json");
+                            if (oldJson.Length > 8)
+                            {
+                                JArray jArray = JArray.Parse(oldJson);
+                                IList<JToken> jTokens = jArray.Children().ToList();
+                                foreach (JToken jToken in jTokens)
+                                {
+                                    if (jToken != null)
+                                    {
+                                        tempFiles.Add(jToken.ToObject<TempFileModel>());
+                                    }
+                                }
+
+                            }
+                            tempFiles.Add(TempFile);
+                            String newJson = JsonConvert.SerializeObject(tempFiles);
+                            await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", newJson);
+                            //刷新数据
+                            UctempFileViewModel.DoRefershFileData();
+                            Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
                         }
-                        tempFiles.Add(TempFile);
-                        String newJson = JsonConvert.SerializeObject(tempFiles);
-                        await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", newJson);
-                        //刷新数据
-                        UctempFileViewModel.DoRefershFileData();
-                        Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
+                        catch (Exception ex)
+                        {
+                            //弹窗提示
+                            BaseDialog dialog = new BaseDialog();
+                            dialog.SetTitle("错误");
+                            dialog.SetContent(new UcMessageDialog(ex.Message, MyEnum.MessageDialogState.danger));
+                            dialog.SetHeight(180);
+                            dialog.ShowDialog();
+                        }
                     } 
                 }, x => true);
             }

@@ -27,6 +27,9 @@
     <Compile Update="View\SelfControl\dialog\FilePropertyDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SelfControl\dialog\UcMessageDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\dialog\UCSetDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -90,6 +93,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\dialog\FilePropertyDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\dialog\UcMessageDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\dialog\UCSetDialog.xaml">

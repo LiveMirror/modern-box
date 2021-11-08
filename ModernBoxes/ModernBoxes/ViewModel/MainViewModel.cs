@@ -9,6 +9,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,11 +44,22 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-                    switch (o.ToString())
+                    if (File.Exists(o.ToString()))
                     {
-                        case "组件应用":
-                            Messenger.Default.Send<Boolean>(true, "isShow");
-                            break;
+                        //打开文件
+                        ProcessStartInfo processStartInfo = new ProcessStartInfo(o.ToString());
+                        Process process = new Process();
+                        process.StartInfo = processStartInfo;
+                        process.StartInfo.UseShellExecute = true;
+                        process.Start();
+                    }
+                    else if (Directory.Exists(o.ToString()))
+                    {
+                        System.Diagnostics.Process.Start("explorer.exe", o.ToString().Replace('/', '\\'));
+                    }
+                    else if (o.ToString().Equals("组件应用"))
+                    {
+                        Messenger.Default.Send<Boolean>(true, "isShow");
                     }
                 }, x => true);
             }

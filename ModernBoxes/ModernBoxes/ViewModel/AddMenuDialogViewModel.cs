@@ -96,6 +96,38 @@ namespace ModernBoxes.ViewModel
             }
         }
 
+        public RelayCommand ChooseFilePath
+        {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+                    openFileDialog.Filter = "*|*";
+                    openFileDialog.Title = "选择一个文件吧";
+                    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        Menu.Target = openFileDialog.FileName;
+                    }
+                },x => true);
+            }
+        }
+
+        public RelayCommand ChooseDirPath
+        {
+            get
+            {
+                return new RelayCommand((o) =>
+                {
+                    System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+                    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        Menu.Target = dialog.SelectedPath;
+                    }
+                }, x => true);
+            }
+        }
+
         public AddMenuDialogViewModel()
         {
             

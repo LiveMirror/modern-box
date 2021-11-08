@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
-    public class MenuModel
+    public class MenuModel :ViewModelBase
     {
 
 
@@ -15,7 +16,7 @@ namespace ModernBoxes.Model
         public String MenuName
         {
             get { return menuName; }
-            set { menuName = value; }
+            set { menuName = value; RaisePropertyChanged("MenuName"); }
         }
 
 
@@ -24,7 +25,7 @@ namespace ModernBoxes.Model
         public String Icon
         {
             get { return icon; }
-            set { icon = value; }
+            set { icon = value; RaisePropertyChanged("Target"); }
         }
 
         private String target = "";
@@ -32,7 +33,7 @@ namespace ModernBoxes.Model
         public String Target
         {
             get { return target; }
-            set { target = value; }
+            set { target = value; RaisePropertyChanged("Target"); }
         }
 
 

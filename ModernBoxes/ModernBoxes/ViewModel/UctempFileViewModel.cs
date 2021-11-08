@@ -88,11 +88,21 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-                    ProcessStartInfo processStartInfo = new ProcessStartInfo(o.ToString());
-                    Process process = new Process();
-                    process.StartInfo = processStartInfo;
-                    process.StartInfo.UseShellExecute = true;
-                    process.Start();
+                    try
+                    {
+                        ProcessStartInfo processStartInfo = new ProcessStartInfo(o.ToString());
+                        Process process = new Process();
+                        process.StartInfo = processStartInfo;
+                        process.StartInfo.UseShellExecute = true;
+                        process.Start();
+                    }catch (Exception ex)
+                    {
+                        BaseDialog dialog = new BaseDialog();
+                        dialog.SetTitle("错误");
+                        dialog.SetContent(new UcMessageDialog("没有找到此文件", MyEnum.MessageDialogState.danger));
+                        dialog.SetHeight(200);
+                        dialog.ShowDialog();
+                    }
                 }, x => true);
             }
         }

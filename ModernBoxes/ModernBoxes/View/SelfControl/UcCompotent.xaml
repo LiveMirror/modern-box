@@ -16,7 +16,7 @@
     </UserControl.Resources>
     <hc:TransitioningContentControl>
         <hc:ScrollViewer Margin="0 0 0 -15">
-            <ItemsControl ItemsSource="{Binding CardContents}" Name="CardApplication" Visibility="Visible">
+            <ItemsControl ItemsSource="{Binding CardContents}" Name="CardApplication" Visibility="Visible" Margin="0 0 5 0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical"/>

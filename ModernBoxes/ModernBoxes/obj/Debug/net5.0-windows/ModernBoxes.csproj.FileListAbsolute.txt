@@ -154,3 +154,5 @@ D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\Resourc
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\View\SelfControl\dialog\FilePropertyDialog.g.cs
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\View\SelfControl\dialog\FilePropertyDialog.baml
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.csproj.AssemblyReference.cache
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\View\SelfControl\dialog\UcMessageDialog.g.cs
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\View\SelfControl\dialog\UcMessageDialog.baml

@@ -17,10 +17,10 @@ namespace ModernBoxes.Tool.convert
             {
                 case "excel":
                 case "xlsx":
-                case "rtf":
                     return new BitmapImage(new Uri(@"\Resource\image\excel.png", UriKind.Relative)); 
                 case "word":
                 case "docx":
+                case "rtf":
                     return new BitmapImage(new Uri(@"\Resource\image\word.png", UriKind.Relative));
                 case "ppt":
                 case "pptx":
@@ -61,7 +61,16 @@ namespace ModernBoxes.Tool.convert
                 case "accdb":
                 case "mdb":
                     return new BitmapImage(new Uri(@"\Resource\image\db.png", UriKind.Relative));
-                case "3d":
+                case "3ds":
+                case "max":
+                case "ma":
+                case "mb":
+                case "dwf":
+                case "dwg":
+                case "dxf":
+                case "nwd":
+                case "nwf":
+                case "nwc":
                     return new BitmapImage(new Uri(@"\Resource\image\3d.png", UriKind.Relative)); 
                 case "config":
                     return new BitmapImage(new Uri(@"\Resource\image\config.png", UriKind.Relative));

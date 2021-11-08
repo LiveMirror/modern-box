@@ -28,6 +28,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
+                <TextBlock Text="添加" FontWeight="Bold" VerticalAlignment="Center" Margin="16 0 0 0" FontSize="20"/>
                 <!--关闭按钮-->
                 <Button Height="40" HorizontalAlignment="Right" Width="40" FontSize="20" Style="{StaticResource closeStyle}" Command="{Binding CloseDialog}" CommandParameter="{Binding ElementName=MenuDialog}">
                     <Button.Template>
@@ -37,18 +38,30 @@
                     </Button.Template>
                 </Button>
                 <StackPanel Grid.Row="1" Margin="16">
-                    <TextBox 
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox 
                         Text="{Binding Menu.Target}"
-                        hc:InfoElement.Title="应用路径"
-                        hc:InfoElement.TitleWidth="140" 
+                        hc:InfoElement.Title="路径"
+                        hc:InfoElement.TitleWidth="70" 
+                        ToolTip="应用,文件,文件夹的路径"
                         hc:InfoElement.TitlePlacement="Left"  
                         hc:InfoElement.Necessary="True" 
                         Style="{StaticResource TextBoxExtend}" 
-                        Margin="0,16,0,0"/>
+                        Margin="0,0,0,0"/>
+                        <hc:ButtonGroup Orientation="Horizontal" Grid.Column="1">
+                            <Button ToolTip="选择文件" Content="文件" Command="{Binding ChooseFilePath}"  Margin="1 0 0 0" Style="{DynamicResource ButtonPrimary}"/>
+                            <Button Content="文件夹" ToolTip="选择文件夹" Command="{Binding ChooseDirPath}"  Margin="1 0 0 0" Style="{DynamicResource ButtonPrimary}"/>
+                        </hc:ButtonGroup>
+                    </Grid>
                     <TextBox 
                         Text="{Binding Menu.MenuName}"
-                        hc:InfoElement.Title="应用名称"
-                        hc:InfoElement.TitleWidth="140" 
+                        hc:InfoElement.Title="名称"
+                        ToolTip="给它起个名字便于区分"
+                        hc:InfoElement.TitleWidth="70" 
                         hc:InfoElement.TitlePlacement="Left"  
                         hc:InfoElement.Necessary="True" 
                         Style="{StaticResource TextBoxExtend}" 

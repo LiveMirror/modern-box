@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
 using ModernBoxes.View.SelfControl;
+using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -73,9 +74,21 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-                    Process process = new Process();
-                    process.StartInfo.FileName = o.ToString();
-                    process.Start();
+                    try
+                    {
+                        Process process = new Process();
+                        process.StartInfo.FileName = o.ToString();
+                        process.Start();
+                    }
+                    catch (System.ComponentModel.Win32Exception ex)
+                    {
+                        BaseDialog dialog = new BaseDialog();
+                        dialog.SetTitle("错误");
+                        dialog.SetContent(new UcMessageDialog("没有找到此应用",MyEnum.MessageDialogState.danger));
+                        dialog.SetHeight(180);
+                        dialog.ShowDialog();
+                    }
+                   
                 }, x => true);
             }
         }
