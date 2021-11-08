@@ -30,7 +30,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock Text="添加" FontWeight="Bold" VerticalAlignment="Center" Margin="16 0 0 0" FontSize="20"/>
                 <!--关闭按钮-->
-                <Button Height="40" HorizontalAlignment="Right" Width="40" FontSize="20" Style="{StaticResource closeStyle}" Command="{Binding CloseDialog}" CommandParameter="{Binding ElementName=MenuDialog}">
+                <Button Height="40" HorizontalAlignment="Right"  Width="40" FontSize="20" Style="{StaticResource closeStyle}" Command="{Binding CloseDialog}" CommandParameter="{Binding ElementName=MenuDialog}">
                     <Button.Template>
                         <ControlTemplate>
                             <TextBlock Text="&#xe606;"   HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="/Resource/#iconfont"/>

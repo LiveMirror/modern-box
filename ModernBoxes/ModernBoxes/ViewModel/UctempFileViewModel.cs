@@ -36,10 +36,28 @@ namespace ModernBoxes.ViewModel
 
         public ObservableCollection<TempFileModel> TempFiles
         {
-            get { return tempFiles; }
+            get { 
+                if (tempFiles.Count > 0)
+                {
+                    BgEmptyShow = Visibility.Collapsed;
+                }
+                else
+                {
+                    BgEmptyShow = Visibility.Visible;   
+                }
+                return tempFiles;
+            }
             set { tempFiles = value;RaisePropertyChanged("TempFiles"); }
         }
 
+
+        private Visibility bgEmptyShow;
+
+        public Visibility BgEmptyShow
+        {
+            get { return bgEmptyShow; }
+            set { bgEmptyShow = value; RaisePropertyChanged("BgEmptyShow"); }
+        }
 
 
         /// <summary>
@@ -155,6 +173,10 @@ namespace ModernBoxes.ViewModel
             {
                 JArray jArray = JArray.Parse(json);
                 jArray.Children().ToList().ForEach(x => TempFiles.Add(x.ToObject<TempFileModel>()));
+                if (jArray.Count>0)
+                {
+                    BgEmptyShow = Visibility.Collapsed;
+                }
             }
         }
     }

@@ -12,6 +12,7 @@
           "MvvmLightLibs": "5.4.1.1",
           "Newtonsoft.Json": "13.0.1",
           "RestSharp": "106.13.0",
+          "SharpVectors": "1.7.6",
           "System.Drawing.Common": "5.0.2",
           "System.Windows.Interactivity.WPF": "2.0.20525"
         },
@@ -98,6 +99,42 @@
           }
         }
       },
+      "SharpVectors/1.7.6": {
+        "runtime": {
+          "lib/net5.0-windows/SharpVectors.Converters.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Core.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Css.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Dom.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Model.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Rendering.Gdi.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Rendering.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Runtime.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          }
+        }
+      },
       "System.Drawing.Common/5.0.2": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "5.0.0"
@@ -180,6 +217,13 @@
       "sha512": "sha512-vwUdmmtC5vtePeNfBWnFcixBF2KjUeVv3ss4ZFzCIkOf7NB7W/9qX8JNZD9DOrz2yGk4AJW8k9znwgPZhnoiNg==",
       "path": "restsharp/106.13.0",
       "hashPath": "restsharp.106.13.0.nupkg.sha512"
+    },
+    "SharpVectors/1.7.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4mdmSPJCUdA+7ig8rMl4MbJ0qB/oDOByCmLhRdDjG54+sGIIYI004vkR4uPbWYsjn/Fgdi55s0vLqO2nLL0jDg==",
+      "path": "sharpvectors/1.7.6",
+      "hashPath": "sharpvectors.1.7.6.nupkg.sha512"
     },
     "System.Drawing.Common/5.0.2": {
       "type": "package",

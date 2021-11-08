@@ -34,6 +34,9 @@
     <None Remove="Resource\image\wps.png" />
     <None Remove="Resource\image\zip.png" />
     <None Remove="Resource\logo.ico" />
+    <None Remove="Resource\svg\empty.svg" />
+    <None Remove="Resource\svg\empty2.svg" />
+    <None Remove="Resource\svg\empty3.svg" />
     <None Remove="TempDirConfig.json" />
     <None Remove="TempFileConfig.json" />
     <None Remove="UsedApplicationConfig.json" />
@@ -121,6 +124,9 @@
     <Content Include="Resource\image\zip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resource\svg\empty.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="TempFileConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -151,6 +157,12 @@
     <Resource Include="Resource\iconfont.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resource\svg\empty2.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\svg\empty3.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -158,6 +170,7 @@
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RestSharp" Version="106.13.0" />
+    <PackageReference Include="SharpVectors" Version="1.7.6" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
     <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
   </ItemGroup>

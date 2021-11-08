@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:ModernBoxes.View.SelfControl"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              mc:Ignorable="d" 
+             xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -17,52 +18,39 @@
     <hc:TransitioningContentControl>
         <Border  Background="Transparent">
 
-            <hc:ScrollViewer >
-                <ItemsControl ItemsSource="{Binding Apps}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Button Style="{DynamicResource ApplicationItemStyle}" 
+            <Grid>
+                <!--空状态-->
+                <svg:SvgViewbox Margin="20" Source="/Resource/svg/empty.svg" Visibility="{Binding IsShowBgEmpty}"/>
+                <hc:ScrollViewer >
+                    <ItemsControl ItemsSource="{Binding Apps}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{DynamicResource ApplicationItemStyle}" 
                                     CommandParameter="{Binding AppPath}" 
                                     Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=DataContext.RunApplication}">
-                                <Button.ContextMenu>
-                                    <ContextMenu>
-                                        <MenuItem VerticalContentAlignment="Center" Icon="&#xe617;" FontFamily="/Resource/#iconfont" Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
-                                    </ContextMenu>
-                                </Button.ContextMenu>
-                            </Button>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.Template>
-                        <ControlTemplate>
-                            <hc:ScrollViewer x:Name="ScrollViewer">
-                                <ItemsPresenter/>
-                            </hc:ScrollViewer>
-                        </ControlTemplate>
-                    </ItemsControl.Template>
-                </ItemsControl>
-            </hc:ScrollViewer>
-
-            <!--<ListBox Margin="3" Template="{DynamicResource ListBoxTemplate1}" ItemsSource="{Binding Apps}" Style="{StaticResource WrapPanelHorizontalListBox}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Button Style="{DynamicResource ApplicationItemStyle}" 
-                                    CommandParameter="{Binding AppPath}" 
-                                    Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=DataContext.RunApplication}">
-                            <Button.ContextMenu>
-                                <ContextMenu>
-                                    <MenuItem Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
-                                </ContextMenu>
-                            </Button.ContextMenu>
-                        </Button>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>-->
-            
+                                    <Button.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem VerticalContentAlignment="Center" Icon="&#xe617;" FontFamily="/Resource/#iconfont" Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
+                                        </ContextMenu>
+                                    </Button.ContextMenu>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <hc:ScrollViewer x:Name="ScrollViewer">
+                                    <ItemsPresenter/>
+                                </hc:ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                    </ItemsControl>
+                </hc:ScrollViewer>
+            </Grid>
             <Border.ContextMenu>
                 <ContextMenu>
                     <MenuItem Icon="&#xe7c4;" VerticalContentAlignment="Center" FontFamily="/Resource/#iconfont" Header="添加应用" Command="{Binding OpenAddApplicationDialog}"/>

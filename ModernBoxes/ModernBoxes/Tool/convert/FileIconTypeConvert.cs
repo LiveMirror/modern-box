@@ -20,6 +20,7 @@ namespace ModernBoxes.Tool.convert
                     return new BitmapImage(new Uri(@"\Resource\image\excel.png", UriKind.Relative)); 
                 case "word":
                 case "docx":
+                case "doc":
                 case "rtf":
                     return new BitmapImage(new Uri(@"\Resource\image\word.png", UriKind.Relative));
                 case "ppt":

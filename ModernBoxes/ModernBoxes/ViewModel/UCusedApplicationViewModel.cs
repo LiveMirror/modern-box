@@ -14,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
@@ -23,14 +24,35 @@ namespace ModernBoxes.ViewModel
         public static event RefershDataHandler RefershDataEvent;
         /// <summary>
         /// 日常应用集合
-        /// </summarySystem.InvalidOperationException:“在使用 ItemsSource 之前，项集合必须为空。”
+        /// </summary>
 
         private ObservableCollection<ApplicationModel> apps = new ObservableCollection<ApplicationModel>();
         public ObservableCollection<ApplicationModel> Apps
         {
-            get { return apps; }
-            set { apps = value; RaisePropertyChanged("Apps"); }
+            get { 
+                if (apps.Count >0)
+                    IsShowBgEmpty = Visibility.Collapsed;
+                else
+                    IsShowBgEmpty = Visibility.Visible;
+                return apps;
+            }
+            set {apps = value;
+                if (apps.Count > 0)
+                    IsShowBgEmpty = Visibility.Collapsed;
+                else
+                    IsShowBgEmpty = Visibility.Visible;
+                RaisePropertyChanged("Apps"); 
+            }
         }
+
+        private Visibility isShow= Visibility.Visible;
+
+        public Visibility IsShowBgEmpty
+        {
+            get { return isShow; }
+            set { isShow = value; RaisePropertyChanged("IsShowBgEmpty"); }
+        }
+
 
 
         /// <summary>
@@ -137,7 +159,11 @@ namespace ModernBoxes.ViewModel
             foreach (JToken jToken in templist)
             {
                 if(jToken != null)
+                {
                     Apps.Add(jToken.ToObject<ApplicationModel>());
+                    //第一次添加应用后将SVG空状态图变为Collapsed
+                    IsShowBgEmpty = Visibility.Collapsed;
+                }
             }
         }
     }

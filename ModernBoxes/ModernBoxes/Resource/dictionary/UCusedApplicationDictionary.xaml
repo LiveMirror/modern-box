@@ -1,8 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:convert="clr-namespace:ModernBoxes.Tool.convert"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl">
 
 
+    <convert:ContentEmptyBackgroundImageConvert x:Key="BgEmptyConvert"/>
     <Style x:Key="ApplicationItemStyle"  TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{DynamicResource RegionBrush}"/>
         <Setter Property="Template">
