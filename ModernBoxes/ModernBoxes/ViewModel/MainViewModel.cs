@@ -103,7 +103,6 @@ namespace ModernBoxes.ViewModel
         {
             RefreshMenuEvent += MainViewModel_RefreshMenuEvent;
             loadMenu();
-         //   loadCardContent();
         }
 
         /// <summary>

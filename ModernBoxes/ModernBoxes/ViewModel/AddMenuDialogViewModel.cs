@@ -66,7 +66,7 @@ namespace ModernBoxes.ViewModel
                 {
                     if (Menu.MenuName!=String.Empty&&Menu.MenuName!=null&&Menu.Target!=String.Empty)
                     {
-                        if (File.Exists(Menu.Target)||Directory.Exists(Menu.Target))
+                        if (File.Exists(Menu.Target)||Directory.Exists(Menu.Target)|| Menu.Target == "组件应用" || Menu.MenuName == "组件应用")
                         {
                             //获取旧数据
                             String path = $"{Environment.CurrentDirectory}\\MenuConfig.json";
