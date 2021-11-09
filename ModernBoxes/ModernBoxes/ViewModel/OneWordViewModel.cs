@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
+using ModernBoxes.View.SelfControl;
+using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
@@ -40,14 +42,24 @@ namespace ModernBoxes.ViewModel
 
         private async void loadOneNote()
         {
-            var client = new RestClient("https://api.muxiaoguo.cn/api/yiyan");
-            client.Timeout = -1;
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("Cookie", "__yjs_duid=1_c7c57d75a2a44f7fb435906e302ceb061635836089220; PHPSESSID=cv64br18t9sdfid1ec96u87pn9");
-            IRestResponse response =await client.ExecuteAsync(request);
-            if (response != null)
+            try
             {
-                OneWord = JsonConvert.DeserializeObject<OneWordModel>(response.Content);
+                var client = new RestClient("https://v1.hitokoto.cn/");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.GET);
+                IRestResponse response = await client.ExecuteAsync(request);
+                if (response != null)
+                {
+                    OneWord = JsonConvert.DeserializeObject<OneWordModel>(response.Content);
+                }
+            }
+            catch (Exception ex)
+            {
+                BaseDialog baseDialog = new BaseDialog();
+                baseDialog.SetTitle("错误");
+                baseDialog.SetContent(new UcMessageDialog(ex.Message, MyEnum.MessageDialogState.danger));
+                baseDialog.ShowDialog();
+
             }
         }
         

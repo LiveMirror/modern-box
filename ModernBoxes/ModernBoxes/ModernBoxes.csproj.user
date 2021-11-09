@@ -27,6 +27,9 @@
     <Compile Update="View\SelfControl\dialog\FilePropertyDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SelfControl\dialog\UcAddCardApplicationDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SelfControl\dialog\UcMessageDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -74,6 +77,9 @@
     <Page Update="Resource\dictionary\tempFileDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resource\dictionary\UcAddCardAppDialogDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resource\dictionary\UCusedApplicationDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -96,6 +102,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\dialog\FilePropertyDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SelfControl\dialog\UcAddCardApplicationDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SelfControl\dialog\UcMessageDialog.xaml">

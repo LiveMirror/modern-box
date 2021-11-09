@@ -88,7 +88,6 @@
                                                         <ContextMenu>
                                                             <MenuItem Header="删除"/>
                                                             <MenuItem Header="添加卡片应用" Name="AddCardApp" Click="AddCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}"/>
-                                                            <MenuItem Header="管理卡片应用" Name="ManagerCardApp" Click="ManagerCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}"/>
                                                         </ContextMenu>
                                                     </StackPanel.ContextMenu>
                                                 </StackPanel>

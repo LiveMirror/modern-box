@@ -100,6 +100,7 @@ namespace ModernBoxes.View.SelfControl
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Messenger.Default.Send<Boolean>(true, "ClosingDialog");
             this.Close();
         }
 

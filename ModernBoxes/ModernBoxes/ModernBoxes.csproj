@@ -9,9 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AllCardsConfig.json" />
     <None Remove="App.config" />
     <None Remove="MenuConfig.json" />
     <None Remove="Resource\iconfont.ttf" />
+    <None Remove="Resource\image\1.png" />
     <None Remove="Resource\image\3d.png" />
     <None Remove="Resource\image\config.png" />
     <None Remove="Resource\image\db.png" />
@@ -27,6 +29,15 @@
     <None Remove="Resource\image\normal.png" />
     <None Remove="Resource\image\pdf.png" />
     <None Remove="Resource\image\ppt.png" />
+    <None Remove="Resource\image\previews\application.png" />
+    <None Remove="Resource\image\previews\dir.png" />
+    <None Remove="Resource\image\previews\dir1.png" />
+    <None Remove="Resource\image\previews\file.png" />
+    <None Remove="Resource\image\previews\file1.png" />
+    <None Remove="Resource\image\previews\notes.png" />
+    <None Remove="Resource\image\previews\notes1.png" />
+    <None Remove="Resource\image\previews\onenote.png" />
+    <None Remove="Resource\image\previews\onenote1.png" />
     <None Remove="Resource\image\program.png" />
     <None Remove="Resource\image\txt.png" />
     <None Remove="Resource\image\video.png" />
@@ -67,12 +78,42 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="AllCardsConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MenuConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resource\image\previews\application.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\dir.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\dir1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\file.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\file1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\notes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\notes1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\previews\onenote.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\image\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resource\image\3d.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -133,6 +174,9 @@
     <Content Include="Resource\image\zip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resource\image\previews\onenote1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resource\svg\empty.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

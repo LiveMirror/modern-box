@@ -1,9 +1,12 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using ModernBoxes.Model;
 using ModernBoxes.MyEnum;
 using ModernBoxes.Tool;
 using ModernBoxes.View;
 using ModernBoxes.View.SelfControl;
+using ModernBoxes.View.SelfControl.dialog;
 using ModernBoxes.ViewModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +54,9 @@ namespace ModernBoxes
         public static event SetMainWidnowHeightHandler SetMainWindowHeightEvent;
         public static event getCompontentWidthHandler GetCompontentWidthEvent;
         public static event SetCompontentWidthHandler SetCompontentWidthEvent;
+
+        public List<CardContentModel> CardApps = new List<CardContentModel>();
+
         /// <summary>
         /// 布局方向
         /// </summary>
@@ -93,7 +99,7 @@ namespace ModernBoxes
         /// <summary>
         /// 初始化配置文件
         /// </summary>
-        private void initConfig()
+        private async void initConfig()
         {
             if ((ConfigHelper.getConfig("isFirst")) == String.Empty)
             {
@@ -105,6 +111,14 @@ namespace ModernBoxes
                 Directory.CreateDirectory($"{Environment.CurrentDirectory}\\FileCache");
                 //默认设置不自启动
                 ConfigHelper.setConfig("autoOpen", false);
+                //卡片配置文件生成
+                CardApps.Add(new CardContentModel() { CardName = "一言", IsChecked = true,CardID = 0, CardHeight = 100,Priview= "/Resource/image/previews/onenote1.png" });
+                CardApps.Add(new CardContentModel() { CardName = "应用", IsChecked = true, CardID = 1, CardHeight = 235, Priview = "/Resource/image/previews/application.png" });
+                CardApps.Add(new CardContentModel() { CardName = "文件夹", IsChecked = true, CardID = 2, CardHeight = 235, Priview = "/Resource/image/previews/dir1.png" });
+                CardApps.Add(new CardContentModel() { CardName = "文件", IsChecked = true, CardID = 3, CardHeight = 235, Priview = "/Resource/image/previews/file1.png" });
+                CardApps.Add(new CardContentModel() { CardName = "便签", IsChecked = false, CardID = 4, CardHeight = 235, Priview = "/Resource/image/previews/notes1.png" });
+                string CardJson = JsonConvert.SerializeObject(CardApps);
+                await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json",CardJson);
             }
 
         }
@@ -301,8 +315,8 @@ namespace ModernBoxes
         {
             BaseDialog baseDialog = new BaseDialog();
             baseDialog.SetTitle("添加卡片应用");
-            baseDialog.setDialogSize(600, 800);
-            baseDialog.SetContent(new UcManagerCardApplication());
+            baseDialog.setDialogSize(565, 400);
+            baseDialog.SetContent(new UcAddCardApplicationDialog());
             baseDialog.ShowDialog();
         }
 

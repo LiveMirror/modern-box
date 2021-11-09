@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
-    public class CardContentModel
+    public class CardContentModel : ViewModelBase
     {
         private int cardId;
 
@@ -47,7 +48,31 @@ namespace ModernBoxes.Model
         public Double CardHeight
         {
             get { return cardHeight; }
-            set { cardHeight = value; }
+            set { cardHeight = value; RaisePropertyChanged("CardHeight"); }
+        }
+
+
+        /// <summary>
+        /// 预览图
+        /// </summary>
+        private String priview;
+
+        public String Priview
+        {
+            get { return priview; }
+            set { priview = value; }
+        }
+
+
+        /// <summary>
+        /// 是否选中
+        /// </summary>
+        private Boolean isChecked;
+
+        public Boolean IsChecked
+        {
+            get { return isChecked; }
+            set { isChecked = value; RaisePropertyChanged("IsChecked"); }
         }
 
 
