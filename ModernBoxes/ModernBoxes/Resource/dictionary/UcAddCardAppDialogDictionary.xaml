@@ -27,7 +27,7 @@
                                 <hc:Card.Header>
                                     <TextBlock Text="{Binding CardName}" Margin="10 10 5 5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 </hc:Card.Header>
-                                <Image Source="{Binding Priview}" Stretch="Fill"/>
+                                <Image Source="{Binding Priview}" Stretch="Fill" Margin="4"/>
                             </hc:Card>
 
                             <Border Grid.Column="1" BorderBrush="Transparent" BorderThickness="1" CornerRadius="16" >

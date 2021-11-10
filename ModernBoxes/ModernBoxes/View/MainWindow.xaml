@@ -86,8 +86,8 @@
                                                          ToolTip="{Binding MenuName}"/>
                                                     <StackPanel.ContextMenu>
                                                         <ContextMenu>
-                                                            <MenuItem Header="删除"/>
                                                             <MenuItem Header="添加卡片应用" Name="AddCardApp" Click="AddCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}"/>
+                                                            <MenuItem Header="删除" Name="BtnDeleteMenuItem" Click="BtnDeleteMenuItem_Click" CommandParameter="{Binding MenuName}"/>
                                                         </ContextMenu>
                                                     </StackPanel.ContextMenu>
                                                 </StackPanel>

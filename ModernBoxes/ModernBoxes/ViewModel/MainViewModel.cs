@@ -5,6 +5,7 @@ using ModernBoxes.Tool;
 using ModernBoxes.View;
 using ModernBoxes.View.SelfControl;
 using ModernBoxes.View.SelfControl.dialog;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,12 @@ using System.Windows;
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefreshMenu();
+    public delegate void DeleteMenuItemHandler(String menuName);
     public class MainViewModel : ViewModelBase
     {
-
+        public static event DeleteMenuItemHandler DeleteMenuItemEvent;
         public static event RefreshMenu RefreshMenuEvent;
-
+        
         /// <summary>
         /// 主菜单集合
         /// </summary>
@@ -104,8 +106,30 @@ namespace ModernBoxes.ViewModel
         public MainViewModel()
         {
             RefreshMenuEvent += MainViewModel_RefreshMenuEvent;
+            DeleteMenuItemEvent += MainViewModel_DeleteMenuItemEvent;
             loadMenu();
         }
+
+        /// <summary>
+        /// 删除菜单项
+        /// </summary>
+        /// <param name="menuName"></param>
+        private async void MainViewModel_DeleteMenuItemEvent(string menuName)
+        {
+            MenuList.Remove(MenuList.FirstOrDefault(o => o.MenuName == menuName));
+            if (File.Exists($"{Environment.CurrentDirectory}\\MenuConfig.json"))
+            {
+                File.Delete($"{Environment.CurrentDirectory}\\MenuConfig.json");
+            }
+            String newJson = JsonConvert.SerializeObject(MenuList);
+            await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\MenuConfig.json",newJson);
+        }
+        public static void DoDeleteMenuItem(String menuName)
+        {
+            DeleteMenuItemEvent(menuName);
+        }
+
+
 
         /// <summary>
         /// 添加菜单后刷新界面

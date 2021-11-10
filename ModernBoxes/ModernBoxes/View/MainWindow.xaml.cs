@@ -320,15 +320,16 @@ namespace ModernBoxes
             baseDialog.ShowDialog();
         }
 
-
         /// <summary>
-        /// 打开管理卡片的对话框
+        /// 删除
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ManagerCardApp_Click(object sender, RoutedEventArgs e)
+        private void BtnDeleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            String menuName = sender.GetType().GetProperty("CommandParameter").GetValue(sender).ToString();
+            MainViewModel.DoDeleteMenuItem(menuName);
+            MainViewModel.DoRefershMenu();
         }
     }
 }

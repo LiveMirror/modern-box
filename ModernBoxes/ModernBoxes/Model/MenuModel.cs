@@ -10,7 +10,6 @@ namespace ModernBoxes.Model
     public class MenuModel :ViewModelBase
     {
 
-
         private String menuName ="";
 
         public String MenuName
