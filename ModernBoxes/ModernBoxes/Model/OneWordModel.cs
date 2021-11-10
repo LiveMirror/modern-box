@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ModernBoxes.Model
+﻿namespace ModernBoxes.Model
 {
     public class OneWordModel
     {
@@ -20,7 +14,5 @@ namespace ModernBoxes.Model
         public string commit_from { get; set; }
         public string created_at { get; set; }
         public int length { get; set; }
-
-
     }
 }

@@ -13,19 +13,19 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefreshMenu();
+
     public delegate void DeleteMenuItemHandler(String menuName);
+
     public class MainViewModel : ViewModelBase
     {
         public static event DeleteMenuItemHandler DeleteMenuItemEvent;
+
         public static event RefreshMenu RefreshMenuEvent;
-        
+
         /// <summary>
         /// 主菜单集合
         /// </summary>
@@ -95,13 +95,10 @@ namespace ModernBoxes.ViewModel
                     dialog.SetTitle("设置");
                     dialog.setDialogSize(560, 800);
                     dialog.SetContent(new UCSetDialog());
-                    dialog.ShowDialog();   
+                    dialog.ShowDialog();
                 }, x => true);
             }
         }
-
-
-
 
         public MainViewModel()
         {
@@ -122,14 +119,13 @@ namespace ModernBoxes.ViewModel
                 File.Delete($"{Environment.CurrentDirectory}\\MenuConfig.json");
             }
             String newJson = JsonConvert.SerializeObject(MenuList);
-            await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\MenuConfig.json",newJson);
+            await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\MenuConfig.json", newJson);
         }
+
         public static void DoDeleteMenuItem(String menuName)
         {
             DeleteMenuItemEvent(menuName);
         }
-
-
 
         /// <summary>
         /// 添加菜单后刷新界面
@@ -137,13 +133,12 @@ namespace ModernBoxes.ViewModel
         /// <param name="bol"></param>
         private void MainViewModel_RefreshMenuEvent()
         {
-           MenuList.Clear();
-           loadMenu();
+            MenuList.Clear();
+            loadMenu();
         }
 
         public static void DoRefershMenu()
         {
-            
             RefreshMenuEvent();
         }
 
@@ -154,7 +149,7 @@ namespace ModernBoxes.ViewModel
         private async void loadMenu()
         {
             String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\MenuConfig.json");
-            if (json.Length>8)
+            if (json.Length > 8)
             {
                 JArray array = JArray.Parse(json);
                 IList<JToken> temp = array.Children().ToList();
@@ -164,7 +159,6 @@ namespace ModernBoxes.ViewModel
                         MenuList.Add(tempItem.ToObject<MenuModel>());
                 }
             }
-            
         }
     }
 }

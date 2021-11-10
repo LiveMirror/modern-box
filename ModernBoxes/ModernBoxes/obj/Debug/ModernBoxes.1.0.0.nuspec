@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ModernBoxes</id>
+    <version>1.0.0</version>
+    <authors>ModernBoxes</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="HandyControl" version="3.2.0" exclude="Build,Analyzers" />
+        <dependency id="MvvmLightLibs" version="5.4.1.1" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="RestSharp" version="106.13.0" exclude="Build,Analyzers" />
+        <dependency id="SharpVectors" version="1.7.6" exclude="Build,Analyzers" />
+        <dependency id="System.Drawing.Common" version="5.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Windows.Interactivity.WPF" version="2.0.20525" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App" />
+      </group>
+    </frameworkReferences>
+    <contentFiles>
+      <files include="any/net5.0-windows7.0/AllCardsConfig.json" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/App.config" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/MenuConfig.json" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/3d.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/config.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/db.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/dir.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/email.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/excel.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/exe.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/gif.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/image.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/link.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/music.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/normal.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/pdf.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/ppt.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/program.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/txt.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/video.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/word.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/wps.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/Resource/image/zip.png" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/TempFileConfig.json" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/UsedApplicationConfig.json" buildAction="Content" />
+      <files include="any/net5.0-windows7.0/TempDirConfig.json" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.runtimeconfig.json" target="lib\net5.0-windows7.0\ModernBoxes.runtimeconfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Debug\net5.0-windows\ModernBoxes.dll" target="lib\net5.0-windows7.0\ModernBoxes.dll" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\AllCardsConfig.json" target="content\AllCardsConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\AllCardsConfig.json" target="contentFiles\any\net5.0-windows7.0\AllCardsConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\App.config" target="content\App.config" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\App.config" target="contentFiles\any\net5.0-windows7.0\App.config" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\MenuConfig.json" target="content\MenuConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\MenuConfig.json" target="contentFiles\any\net5.0-windows7.0\MenuConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\3d.png" target="content\Resource\image\3d.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\3d.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\3d.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\config.png" target="content\Resource\image\config.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\config.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\config.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\db.png" target="content\Resource\image\db.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\db.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\db.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\dir.png" target="content\Resource\image\dir.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\dir.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\dir.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\email.png" target="content\Resource\image\email.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\email.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\email.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\excel.png" target="content\Resource\image\excel.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\excel.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\excel.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\exe.png" target="content\Resource\image\exe.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\exe.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\exe.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\gif.png" target="content\Resource\image\gif.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\gif.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\gif.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\image.png" target="content\Resource\image\image.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\image.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\image.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\link.png" target="content\Resource\image\link.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\link.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\link.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\music.png" target="content\Resource\image\music.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\music.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\music.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\normal.png" target="content\Resource\image\normal.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\normal.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\normal.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\pdf.png" target="content\Resource\image\pdf.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\pdf.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\pdf.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\ppt.png" target="content\Resource\image\ppt.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\ppt.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\ppt.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\program.png" target="content\Resource\image\program.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\program.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\program.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\txt.png" target="content\Resource\image\txt.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\txt.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\txt.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\video.png" target="content\Resource\image\video.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\video.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\video.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\word.png" target="content\Resource\image\word.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\word.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\word.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\wps.png" target="content\Resource\image\wps.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\wps.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\wps.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\zip.png" target="content\Resource\image\zip.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\Resource\image\zip.png" target="contentFiles\any\net5.0-windows7.0\Resource\image\zip.png" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\TempFileConfig.json" target="content\TempFileConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\TempFileConfig.json" target="contentFiles\any\net5.0-windows7.0\TempFileConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\UsedApplicationConfig.json" target="content\UsedApplicationConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\UsedApplicationConfig.json" target="contentFiles\any\net5.0-windows7.0\UsedApplicationConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\TempDirConfig.json" target="content\TempDirConfig.json" />
+    <file src="D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\TempDirConfig.json" target="contentFiles\any\net5.0-windows7.0\TempDirConfig.json" />
+  </files>
+</package>

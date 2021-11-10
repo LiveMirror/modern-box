@@ -2,20 +2,9 @@
 using ModernBoxes.View.SelfControl.dialog;
 using ModernBoxes.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ModernBoxes.View.SelfControl
 {
@@ -39,9 +28,8 @@ namespace ModernBoxes.View.SelfControl
         {
             PropertyInfo? propertyInfo = sender.GetType().GetProperty("CommandParameter");
             String? filePath = propertyInfo.GetValue(sender).ToString();
-            Messenger.Default.Send<String>(filePath,"deleteFile");
+            Messenger.Default.Send<String>(filePath, "deleteFile");
         }
-
 
         /// <summary>
         /// 查看文件属性
@@ -51,7 +39,7 @@ namespace ModernBoxes.View.SelfControl
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             PropertyInfo? propertyInfo = sender.GetType().GetProperty("CommandParameter");
-            if (propertyInfo!=null)
+            if (propertyInfo != null)
             {
                 String? filePath = propertyInfo.GetValue(sender).ToString();
                 BaseDialog baseDialog = new BaseDialog();

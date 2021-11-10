@@ -1,11 +1,9 @@
-﻿using Microsoft.Win32;
-using ModernBoxes.MyEnum;
+﻿using ModernBoxes.MyEnum;
 using ModernBoxes.Tool;
 using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using IWshRuntimeLibrary;
 
 namespace ModernBoxes.View.SelfControl.dialog
 {
@@ -44,7 +42,6 @@ namespace ModernBoxes.View.SelfControl.dialog
             else
             {
                 RB_NotAutoOpen.IsChecked = true;
-
             }
         }
 
@@ -76,7 +73,6 @@ namespace ModernBoxes.View.SelfControl.dialog
         {
             if (bol)
             {
-
                 Application.Current.Resources.MergedDictionaries.Remove(Application.Current.Resources.MergedDictionaries.FirstOrDefault(o =>
                     o.Source == new Uri("pack://application:,,,/HandyControl;component/Themes/SkinDark.xaml")
                 ));
@@ -142,7 +138,6 @@ namespace ModernBoxes.View.SelfControl.dialog
             ConfigHelper.setConfig("autoOpen", true);
         }
 
-
         /// <summary>
         /// 停用自启动
         /// </summary>
@@ -154,6 +149,5 @@ namespace ModernBoxes.View.SelfControl.dialog
             autoOpenSoftware.SetAutoStart(false);
             ConfigHelper.setConfig("autoOpen", false);
         }
-      
     }
 }

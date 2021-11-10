@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace ModernBoxes.Tool.convert
@@ -16,12 +12,16 @@ namespace ModernBoxes.Tool.convert
             {
                 case 0:
                     return "#df4853";
+
                 case 1:
                     return "#ffe03b";
+
                 case 2:
                     return "#477bf4";
+
                 case 3:
                     return "#42bf5f";
+
                 default:
                     return "#477bf4";
             }

@@ -1,9 +1,8 @@
 ﻿<Window x:Class="ModernBoxes.View.SelfControl.BaseDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ModernBoxes.View.SelfControl"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         ResizeMode="NoResize"
         WindowStyle="None"
@@ -16,27 +15,26 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resource/dictionary/AddMenuDialogDictionary.xaml"/>
+                <ResourceDictionary Source="/Resource/dictionary/AddMenuDialogDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <hc:TransitioningContentControl >
+    <hc:TransitioningContentControl>
         <hc:Card Margin="10" hc:BorderElement.CornerRadius="16" Effect="{StaticResource EffectShadow1}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Name="TB_DialogTitle" Text="" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontWeight="Bold" FontSize="20"/>
+                <TextBlock Grid.Row="0" Name="TB_DialogTitle" Text="" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" FontWeight="Bold" FontSize="20" />
                 <Button Grid.Row="0" Height="40" Click="Button_Click" HorizontalAlignment="Right" Width="40" FontSize="20" Style="{StaticResource closeStyle}" Command="{Binding CloseDialog}">
                     <Button.Template>
                         <ControlTemplate>
-                            <TextBlock Text="&#xe606;"   HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="/Resource/#iconfont"/>
+                            <TextBlock Text="&#xe606;"   HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="/Resource/#iconfont" />
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
                 <ContentControl Grid.Row="1" Panel.ZIndex="5" Name="DialogContent" Background="Red">
-                    
                 </ContentControl>
             </Grid>
         </hc:Card>

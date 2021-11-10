@@ -170,3 +170,4 @@ D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernB
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ref\ModernBoxes.dll
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.pdb
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.genruntimeconfig.cache
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Debug\net5.0-windows\ModernBoxes.csproj.AssemblyReference.cache

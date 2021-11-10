@@ -10,23 +10,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
     public class AddMenuDialogViewModel : ViewModelBase
     {
-
         private MenuModel menuModel = new MenuModel();
 
         public MenuModel Menu
         {
             get { return menuModel; }
-            set { menuModel = value;RaisePropertyChanged("Menu"); }
+            set { menuModel = value; RaisePropertyChanged("Menu"); }
         }
-
 
         private List<MenuModel> menuModels = new List<MenuModel>();
 
@@ -35,7 +31,6 @@ namespace ModernBoxes.ViewModel
             get { return menuModels; }
             set { menuModels = value; }
         }
-
 
         /// <summary>
         /// 关闭对话框
@@ -46,7 +41,7 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-                    if (o!=null)
+                    if (o != null)
                     {
                         Window window = o as Window;
                         window.Close();
@@ -64,9 +59,9 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand(async (o) =>
                 {
-                    if (Menu.MenuName!=String.Empty&&Menu.MenuName!=null&&Menu.Target!=String.Empty)
+                    if (Menu.MenuName != String.Empty && Menu.MenuName != null && Menu.Target != String.Empty)
                     {
-                        if (File.Exists(Menu.Target)||Directory.Exists(Menu.Target)|| Menu.Target == "组件应用" || Menu.MenuName == "组件应用")
+                        if (File.Exists(Menu.Target) || Directory.Exists(Menu.Target) || Menu.Target == "组件应用" || Menu.MenuName == "组件应用")
                         {
                             //获取旧数据
                             String path = $"{Environment.CurrentDirectory}\\MenuConfig.json";
@@ -132,7 +127,7 @@ namespace ModernBoxes.ViewModel
                     if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         Menu.Target = openFileDialog.FileName;
-                        if (Menu.Target.Substring(Menu.Target.LastIndexOf('.')+1)=="exe")
+                        if (Menu.Target.Substring(Menu.Target.LastIndexOf('.') + 1) == "exe")
                         {
                             String iconPath = $"{Environment.CurrentDirectory}\\icons\\";
                             String FileName = $"{Convert.ToString(DateTime.Now.Year) + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second}.ico";
@@ -144,7 +139,7 @@ namespace ModernBoxes.ViewModel
                             Menu.Icon = Menu.Target.Substring(Menu.Target.LastIndexOf('.') + 1);
                         }
                     }
-                },x => true);
+                }, x => true);
             }
         }
 
@@ -169,7 +164,6 @@ namespace ModernBoxes.ViewModel
 
         public AddMenuDialogViewModel()
         {
-            
         }
     }
 }

@@ -1,9 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
@@ -16,7 +12,6 @@ namespace ModernBoxes.Model
             get { return cardId; }
             set { cardId = value; }
         }
-
 
         /// <summary>
         /// 卡片名称
@@ -51,7 +46,6 @@ namespace ModernBoxes.Model
             set { cardHeight = value; RaisePropertyChanged("CardHeight"); }
         }
 
-
         /// <summary>
         /// 预览图
         /// </summary>
@@ -63,7 +57,6 @@ namespace ModernBoxes.Model
             set { priview = value; }
         }
 
-
         /// <summary>
         /// 是否选中
         /// </summary>
@@ -74,7 +67,5 @@ namespace ModernBoxes.Model
             get { return isChecked; }
             set { isChecked = value; RaisePropertyChanged("IsChecked"); }
         }
-
-
     }
 }

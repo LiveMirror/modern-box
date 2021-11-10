@@ -1,19 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.MyEnum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ModernBoxes.View.SelfControl.dialog
 {
@@ -22,8 +12,8 @@ namespace ModernBoxes.View.SelfControl.dialog
     /// </summary>
     public partial class UcMessageDialog : UserControl
     {
-
         private Boolean State = false;
+
         public UcMessageDialog(String content, MessageDialogState MessageState)
         {
             InitializeComponent();
@@ -34,10 +24,12 @@ namespace ModernBoxes.View.SelfControl.dialog
                     TB_Icon.Text = "\xe618";
                     TB_Icon.Foreground = new SolidColorBrush(Color.FromRgb(255, 82, 83));
                     break;
+
                 case MessageDialogState.Info:
                     TB_Icon.Text = "\xe630";
                     TB_Icon.Foreground = new SolidColorBrush(Color.FromRgb(71, 123, 244));
                     break;
+
                 case MessageDialogState.waring:
                     TB_Icon.Text = "\xe619";
                     TB_Icon.Foreground = new SolidColorBrush(Color.FromRgb(255, 224, 59));

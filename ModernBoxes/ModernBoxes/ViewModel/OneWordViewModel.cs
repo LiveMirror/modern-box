@@ -4,13 +4,8 @@ using ModernBoxes.Tool;
 using ModernBoxes.View.SelfControl;
 using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernBoxes.ViewModel
 {
@@ -59,9 +54,7 @@ namespace ModernBoxes.ViewModel
                 baseDialog.SetTitle("错误");
                 baseDialog.SetContent(new UcMessageDialog(ex.Message, MyEnum.MessageDialogState.danger));
                 baseDialog.ShowDialog();
-
             }
         }
-        
     }
 }

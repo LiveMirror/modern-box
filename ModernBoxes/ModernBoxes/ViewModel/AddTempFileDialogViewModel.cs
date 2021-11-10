@@ -10,16 +10,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 
 namespace ModernBoxes.ViewModel
 {
-
     public class AddTempFileDialogViewModel : ViewModelBase
     {
-
         private List<Boolean> fileKind = new List<bool>() { true, false, false, false };
 
         public List<Boolean> FileKind
@@ -36,12 +32,10 @@ namespace ModernBoxes.ViewModel
             set { tempFile = value; RaisePropertyChanged("TempFile"); }
         }
 
-
         private List<TempFileModel> tempFiles = new List<TempFileModel>();
 
         public AddTempFileDialogViewModel()
         {
-
         }
 
         public AddTempFileDialogViewModel(String FileName)
@@ -54,8 +48,6 @@ namespace ModernBoxes.ViewModel
             get { return tempFiles; }
             set { tempFiles = value; }
         }
-
-
 
         /// <summary>
         /// 确定，添加已有文件
@@ -113,7 +105,6 @@ namespace ModernBoxes.ViewModel
                                         tempFiles.Add(jToken.ToObject<TempFileModel>());
                                     }
                                 }
-
                             }
                             tempFiles.Add(TempFile);
                             String newJson = JsonConvert.SerializeObject(tempFiles);
@@ -132,11 +123,10 @@ namespace ModernBoxes.ViewModel
                             dialog.SetHeight(180);
                             dialog.ShowDialog();
                         }
-                    } 
+                    }
                 }, x => true);
             }
         }
-
 
         /// <summary>
         /// 选择文件

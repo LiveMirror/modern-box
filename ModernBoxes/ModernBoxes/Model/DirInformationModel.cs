@@ -1,9 +1,5 @@
 ﻿using ModernBoxes.MyEnum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
@@ -16,7 +12,6 @@ namespace ModernBoxes.Model
             get { return path; }
             set { path = value; }
         }
-
 
         private String kind;
 
@@ -34,7 +29,6 @@ namespace ModernBoxes.Model
             set { size = value; }
         }
 
-
         private String space;
 
         public String Space
@@ -51,9 +45,9 @@ namespace ModernBoxes.Model
             set { include = value; }
         }
 
-        private String  createTime;
+        private String createTime;
 
-        public String  CreateTime
+        public String CreateTime
         {
             get { return createTime; }
             set { createTime = value; }
@@ -66,7 +60,6 @@ namespace ModernBoxes.Model
             get { return dirName; }
             set { dirName = value; }
         }
-                
 
         private DirEnum dirKind;
 
@@ -75,8 +68,5 @@ namespace ModernBoxes.Model
             get { return dirKind; }
             set { dirKind = value; }
         }
-
-
-
     }
 }

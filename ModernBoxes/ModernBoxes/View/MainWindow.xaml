@@ -1,19 +1,17 @@
 ﻿<Window x:Class="ModernBoxes.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ModernBoxes"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="Transparent"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        WindowStyle="None"        
-        xmlns:hc="https://handyorg.github.io/handycontrol"
+        WindowStyle="None"
         AllowsTransparency="True"
         x:Name="window"
-        xmlns:tool="clr-namespace:ModernBoxes.Tool"
         Title="MainWindow" Height="1000" Width="1400">
     <Window.Resources>
         <ResourceDictionary>
@@ -27,35 +25,35 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <!--左侧显示-->
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
                     <!--右侧显示-->
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
 
                 <!--中间部分的主窗体-->
-                <Grid Margin="5"  Grid.Column="1" >
+                <Grid Margin="5"  Grid.Column="1">
                     <!--左侧内容-->
-                    <hc:Card 
-                        hc:BorderElement.CornerRadius="16" 
-                        Name="MiddleWindow" 
-                        Width="{Binding ElementName=Toggle,Path=IsChecked,Converter={StaticResource toconvert}}"   
+                    <hc:Card
+                        hc:BorderElement.CornerRadius="16"
+                        Name="MiddleWindow"
+                        Width="{Binding ElementName=Toggle,Path=IsChecked,Converter={StaticResource toconvert}}"
                         Background="White" Effect="{StaticResource EffectShadow1}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
-                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
                             <StackPanel Orientation="Vertical">
                                 <ToggleButton Name="Toggle" Style="{DynamicResource MainMenuToggleButton}" VerticalAlignment="Top" Height="40"  Margin="0 16 0 0">
                                     <ToggleButton.ContextMenu>
                                         <ContextMenu>
                                             <MenuItem Header="层级">
-                                                <MenuItem Header="顶层" IsCheckable="True" Name="topItem" Click="topItem_Click"  IsChecked="False"/>
-                                                <MenuItem Header="底层" IsCheckable="True"  Name="BottomItem" Click="BottomItem_Click" IsChecked="True"/>
+                                                <MenuItem Header="顶层" IsCheckable="True" Name="topItem" Click="topItem_Click"  IsChecked="False" />
+                                                <MenuItem Header="底层" IsCheckable="True"  Name="BottomItem" Click="BottomItem_Click" IsChecked="True" />
                                             </MenuItem>
-                                            <MenuItem Header="固定" Name="btn_fixed" Click="MenuItem_Click_To_Fixed" IsChecked="False"/>
-                                            <MenuItem Header="关闭" Name="btn_close" Click="MenuItem_Click_To_CloseWindow"/>
+                                            <MenuItem Header="固定" Name="btn_fixed" Click="MenuItem_Click_To_Fixed" IsChecked="False" />
+                                            <MenuItem Header="关闭" Name="btn_close" Click="MenuItem_Click_To_CloseWindow" />
                                         </ContextMenu>
                                     </ToggleButton.ContextMenu>
                                 </ToggleButton>
@@ -65,57 +63,56 @@
                                     <ItemsControl ItemsSource="{Binding MenuList}" Name="items">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
-                                                <StackPanel Orientation="Vertical"/>
+                                                <StackPanel Orientation="Vertical" />
                                             </ItemsPanelTemplate>
                                         </ItemsControl.ItemsPanel>
 
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal"  Margin="0 6 0 0">
-                                                    <!--<TextBlock FontFamily="/Resource/#iconfont" Text="&#xe652;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="6 6 16 6"/>
-                                            <TextBlock Grid.Column="1" Text="{Binding MenuName}" VerticalAlignment="Center" Margin="10 0 0 0"/>-->
+                                                    <!--<TextBlock FontFamily="/Resource/#iconfont" Text="&#xe652;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Margin="6 6 16 6" />
+                                            <TextBlock Grid.Column="1" Text="{Binding MenuName}" VerticalAlignment="Center" Margin="10 0 0 0" />-->
                                                     <RadioButton
                                                          Width="200"
                                                          Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenApp}"
                                                          CommandParameter="{Binding Target}"
-                                                         HorizontalAlignment="Center" 
+                                                         HorizontalAlignment="Center"
                                                          Style="{StaticResource MenuStyle}"
-                                                         VerticalContentAlignment="Center" 
+                                                         VerticalContentAlignment="Center"
                                                          GroupName="menu"
-                                                         Content="{Binding MenuName}" 
-                                                         ToolTip="{Binding MenuName}"/>
+                                                         Content="{Binding MenuName}"
+                                                         ToolTip="{Binding MenuName}" />
                                                     <StackPanel.ContextMenu>
                                                         <ContextMenu>
-                                                            <MenuItem Header="添加卡片应用" Name="AddCardApp" Click="AddCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}"/>
-                                                            <MenuItem Header="删除" Name="BtnDeleteMenuItem" Click="BtnDeleteMenuItem_Click" CommandParameter="{Binding MenuName}"/>
+                                                            <MenuItem Header="添加卡片应用" Name="AddCardApp" Click="AddCardApp_Click" Visibility="{Binding MenuName,Converter={StaticResource IsShowContextMenu}}" />
+                                                            <MenuItem Header="删除" Name="BtnDeleteMenuItem" Click="BtnDeleteMenuItem_Click" CommandParameter="{Binding MenuName}" />
                                                         </ContextMenu>
                                                     </StackPanel.ContextMenu>
                                                 </StackPanel>
                                             </DataTemplate>
-
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </hc:ScrollViewer>
                                 <TextBlock ToolTip="添加"  Text="&#xe7c4;" FontFamily="/Resource/#iconfont" HorizontalAlignment="Center" FontSize="25" Margin="0 10 0 0" Foreground="DarkGray">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="MouseLeftButtonDown">
-                                            <i:InvokeCommandAction Command="{Binding AddMenuDialog}"/>
+                                            <i:InvokeCommandAction Command="{Binding AddMenuDialog}" />
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
                                 </TextBlock>
                             </StackPanel>
 
                             <StackPanel Grid.Row="1">
-                                <TextBlock 
-                                    Text="&#xe6de;" 
-                                    HorizontalAlignment="Center" 
-                                    Margin="16" 
-                                    FontFamily="/Resource/#iconfont" 
-                                    Foreground="Gray" 
+                                <TextBlock
+                                    Text="&#xe6de;"
+                                    HorizontalAlignment="Center"
+                                    Margin="16"
+                                    FontFamily="/Resource/#iconfont"
+                                    Foreground="Gray"
                                     FontSize="20">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="MouseLeftButtonDown">
-                                            <i:InvokeCommandAction Command="{Binding OpenSetDialog}"/>
+                                            <i:InvokeCommandAction Command="{Binding OpenSetDialog}" />
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
                                 </TextBlock>
@@ -123,33 +120,31 @@
                         </Grid>
                     </hc:Card>
                     <!--托盘图标-->
-
                 </Grid>
 
                 <!--左侧内容区-->
                 <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="0" Name="compontentLayoutLeft" Visibility="Hidden">
-                    <ContentControl x:Name="LeftContent"/>
+                    <ContentControl x:Name="LeftContent" />
                 </hc:TransitioningContentControl>
 
                 <!--右侧内容区-->
                 <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
-                    <ContentControl x:Name="RightContent"/>
+                    <ContentControl x:Name="RightContent" />
                 </hc:TransitioningContentControl>
 
                 <hc:NotifyIcon x:Name="NotifyIconContextContent" Text="木函" Visibility="Visible" Icon="/Resource/logo.ico">
                     <hc:NotifyIcon.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Icon="&#xe600;" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Resource/#iconfont" Command="hc:ControlCommands.ShutdownApp" Header="退出程序"/>
+                            <MenuItem Icon="&#xe600;" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Resource/#iconfont" Command="hc:ControlCommands.ShutdownApp" Header="退出程序" />
                         </ContextMenu>
                     </hc:NotifyIcon.ContextMenu>
                     <hc:Interaction.Triggers>
                         <hc:EventTrigger EventName="Click">
-                            <hc:EventToCommand Command="hc:ControlCommands.PushMainWindow2Top"/>
+                            <hc:EventToCommand Command="hc:ControlCommands.PushMainWindow2Top" />
                         </hc:EventTrigger>
                     </hc:Interaction.Triggers>
                 </hc:NotifyIcon>
             </Grid>
         </Border>
     </hc:TransitioningContentControl>
-
 </Window>

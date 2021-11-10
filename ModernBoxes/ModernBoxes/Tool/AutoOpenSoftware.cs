@@ -1,12 +1,8 @@
-﻿using System;
+﻿using IWshRuntimeLibrary; //添加引用，在 Com 中搜索 Windows Script Host Object Model
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
 using System.Diagnostics;
-using IWshRuntimeLibrary; //添加引用，在 Com 中搜索 Windows Script Host Object Model
-
-using System.Threading.Tasks;
+using System.IO;
 
 namespace ModernBoxes.Tool
 {
@@ -213,6 +209,5 @@ namespace ModernBoxes.Tool
                 this.CreateShortcut(desktopPath, quickName, appPath, "软件描述");
             }
         }
-
     }
 }

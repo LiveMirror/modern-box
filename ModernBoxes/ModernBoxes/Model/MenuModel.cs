@@ -1,23 +1,17 @@
 ﻿using GalaSoft.MvvmLight;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
-    public class MenuModel :ViewModelBase
+    public class MenuModel : ViewModelBase
     {
-
-        private String menuName ="";
+        private String menuName = "";
 
         public String MenuName
         {
             get { return menuName; }
             set { menuName = value; RaisePropertyChanged("MenuName"); }
         }
-
 
         private String icon = "";
 
@@ -34,9 +28,5 @@ namespace ModernBoxes.Model
             get { return target; }
             set { target = value; RaisePropertyChanged("Target"); }
         }
-
-
-
-
     }
 }

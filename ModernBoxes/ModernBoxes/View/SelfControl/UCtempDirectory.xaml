@@ -1,59 +1,59 @@
 ﻿<UserControl x:Class="ModernBoxes.View.SelfControl.UCtempDirectory"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              DragEnter="UserControl_DragEnter"
              Drop="UserControl_Drop"
              xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
              xmlns:local="clr-namespace:ModernBoxes.View.SelfControl"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800" AllowDrop="True">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resource/dictionary/TempDirectoryDictionary.xaml"/>
+                <ResourceDictionary Source="/Resource/dictionary/TempDirectoryDictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <hc:TransitioningContentControl>
         <Border Background="Transparent">
             <Grid>
-                <svg:SvgViewbox Source="/Resource/svg/empty2.svg" Margin="20" Visibility="{Binding BgEmptyShow}"/>
+                <svg:SvgViewbox Source="/Resource/svg/empty2.svg" Margin="20" Visibility="{Binding BgEmptyShow}" />
                 <hc:ScrollViewer>
                     <ItemsControl ItemsSource="{Binding TempDirs}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel/>
+                                <WrapPanel />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <hc:TransitioningContentControl TransitionMode="Bottom2Top">
-                                    <Button 
+                                    <Button
                                         ToolTip="{Binding TempDirPath}"
-                                Style="{StaticResource TempDirStyle}" 
-                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenDir}" 
+                                Style="{StaticResource TempDirStyle}"
+                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl},Path=DataContext.OpenDir}"
                                 CommandParameter="{Binding TempDirPath}">
                                         <Button.ContextMenu>
                                             <ContextMenu>
-                                                <MenuItem 
-                                                Icon="&#xe617;" 
-                                                VerticalAlignment="Center" 
+                                                <MenuItem
+                                                Icon="&#xe617;"
+                                                VerticalAlignment="Center"
                                                 Click="MenuItem_Click"
                                                 CommandParameter="{Binding TempDirPath}"
-                                                VerticalContentAlignment="Center" 
-                                                FontFamily="/Resource/#iconfont" 
-                                                Header="删除"/>
-                                                <MenuItem 
-                                                Icon="&#xe728;" 
+                                                VerticalContentAlignment="Center"
+                                                FontFamily="/Resource/#iconfont"
+                                                Header="删除" />
+                                                <MenuItem
+                                                Icon="&#xe728;"
                                                 Click="MenuItem_Click_1"
                                                 CommandParameter="{Binding TempDirPath}"
-                                                VerticalAlignment="Center" 
-                                                VerticalContentAlignment="Center" 
-                                                FontFamily="/Resource/#iconfont" 
-                                                Header="属性"/>
+                                                VerticalAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                FontFamily="/Resource/#iconfont"
+                                                Header="属性" />
                                             </ContextMenu>
                                         </Button.ContextMenu>
                                     </Button>
@@ -68,9 +68,9 @@
                     <MenuItem Header="新建" Command="{Binding NewTempDir}" Icon="&#xe67a;" FontFamily="/Resource/#iconfont" VerticalAlignment="Center" />
                     <MenuItem VerticalContentAlignment="Center"
                               Command="{Binding AddTempDir}"
-                              Header="添加" 
-                              Icon="&#xeb2e;" 
-                              FontFamily="/Resource/#iconfont"/>
+                              Header="添加"
+                              Icon="&#xeb2e;"
+                              FontFamily="/Resource/#iconfont" />
                 </ContextMenu>
             </Border.ContextMenu>
         </Border>

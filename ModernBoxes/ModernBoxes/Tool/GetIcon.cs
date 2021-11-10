@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernBoxes.Tool
 {
-    
-    public  class GetIcon
+    public class GetIcon
     {
         [STAThread]
-        public static void getFileIcon(String FilePath,String savePath,String FileName)
+        public static void getFileIcon(String FilePath, String savePath, String FileName)
         {
             //选择文件对话框
             //var opfd = new System.Windows.Forms.OpenFileDialog { Filter = "资源文件|*.exe;*.dll" };
@@ -61,7 +56,7 @@ namespace ModernBoxes.Tool
                 {
                     using (var myIcon = ico.ToBitmap())
                     {
-                        myIcon.Save($"{savePath+FileName}", ImageFormat.Icon);
+                        myIcon.Save($"{savePath + FileName}", ImageFormat.Icon);
                     }
                 }
                 //内存回收
@@ -69,9 +64,8 @@ namespace ModernBoxes.Tool
             }
         }
 
-
         //details: https://msdn.microsoft.com/en-us/library/windows/desktop/ms648075(v=vs.85).aspx
-        //This function extracts from executable (.exe), DLL (.dll), icon (.ico), cursor (.cur), animated cursor (.ani), and bitmap (.bmp) files. 
+        //This function extracts from executable (.exe), DLL (.dll), icon (.ico), cursor (.cur), animated cursor (.ani), and bitmap (.bmp) files.
         //Extractions from Windows 3.x 16-bit executables (.exe or .dll) are also supported.
         /// <summary>
         /// Creates an array of handles to icons that are extracted from a specified file.

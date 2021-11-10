@@ -12,50 +12,54 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershDataHandler();
+
     public delegate void AddUsedAppHandler(ApplicationModel model);
+
     public class UCusedApplicationViewModel : ViewModelBase
     {
         public static event RefershDataHandler RefershDataEvent;
+
         public static event AddUsedAppHandler AddUsedAppEvent;
+
         /// <summary>
         /// 日常应用集合
         /// </summary>
 
         private ObservableCollection<ApplicationModel> apps = new ObservableCollection<ApplicationModel>();
+
         public ObservableCollection<ApplicationModel> Apps
         {
-            get { 
-                if (apps.Count >0)
+            get
+            {
+                if (apps.Count > 0)
                     IsShowBgEmpty = Visibility.Collapsed;
                 else
                     IsShowBgEmpty = Visibility.Visible;
                 return apps;
             }
-            set {apps = value;
+            set
+            {
+                apps = value;
                 if (apps.Count > 0)
                     IsShowBgEmpty = Visibility.Collapsed;
                 else
                     IsShowBgEmpty = Visibility.Visible;
-                RaisePropertyChanged("Apps"); 
+                RaisePropertyChanged("Apps");
             }
         }
 
-        private Visibility isShow= Visibility.Visible;
+        private Visibility isShow = Visibility.Visible;
 
         public Visibility IsShowBgEmpty
         {
             get { return isShow; }
             set { isShow = value; RaisePropertyChanged("IsShowBgEmpty"); }
         }
-
-
 
         /// <summary>
         /// 打开应用添加对话框
@@ -84,7 +88,6 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-
                 }, x => true);
             }
         }
@@ -108,15 +111,13 @@ namespace ModernBoxes.ViewModel
                     {
                         BaseDialog dialog = new BaseDialog();
                         dialog.SetTitle("错误");
-                        dialog.SetContent(new UcMessageDialog("没有找到此应用",MyEnum.MessageDialogState.danger));
+                        dialog.SetContent(new UcMessageDialog("没有找到此应用", MyEnum.MessageDialogState.danger));
                         dialog.SetHeight(180);
                         dialog.ShowDialog();
                     }
-                   
                 }, x => true);
             }
         }
-
 
         public UCusedApplicationViewModel()
         {
@@ -141,13 +142,12 @@ namespace ModernBoxes.ViewModel
             AddUsedAppEvent(model);
         }
 
-
         /// <summary>
         /// 删除日常应用
         /// </summary>
         public async void toDeleteApplication(String path)
         {
-            ApplicationModel? model =Apps.FirstOrDefault<ApplicationModel>(o => o.AppPath.Contains(path));
+            ApplicationModel? model = Apps.FirstOrDefault<ApplicationModel>(o => o.AppPath.Contains(path));
             Apps.Remove(model);
             String json = JsonConvert.SerializeObject(Apps);
             //删除原文件写入新文件防止json数据有误
@@ -177,7 +177,7 @@ namespace ModernBoxes.ViewModel
             IList<JToken> templist = jArray.Children().ToList();
             foreach (JToken jToken in templist)
             {
-                if(jToken != null)
+                if (jToken != null)
                 {
                     Apps.Add(jToken.ToObject<ApplicationModel>());
                     //第一次添加应用后将SVG空状态图变为Collapsed

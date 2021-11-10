@@ -2,15 +2,12 @@
 using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
-using ModernBoxes.View.SelfControl;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 
 namespace ModernBoxes.ViewModel
@@ -20,7 +17,7 @@ namespace ModernBoxes.ViewModel
         /// <summary>
         /// 单选按钮默认选择第一个
         /// </summary>
-        private List<Boolean> dirKind = new List<bool>() { true,false,false,false};
+        private List<Boolean> dirKind = new List<bool>() { true, false, false, false };
 
         public List<Boolean> DirKind
         {
@@ -36,7 +33,6 @@ namespace ModernBoxes.ViewModel
             set { dirmodel = value; RaisePropertyChanged("DirModel"); }
         }
 
-
         private List<TempDirModel> tempDirs = new List<TempDirModel>();
 
         public List<TempDirModel> TempDirs
@@ -45,15 +41,14 @@ namespace ModernBoxes.ViewModel
             set { tempDirs = value; }
         }
 
-
-
         /// <summary>
         /// 添加文件夹
         /// </summary>
-        public RelayCommand AddTempDir {
+        public RelayCommand AddTempDir
+        {
             get
             {
-                return new RelayCommand(async(o) =>
+                return new RelayCommand(async (o) =>
                 {
                     if (DirModel.TempDirPath != String.Empty && DirModel.TempDirPath != null)
                     {
@@ -100,7 +95,6 @@ namespace ModernBoxes.ViewModel
                                     TempDirs.Add(jToken.ToObject<TempDirModel>());
                                 }
                             }
-
                         }
                         TempDirs.Add(DirModel);
                         String newJson = JsonConvert.SerializeObject(TempDirs);
@@ -109,7 +103,6 @@ namespace ModernBoxes.ViewModel
                         //UCTempDirectoryViewModel.DoRefershData();
                         UCTempDirectoryViewModel.DoAddTempDirItem(DirModel);
                         Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
-
                     }
                 }, x => true);
             }
@@ -125,7 +118,7 @@ namespace ModernBoxes.ViewModel
                 return new RelayCommand((o) =>
                 {
                     System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
-                    if (dialog.ShowDialog()== System.Windows.Forms.DialogResult.OK)
+                    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         DirModel.TempDirPath = dialog.SelectedPath;
                     }
@@ -133,13 +126,8 @@ namespace ModernBoxes.ViewModel
             }
         }
 
-       
-
-      
-
         public AddTempDirViewModel()
         {
-
         }
 
         public AddTempDirViewModel(String DirPath)

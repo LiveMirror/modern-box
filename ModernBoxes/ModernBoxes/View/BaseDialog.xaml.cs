@@ -1,17 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ModernBoxes.View.SelfControl
 {
@@ -20,7 +10,6 @@ namespace ModernBoxes.View.SelfControl
     /// </summary>
     public partial class BaseDialog : Window
     {
-
         public BaseDialog()
         {
             InitializeComponent();
@@ -35,12 +24,11 @@ namespace ModernBoxes.View.SelfControl
             }
         }
 
-        public BaseDialog(String title,Object content)
+        public BaseDialog(String title, Object content)
         {
             this.TB_DialogTitle.Text = title;
             this.Content = Content;
         }
-
 
         /// <summary>
         /// 设置对黄框标题
@@ -57,7 +45,7 @@ namespace ModernBoxes.View.SelfControl
         /// <param name="content"></param>
         public void SetContent(Object content)
         {
-            if (content!=null)
+            if (content != null)
             {
                 this.DialogContent.Content = content;
             }
@@ -68,7 +56,7 @@ namespace ModernBoxes.View.SelfControl
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        public void setDialogSize(int width,int height)
+        public void setDialogSize(int width, int height)
         {
             this.Width = width;
             this.Height = height;
@@ -89,9 +77,8 @@ namespace ModernBoxes.View.SelfControl
         /// <param name="height"></param>
         public void SetHeight(int height)
         {
-            this.Height= height;
+            this.Height = height;
         }
-
 
         /// <summary>
         /// 关闭对话框

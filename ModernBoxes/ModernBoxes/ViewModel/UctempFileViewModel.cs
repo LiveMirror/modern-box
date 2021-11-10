@@ -7,22 +7,22 @@ using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershFileDataHandler();
+
     public delegate void AddFileItemHandler(TempFileModel model);
+
     public class UctempFileViewModel : ViewModelBase
     {
         public static event RefershFileDataHandler RefershFileDataEvent;
+
         public static event AddFileItemHandler AddFileItemEvent;
 
         private TempFileModel tempFile = new TempFileModel();
@@ -30,28 +30,27 @@ namespace ModernBoxes.ViewModel
         public TempFileModel TempFile
         {
             get { return tempFile; }
-            set { tempFile = value;RaisePropertyChanged("TempFile"); }
+            set { tempFile = value; RaisePropertyChanged("TempFile"); }
         }
-
 
         private ObservableCollection<TempFileModel> tempFiles = new ObservableCollection<TempFileModel>();
 
         public ObservableCollection<TempFileModel> TempFiles
         {
-            get { 
+            get
+            {
                 if (tempFiles.Count > 0)
                 {
                     BgEmptyShow = Visibility.Collapsed;
                 }
                 else
                 {
-                    BgEmptyShow = Visibility.Visible;   
+                    BgEmptyShow = Visibility.Visible;
                 }
                 return tempFiles;
             }
-            set { tempFiles = value;RaisePropertyChanged("TempFiles"); }
+            set { tempFiles = value; RaisePropertyChanged("TempFiles"); }
         }
-
 
         private Visibility bgEmptyShow;
 
@@ -60,7 +59,6 @@ namespace ModernBoxes.ViewModel
             get { return bgEmptyShow; }
             set { bgEmptyShow = value; RaisePropertyChanged("BgEmptyShow"); }
         }
-
 
         /// <summary>
         /// 新建文件
@@ -73,7 +71,7 @@ namespace ModernBoxes.ViewModel
                 {
                     BaseDialog baseDialog = new BaseDialog();
                     baseDialog.SetTitle("新建文件");
-                    AddTempFileDialog addTempFileDialog= new AddTempFileDialog();
+                    AddTempFileDialog addTempFileDialog = new AddTempFileDialog();
                     addTempFileDialog.ChangeToNewDirUI();
                     baseDialog.SetHeight(200);
                     baseDialog.SetContent(addTempFileDialog);
@@ -115,7 +113,8 @@ namespace ModernBoxes.ViewModel
                         process.StartInfo = processStartInfo;
                         process.StartInfo.UseShellExecute = true;
                         process.Start();
-                    }catch (Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         BaseDialog dialog = new BaseDialog();
                         dialog.SetTitle("错误");
@@ -178,7 +177,6 @@ namespace ModernBoxes.ViewModel
             }
         }
 
-
         private void UctempFileViewModel_RefershFileDataEvent()
         {
             TempFiles.Clear();
@@ -197,11 +195,11 @@ namespace ModernBoxes.ViewModel
         private async void init()
         {
             String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempFileConfig.json");
-            if (json.Length>8)
+            if (json.Length > 8)
             {
                 JArray jArray = JArray.Parse(json);
                 jArray.Children().ToList().ForEach(x => TempFiles.Add(x.ToObject<TempFileModel>()));
-                if (jArray.Count>0)
+                if (jArray.Count > 0)
                 {
                     BgEmptyShow = Visibility.Collapsed;
                 }

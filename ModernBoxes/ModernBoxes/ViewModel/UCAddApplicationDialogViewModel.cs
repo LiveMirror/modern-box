@@ -7,11 +7,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
-using System.Drawing.Drawing2D;
-using System.Drawing;
-using System.IO;
-using System.Windows.Media.Imaging;
 
 namespace ModernBoxes.ViewModel
 {
@@ -25,14 +20,13 @@ namespace ModernBoxes.ViewModel
             set { appModel = value; RaisePropertyChanged("AppModel"); }
         }
 
-        private List<ApplicationModel> usedList = new List<ApplicationModel>(); 
+        private List<ApplicationModel> usedList = new List<ApplicationModel>();
 
         public List<ApplicationModel> UsedList
         {
             get { return usedList; }
             set { usedList = value; }
         }
-
 
         /// <summary>
         /// 添加应用
@@ -41,10 +35,11 @@ namespace ModernBoxes.ViewModel
         {
             get
             {
-                return new RelayCommand(async (o)=>{
+                return new RelayCommand(async (o) =>
+                {
                     try
                     {
-                        if(AppModel.AppPath != String.Empty)
+                        if (AppModel.AppPath != String.Empty)
                         {
                             String oldJson = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\UsedApplicationConfig.json");
                             if (oldJson.Length > 8)
@@ -63,13 +58,13 @@ namespace ModernBoxes.ViewModel
                             {
                                 UsedList.Add(AppModel);
                             }
-                            if (AppModel.Icon==String.Empty||AppModel.Icon==null)
+                            if (AppModel.Icon == String.Empty || AppModel.Icon == null)
                             {
                                 //采用默认的可执行文件图标
                                 String iconPath = $"{Environment.CurrentDirectory}\\icons\\";
                                 String FileName = $"{Convert.ToString(DateTime.Now.Year) + DateTime.Now.Month + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second}.ico";
-                                GetIcon.getFileIcon(AppModel.AppPath,iconPath,FileName);
-                                AppModel.Icon = iconPath+FileName;
+                                GetIcon.getFileIcon(AppModel.AppPath, iconPath, FileName);
+                                AppModel.Icon = iconPath + FileName;
                             }
                             String newJson = JsonConvert.SerializeObject(UsedList);
                             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\UsedApplicationConfig.json", newJson);
@@ -82,9 +77,8 @@ namespace ModernBoxes.ViewModel
                     }
                     catch (Exception ex)
                     {
-
                     }
-                },x=>true);
+                }, x => true);
             }
         }
 
@@ -103,14 +97,15 @@ namespace ModernBoxes.ViewModel
                     {
                         AppModel.AppPath = openFileDialog.FileName;
                     }
-                },x=>true);
+                }, x => true);
             }
         }
 
         /// <summary>
         /// 选择图标路径
         /// </summary>
-        public RelayCommand ChosePhotoPath {
+        public RelayCommand ChosePhotoPath
+        {
             get
             {
                 return new RelayCommand((o) =>
@@ -124,9 +119,9 @@ namespace ModernBoxes.ViewModel
                 }, x => true);
             }
         }
+
         public UCAddApplicationDialogViewModel()
         {
-
         }
     }
 }

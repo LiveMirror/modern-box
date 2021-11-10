@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ModernBoxes.Tool
@@ -23,7 +19,6 @@ namespace ModernBoxes.Tool
             this.m_execute = m_execute;
         }
 
-
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
@@ -43,6 +38,5 @@ namespace ModernBoxes.Tool
         {
             this.m_execute(parameter);
         }
-
     }
 }

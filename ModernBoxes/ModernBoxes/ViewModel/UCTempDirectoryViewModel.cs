@@ -7,28 +7,29 @@ using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershTTempDirDataHandler();
+
     public delegate void AddTempDirHandler(TempDirModel model);
+
     public class UCTempDirectoryViewModel : ViewModelBase
     {
         public static event RefershTTempDirDataHandler RefershDataEvent;
+
         public static event AddTempDirHandler AddTempDirEvent;
 
         private ObservableCollection<TempDirModel> tempDirs = new ObservableCollection<TempDirModel>();
 
         public ObservableCollection<TempDirModel> TempDirs
         {
-            get { 
+            get
+            {
                 if (tempDirs.Count > 0)
                 {
                     BgEmptyShow = Visibility.Collapsed;
@@ -37,9 +38,9 @@ namespace ModernBoxes.ViewModel
                 {
                     BgEmptyShow = Visibility.Visible;
                 }
-                return tempDirs; 
+                return tempDirs;
             }
-            set { tempDirs = value;RaisePropertyChanged("TempDirs"); }
+            set { tempDirs = value; RaisePropertyChanged("TempDirs"); }
         }
 
         private Visibility bgEmptyShow = Visibility.Visible;
@@ -47,9 +48,8 @@ namespace ModernBoxes.ViewModel
         public Visibility BgEmptyShow
         {
             get { return bgEmptyShow; }
-            set { bgEmptyShow = value;RaisePropertyChanged("BgEmptyShow"); }
+            set { bgEmptyShow = value; RaisePropertyChanged("BgEmptyShow"); }
         }
-
 
         /// <summary>
         /// 添加临时文件夹
@@ -78,7 +78,7 @@ namespace ModernBoxes.ViewModel
             {
                 return new RelayCommand((o) =>
                 {
-                    System.Diagnostics.Process.Start("explorer.exe", o.ToString().Replace('/','\\'));
+                    System.Diagnostics.Process.Start("explorer.exe", o.ToString().Replace('/', '\\'));
                 }, x => true);
             }
         }
@@ -101,7 +101,6 @@ namespace ModernBoxes.ViewModel
                 }, x => true);
             }
         }
-
 
         public UCTempDirectoryViewModel()
         {
@@ -152,7 +151,6 @@ namespace ModernBoxes.ViewModel
             RefershDataEvent();
         }
 
-
         /// <summary>
         /// 加载数据
         /// </summary>
@@ -161,8 +159,8 @@ namespace ModernBoxes.ViewModel
         {
             String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\TempDirConfig.json");
             JArray jArray = JArray.Parse(json);
-            jArray.Children().ToList().ForEach(x=>TempDirs.Add(x.ToObject<TempDirModel>()));
-            if (jArray.Children().ToList().Count>0)
+            jArray.Children().ToList().ForEach(x => TempDirs.Add(x.ToObject<TempDirModel>()));
+            if (jArray.Children().ToList().Count > 0)
             {
                 BgEmptyShow = Visibility.Collapsed;
             }

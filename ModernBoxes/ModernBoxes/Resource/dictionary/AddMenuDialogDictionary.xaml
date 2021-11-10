@@ -3,13 +3,13 @@
     <Style x:Key="closeStyle" TargetType="Button">
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="#5687FA"/>
+                <Setter Property="Foreground" Value="#5687FA" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="False">
-                <Setter Property="Foreground" Value="#085bfd"/>
+                <Setter Property="Foreground" Value="#085bfd" />
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Foreground" Value="#adc4fa"/>
+                <Setter Property="Foreground" Value="#adc4fa" />
             </Trigger>
         </Style.Triggers>
     </Style>

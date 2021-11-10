@@ -1,3 +1,1 @@
-[
-
-]
+[{"CardID":0,"CardName":"一言","CardContent":null,"CardHeight":100.0,"Priview":"/Resource/image/previews/onenote1.png","IsChecked":true,"IsInDesignMode":false},{"CardID":1,"CardName":"应用","CardContent":null,"CardHeight":235.0,"Priview":"/Resource/image/previews/application.png","IsChecked":true,"IsInDesignMode":false},{"CardID":2,"CardName":"文件夹","CardContent":null,"CardHeight":235.0,"Priview":"/Resource/image/previews/dir1.png","IsChecked":true,"IsInDesignMode":false},{"CardID":3,"CardName":"文件","CardContent":null,"CardHeight":235.0,"Priview":"/Resource/image/previews/file1.png","IsChecked":true,"IsInDesignMode":false},{"CardID":4,"CardName":"便签","CardContent":null,"CardHeight":235.0,"Priview":"/Resource/image/previews/notes1.png","IsChecked":false,"IsInDesignMode":false}]

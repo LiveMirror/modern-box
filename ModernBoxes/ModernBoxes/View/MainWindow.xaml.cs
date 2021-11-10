@@ -2,7 +2,6 @@
 using ModernBoxes.Model;
 using ModernBoxes.MyEnum;
 using ModernBoxes.Tool;
-using ModernBoxes.View;
 using ModernBoxes.View.SelfControl;
 using ModernBoxes.View.SelfControl.dialog;
 using ModernBoxes.ViewModel;
@@ -11,48 +10,44 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ModernBoxes
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
+    ///
 
     public delegate void CloseCompontentLayoutHandler();
+
     /// <summary>
     /// 获取或设置主窗体的宽高
     /// </summary>
     /// <returns></returns>
     public delegate Double getMainWindowHeightHandler();
+
     public delegate void SetMainWidnowHeightHandler(Double value);
+
     /// <summary>
     /// 获取或设置卡片的宽高
     /// </summary>
     /// <returns></returns>
     public delegate Double getCompontentWidthHandler();
+
     public delegate void SetCompontentWidthHandler(Double value);
+
     public partial class MainWindow : Window
     {
-
         public static event CloseCompontentLayoutHandler CloseCompontentLayoutEvent;
+
         public static event getMainWindowHeightHandler GetMainWindowHeightEvent;
+
         public static event SetMainWidnowHeightHandler SetMainWindowHeightEvent;
+
         public static event getCompontentWidthHandler GetCompontentWidthEvent;
+
         public static event SetCompontentWidthHandler SetCompontentWidthEvent;
 
         public List<CardContentModel> CardApps = new List<CardContentModel>();
@@ -60,7 +55,7 @@ namespace ModernBoxes
         /// <summary>
         /// 布局方向
         /// </summary>
-        CommentLayout commentLayout = CommentLayout.right;
+        private CommentLayout commentLayout = CommentLayout.right;
 
         public MainWindow()
         {
@@ -78,7 +73,6 @@ namespace ModernBoxes
                 this.WindowStartupLocation = WindowStartupLocation.Manual;
                 this.Left = Convert.ToInt32(ConfigHelper.getConfig("x"));
                 this.Top = Convert.ToInt32(ConfigHelper.getConfig("y"));
-
             }
             this.DataContext = new MainViewModel();
             this.window.MouseLeftButtonDown += Window_MouseLeftButtonDown;
@@ -89,12 +83,7 @@ namespace ModernBoxes
             Messenger.Default.Register<Boolean>(this, "isShow", ShowCardApplaction);
 
             loadComment();
-
         }
-
-       
-
-
 
         /// <summary>
         /// 初始化配置文件
@@ -112,15 +101,14 @@ namespace ModernBoxes
                 //默认设置不自启动
                 ConfigHelper.setConfig("autoOpen", false);
                 //卡片配置文件生成
-                CardApps.Add(new CardContentModel() { CardName = "一言", IsChecked = true,CardID = 0, CardHeight = 100,Priview= "/Resource/image/previews/onenote1.png" });
+                CardApps.Add(new CardContentModel() { CardName = "一言", IsChecked = true, CardID = 0, CardHeight = 100, Priview = "/Resource/image/previews/onenote1.png" });
                 CardApps.Add(new CardContentModel() { CardName = "应用", IsChecked = true, CardID = 1, CardHeight = 235, Priview = "/Resource/image/previews/application.png" });
                 CardApps.Add(new CardContentModel() { CardName = "文件夹", IsChecked = true, CardID = 2, CardHeight = 235, Priview = "/Resource/image/previews/dir1.png" });
                 CardApps.Add(new CardContentModel() { CardName = "文件", IsChecked = true, CardID = 3, CardHeight = 235, Priview = "/Resource/image/previews/file1.png" });
                 CardApps.Add(new CardContentModel() { CardName = "便签", IsChecked = false, CardID = 4, CardHeight = 235, Priview = "/Resource/image/previews/notes1.png" });
                 string CardJson = JsonConvert.SerializeObject(CardApps);
-                await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json",CardJson);
+                await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json", CardJson);
             }
-
         }
 
         /// <summary>
@@ -176,7 +164,6 @@ namespace ModernBoxes
             //根据配置文件中的布局参数重新加载
             loadComment();
         }
-       
 
         /// <summary>
         /// 控制窗体固定
@@ -199,7 +186,6 @@ namespace ModernBoxes
                 btn_fixed.IsChecked = true;
             }
         }
-
 
         /// <summary>
         /// 窗体拖拽事件
@@ -225,13 +211,13 @@ namespace ModernBoxes
             BottomItem.IsChecked = false;
             this.Topmost = true;
         }
+
         private void BottomItem_Click(object sender, RoutedEventArgs e)
         {
             topItem.IsChecked = false;
             BottomItem.IsChecked = true;
             this.Topmost = false;
         }
-
 
         /// <summary>
         /// 设置主界面的高
@@ -243,10 +229,12 @@ namespace ModernBoxes
         {
             this.Height = value;
         }
+
         public static void DoSetMainWindowHeight(Double value)
         {
             SetMainWindowHeightEvent(value);
         }
+
         /// <summary>
         /// 获取主界面的高
         /// </summary>
@@ -256,6 +244,7 @@ namespace ModernBoxes
         {
             return this.Height;
         }
+
         public static Double DoGetMainWindowHeight()
         {
             return GetMainWindowHeightEvent();
@@ -271,6 +260,7 @@ namespace ModernBoxes
             compontentLayoutLeft.Width = value;
             compontentLayoutRight.Width = value;
         }
+
         public static void DoSetCompontentWidth(Double value)
         {
             SetCompontentWidthEvent(value);
@@ -280,11 +270,11 @@ namespace ModernBoxes
         {
             return compontentLayoutLeft.Width;
         }
+
         public static Double DoGetCompontentWidth()
         {
             return GetCompontentWidthEvent();
         }
-
 
         /// <summary>
         /// 关闭窗口
@@ -294,8 +284,8 @@ namespace ModernBoxes
         private void MenuItem_Click_To_CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
-
         }
+
         /// <summary>
         /// 重写关闭方法
         /// </summary>

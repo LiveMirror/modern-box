@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ModernBoxes.Tool
 {
     public class FileHelper
     {
-
-        public static async Task<bool> WriteFile(String path,String Content)
+        public static async Task<bool> WriteFile(String path, String Content)
         {
             FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate);
             StreamWriter streamWriter = new StreamWriter(fileStream);
             try
             {
                 await streamWriter.WriteAsync(Content);
-               
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }
@@ -30,8 +26,6 @@ namespace ModernBoxes.Tool
             return true;
         }
 
-
-
         public static async Task<String> ReadFile(String path)
         {
             FileStream fileStream = new FileStream(path, FileMode.Open);
@@ -41,8 +35,6 @@ namespace ModernBoxes.Tool
             fileStream.Close();
             return content;
         }
-
-
 
         public static void CopyFolder(string strFromPath, string strToPath)
         {

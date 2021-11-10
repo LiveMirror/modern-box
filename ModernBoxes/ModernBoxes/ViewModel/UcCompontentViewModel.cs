@@ -1,25 +1,23 @@
 ﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Messaging;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
 using ModernBoxes.View.SelfControl;
 using ModernBoxes.View.SelfControl.dialog;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershCardContentsHandler();
-    public delegate void ChangeCardAppHeightHandler(int CardId,Double height);
+
+    public delegate void ChangeCardAppHeightHandler(int CardId, Double height);
+
     public class UcCompontentViewModel : ViewModelBase
     {
         public static event RefershCardContentsHandler RefershCardContentsEvent;
+
         public static event ChangeCardAppHeightHandler ChangeCardAppHeightEvent;
 
         /// <summary>
@@ -34,7 +32,6 @@ namespace ModernBoxes.ViewModel
             set { cardContents = value; RaisePropertyChanged("CardContents"); }
         }
 
-
         public UcCompontentViewModel()
         {
             RefershCardContentsEvent += UcCompontentViewModel_RefershCardContentsEvent;
@@ -44,26 +41,27 @@ namespace ModernBoxes.ViewModel
 
         private void UcCompontentViewModel_ChangeCardAppHeightEvent(int CardId, double height)
         {
-           CardContents.FirstOrDefault(o => o.CardID == CardId).CardHeight = height;
+            CardContents.FirstOrDefault(o => o.CardID == CardId).CardHeight = height;
         }
-        public static void DoChangeCardAppHeight(int CardId,Double height)
+
+        public static void DoChangeCardAppHeight(int CardId, Double height)
         {
-            ChangeCardAppHeightEvent(CardId,height);
+            ChangeCardAppHeightEvent(CardId, height);
         }
 
         /// <summary>
         /// 刷新卡片数据
         /// </summary>
-        private  void UcCompontentViewModel_RefershCardContentsEvent()
+        private void UcCompontentViewModel_RefershCardContentsEvent()
         {
             CardContents.Clear();
-             loadCardContent();
+            loadCardContent();
         }
+
         public static void DoloadCardContent()
         {
             RefershCardContentsEvent();
         }
-
 
         /// <summary>
         /// 加载卡片内容
@@ -81,24 +79,29 @@ namespace ModernBoxes.ViewModel
                         switch (o.ToObject<CardContentModel>().CardID)
                         {
                             case 0:
-                                CardContents.Add(new CardContentModel() { CardName = "一言",CardID= o.ToObject<CardContentModel>().CardID, CardHeight= o.ToObject<CardContentModel>().CardHeight, CardContent = new UCOneWord()});
+                                CardContents.Add(new CardContentModel() { CardName = "一言", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCOneWord() });
                                 break;
+
                             case 1:
                                 CardContents.Add(new CardContentModel() { CardName = "应用", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCusedApplications() });
                                 break;
+
                             case 2:
                                 CardContents.Add(new CardContentModel() { CardName = "文件夹", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCtempDirectory() });
                                 break;
+
                             case 3:
                                 CardContents.Add(new CardContentModel() { CardName = "文件", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UcTempFile() });
                                 break;
+
                             case 4:
                                 CardContents.Add(new CardContentModel() { CardName = "便签", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCnotes() });
                                 break;
                         }
                     }
                 });
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 BaseDialog baseDialog = new BaseDialog();
                 baseDialog.SetTitle("错误");

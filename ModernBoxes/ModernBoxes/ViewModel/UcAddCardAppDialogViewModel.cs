@@ -3,17 +3,12 @@ using GalaSoft.MvvmLight.Messaging;
 using HandyControl.Controls;
 using ModernBoxes.Model;
 using ModernBoxes.Tool;
-using ModernBoxes.View.SelfControl;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace ModernBoxes.ViewModel
 {
@@ -38,9 +33,8 @@ namespace ModernBoxes.ViewModel
                     {
                         String tag = previewSlider.Tag.ToString();
                         Double value = previewSlider.Value;
-                        UcCompontentViewModel.DoChangeCardAppHeight(Convert.ToInt32(tag),value);
+                        UcCompontentViewModel.DoChangeCardAppHeight(Convert.ToInt32(tag), value);
                     }
-
                 }, x => true);
             }
         }
@@ -56,7 +50,7 @@ namespace ModernBoxes.ViewModel
         {
             String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json");
             JArray jArray = JArray.Parse(json);
-            jArray.Children().ToList().ForEach(o =>CardApps.Add(o.ToObject<CardContentModel>()));
+            jArray.Children().ToList().ForEach(o => CardApps.Add(o.ToObject<CardContentModel>()));
         }
 
         public async void SaveData(Boolean bol)
@@ -70,6 +64,5 @@ namespace ModernBoxes.ViewModel
             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json", newJson);
             UcCompontentViewModel.DoloadCardContent();
         }
-
     }
 }

@@ -1,25 +1,17 @@
 ﻿using GalaSoft.MvvmLight;
 using ModernBoxes.MyEnum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernBoxes.Model
 {
-
     public class TempDirModel : ViewModelBase
     {
-
-
-
         private String tempDirPath;
 
         public String TempDirPath
         {
             get { return tempDirPath; }
-            set { tempDirPath = value;RaisePropertyChanged("TempDirPath"); }
+            set { tempDirPath = value; RaisePropertyChanged("TempDirPath"); }
         }
 
         /// <summary>
@@ -33,9 +25,7 @@ namespace ModernBoxes.Model
         public DirEnum TempDirImportantKind
         {
             get { return tempDirImportantKind; }
-            set { tempDirImportantKind = value;RaisePropertyChanged("TempDirImportantKind"); }
+            set { tempDirImportantKind = value; RaisePropertyChanged("TempDirImportantKind"); }
         }
-
-
     }
 }
