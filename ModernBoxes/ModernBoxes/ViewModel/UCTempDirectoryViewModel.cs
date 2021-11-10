@@ -18,9 +18,11 @@ using System.Windows;
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershTTempDirDataHandler();
+    public delegate void AddTempDirHandler(TempDirModel model);
     public class UCTempDirectoryViewModel : ViewModelBase
     {
         public static event RefershTTempDirDataHandler RefershDataEvent;
+        public static event AddTempDirHandler AddTempDirEvent;
 
         private ObservableCollection<TempDirModel> tempDirs = new ObservableCollection<TempDirModel>();
 
@@ -105,8 +107,24 @@ namespace ModernBoxes.ViewModel
         {
             Messenger.Default.Register<String>(this, "detempdir", DoDeleteTempDir);
             RefershDataEvent += RefershData;
+            AddTempDirEvent += UCTempDirectoryViewModel_AddTempDirEvent;
             init();
         }
+
+        /// <summary>
+        /// 添加临时文件夹
+        /// </summary>
+        /// <param name="model"></param>
+        private void UCTempDirectoryViewModel_AddTempDirEvent(TempDirModel model)
+        {
+            TempDirs.Add(model);
+        }
+
+        public static void DoAddTempDirItem(TempDirModel model)
+        {
+            AddTempDirEvent(model);
+        }
+
         /// <summary>
         /// 删除临时文件夹
         /// </summary>

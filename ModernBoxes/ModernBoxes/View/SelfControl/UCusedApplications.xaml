@@ -30,15 +30,18 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Style="{DynamicResource ApplicationItemStyle}" 
+                                <hc:TransitioningContentControl>
+                                    <Button Style="{DynamicResource ApplicationItemStyle}" 
                                     CommandParameter="{Binding AppPath}" 
                                     Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl},Path=DataContext.RunApplication}">
-                                    <Button.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem VerticalContentAlignment="Center" Icon="&#xe617;" FontFamily="/Resource/#iconfont" Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
-                                        </ContextMenu>
-                                    </Button.ContextMenu>
-                                </Button>
+                                        <Button.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem VerticalContentAlignment="Center" Icon="&#xe617;" FontFamily="/Resource/#iconfont" Header="删除" Click="MenuItem_Click" CommandParameter="{Binding AppPath}" />
+                                            </ContextMenu>
+                                        </Button.ContextMenu>
+                                    </Button>
+                                </hc:TransitioningContentControl>
+
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.Template>

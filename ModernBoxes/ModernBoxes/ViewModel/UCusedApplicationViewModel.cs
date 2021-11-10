@@ -19,9 +19,11 @@ using System.Windows;
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershDataHandler();
+    public delegate void AddUsedAppHandler(ApplicationModel model);
     public class UCusedApplicationViewModel : ViewModelBase
     {
         public static event RefershDataHandler RefershDataEvent;
+        public static event AddUsedAppHandler AddUsedAppEvent;
         /// <summary>
         /// 日常应用集合
         /// </summary>
@@ -119,9 +121,26 @@ namespace ModernBoxes.ViewModel
         public UCusedApplicationViewModel()
         {
             RefershDataEvent += UCusedApplicationViewModel_RefershDataEvent;
+            AddUsedAppEvent += UCusedApplicationViewModel_AddUsedAppEvent;
             Messenger.Default.Register<String>(this, "path", toDeleteApplication);
             loadUsedApplication();
         }
+
+        /// <summary>
+        /// 添加日常应用
+        /// </summary>
+        /// <param name="model"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void UCusedApplicationViewModel_AddUsedAppEvent(ApplicationModel model)
+        {
+            Apps.Add(model);
+        }
+
+        public static void DoAddUsedApp(ApplicationModel model)
+        {
+            AddUsedAppEvent(model);
+        }
+
 
         /// <summary>
         /// 删除日常应用
@@ -134,7 +153,7 @@ namespace ModernBoxes.ViewModel
             //删除原文件写入新文件防止json数据有误
             File.Delete($"{Environment.CurrentDirectory}\\UsedApplicationConfig.json");
             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\UsedApplicationConfig.json", json);
-            DoRefershData();
+            //DoRefershData();
         }
 
         private void UCusedApplicationViewModel_RefershDataEvent()

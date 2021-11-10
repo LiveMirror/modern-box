@@ -105,7 +105,9 @@ namespace ModernBoxes.ViewModel
                         TempDirs.Add(DirModel);
                         String newJson = JsonConvert.SerializeObject(TempDirs);
                         await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempDirConfig.json", newJson);
-                        UCTempDirectoryViewModel.DoRefershData();
+                        //刷新
+                        //UCTempDirectoryViewModel.DoRefershData();
+                        UCTempDirectoryViewModel.DoAddTempDirItem(DirModel);
                         Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
 
                     }

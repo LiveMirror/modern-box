@@ -19,9 +19,11 @@ using System.Windows;
 namespace ModernBoxes.ViewModel
 {
     public delegate void RefershFileDataHandler();
+    public delegate void AddFileItemHandler(TempFileModel model);
     public class UctempFileViewModel : ViewModelBase
     {
         public static event RefershFileDataHandler RefershFileDataEvent;
+        public static event AddFileItemHandler AddFileItemEvent;
 
         private TempFileModel tempFile = new TempFileModel();
 
@@ -128,10 +130,25 @@ namespace ModernBoxes.ViewModel
         public UctempFileViewModel()
         {
             RefershFileDataEvent += UctempFileViewModel_RefershFileDataEvent;
+            AddFileItemEvent += UctempFileViewModel_AddFileItemEvent;
             Messenger.Default.Register<String>(this, "deleteFile", DoDeleteFile);
             init();
         }
 
+        /// <summary>
+        /// 添加临时文件
+        /// </summary>
+        /// <param name="model"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void UctempFileViewModel_AddFileItemEvent(TempFileModel model)
+        {
+            TempFiles.Add(model);
+        }
+
+        public static void DoAddFileItem(TempFileModel model)
+        {
+            AddFileItemEvent(model);
+        }
 
         /// <summary>
         /// 删除文件
@@ -139,14 +156,25 @@ namespace ModernBoxes.ViewModel
         /// <param name="FilePath"></param>
         public async void DoDeleteFile(String FilePath)
         {
-            TempFileModel? tempFileModel = TempFiles.FirstOrDefault(o => o.FilePath == FilePath);
-            if (tempFileModel != null)
+            try
             {
-                TempFiles.Remove(tempFileModel);
-                File.Delete(FilePath);
-                String json = JsonConvert.SerializeObject(TempFiles);
-                File.Delete($"{Environment.CurrentDirectory}\\TempFileConfig.json");
-                await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", json);
+                TempFileModel? tempFileModel = TempFiles.FirstOrDefault(o => o.FilePath == FilePath);
+                if (tempFileModel != null)
+                {
+                    TempFiles.Remove(tempFileModel);
+                    File.Delete(FilePath);
+                    String json = JsonConvert.SerializeObject(TempFiles);
+                    File.Delete($"{Environment.CurrentDirectory}\\TempFileConfig.json");
+                    await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", json);
+                }
+            }
+            catch (Exception ex)
+            {
+                BaseDialog baseDialog = new BaseDialog();
+                UcMessageDialog ucMessageDialog = new UcMessageDialog(ex.Message, MyEnum.MessageDialogState.waring);
+                baseDialog.SetTitle("警告");
+                baseDialog.SetContent(ucMessageDialog);
+                baseDialog.ShowDialog();
             }
         }
 

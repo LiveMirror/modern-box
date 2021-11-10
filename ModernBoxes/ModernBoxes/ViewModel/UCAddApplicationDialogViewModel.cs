@@ -74,7 +74,8 @@ namespace ModernBoxes.ViewModel
                             String newJson = JsonConvert.SerializeObject(UsedList);
                             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\UsedApplicationConfig.json", newJson);
                             //刷新数据
-                            UCusedApplicationViewModel.DoRefershData();
+                            //UCusedApplicationViewModel.DoRefershData();
+                            UCusedApplicationViewModel.DoAddUsedApp(AppModel);
                             //关闭对话框
                             Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
                         }

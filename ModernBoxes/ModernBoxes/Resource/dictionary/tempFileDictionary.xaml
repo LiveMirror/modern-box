@@ -2,6 +2,7 @@
                     xmlns:tool="clr-namespace:ModernBoxes.Tool.convert"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <tool:FileIconTypeConvert x:Key="iconConvert"/>
+    <tool:FileKindConvert x:Key="FileImportantKind"/>
     <tool:GetDirNameFrompathConvert x:Key="getFileName"/>
     <Style x:Key="tempFileStyle" TargetType="Button">
         <Setter Property="FontFamily" Value="/Resource/#iconfont"/>
@@ -10,14 +11,17 @@
                 <ControlTemplate TargetType="Button">
                     <Border Width="70" Height="70" CornerRadius="5" x:Name="border" Margin="6">
                         <DockPanel>
-                            <Image 
-                                DockPanel.Dock="Top" 
+                            <Grid DockPanel.Dock="Top" >
+                                <Image 
                                 Margin="0 5 0 5"
                                 Source="{Binding FilePath,Converter={StaticResource iconConvert}}"
                                 VerticalAlignment="Center" 
                                 HorizontalAlignment="Center" 
                                 Width="40" 
                                 Height="40"/>
+                                <Border Width="10" Height="10" CornerRadius="5" Background="{Binding FileKind,Converter={StaticResource FileImportantKind}}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 15 0"/>
+                            </Grid>
+
                             <TextBlock 
                                 Margin="0 0 0 5" 
                                 DockPanel.Dock="Bottom"

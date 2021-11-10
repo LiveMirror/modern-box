@@ -119,7 +119,8 @@ namespace ModernBoxes.ViewModel
                             String newJson = JsonConvert.SerializeObject(tempFiles);
                             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", newJson);
                             //刷新数据
-                            UctempFileViewModel.DoRefershFileData();
+                            //UctempFileViewModel.DoRefershFileData();
+                            UctempFileViewModel.DoAddFileItem(TempFile);
                             Messenger.Default.Send<Boolean>(true, "IsCloseBaseDialog");
                         }
                         catch (Exception ex)
