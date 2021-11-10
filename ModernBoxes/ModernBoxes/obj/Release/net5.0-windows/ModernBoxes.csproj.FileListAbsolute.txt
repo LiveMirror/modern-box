@@ -115,3 +115,10 @@ D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\dialog\UCSetDialog.baml
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\UcCompotent.baml
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\UcTempFile.baml
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Release\net5.0-windows\AllCardsConfig.json
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\Interop.IWshRuntimeLibrary.dll
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\Resource\dictionary\UcAddCardAppDialogDictionary.baml
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\dialog\UcAddCardApplicationDialog.g.cs
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\UcManagerCardApplication.g.cs
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\dialog\UcAddCardApplicationDialog.baml
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\obj\Release\net5.0-windows\View\SelfControl\UcManagerCardApplication.baml

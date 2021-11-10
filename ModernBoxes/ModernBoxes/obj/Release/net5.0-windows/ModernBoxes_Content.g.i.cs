@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("allcardsconfig.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app.config")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("menuconfig.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/image/3d.png")]

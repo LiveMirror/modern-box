@@ -1,4 +1,5 @@
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Release\net5.0-windows\publish\ModernBoxes.exe
+D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Release\net5.0-windows\publish\AllCardsConfig.json
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Release\net5.0-windows\publish\App.config
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Release\net5.0-windows\publish\MenuConfig.json
 D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\bin\Release\net5.0-windows\publish\Resource\image\3d.png
