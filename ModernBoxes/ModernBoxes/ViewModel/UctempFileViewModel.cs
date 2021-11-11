@@ -131,7 +131,23 @@ namespace ModernBoxes.ViewModel
             RefershFileDataEvent += UctempFileViewModel_RefershFileDataEvent;
             AddFileItemEvent += UctempFileViewModel_AddFileItemEvent;
             Messenger.Default.Register<String>(this, "deleteFile", DoDeleteFile);
+            Messenger.Default.Register<String>(this, "RemoveFile", RemoveFile);
             init();
+        }
+
+        /// <summary>
+        /// 移除文件，在文件卡片中删除但是不删除源文件
+        /// </summary>
+        /// <param name="FilePath"></param>
+        public async void RemoveFile(String FilePath)
+        {
+            if (File.Exists(FilePath))
+            {
+                TempFiles.Remove(TempFiles.FirstOrDefault(o => o.FilePath == FilePath));
+                String newJson = JsonConvert.SerializeObject(TempFiles);
+                File.Delete($"{Environment.CurrentDirectory}\\TempFileConfig.json");
+                await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", newJson);
+            }
         }
 
         /// <summary>

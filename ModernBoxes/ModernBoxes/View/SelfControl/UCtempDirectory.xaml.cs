@@ -2,6 +2,7 @@
 using ModernBoxes.View.SelfControl.dialog;
 using ModernBoxes.ViewModel;
 using System;
+using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -47,10 +48,32 @@ namespace ModernBoxes.View.SelfControl
         {
             String? dirPath = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
             BaseDialog baseDialog = new BaseDialog();
-            baseDialog.SetTitle("添加文件夹");
-            baseDialog.SetHeight(255);
-            baseDialog.SetContent(new AddTempDirDialog(dirPath));
+            if (Directory.Exists(dirPath))
+            {
+                baseDialog.SetTitle("添加文件夹");
+                baseDialog.SetHeight(255);
+                baseDialog.SetContent(new AddTempDirDialog(dirPath));
+            }
+            else
+            {
+                baseDialog.SetTitle("提示");
+                baseDialog.SetHeight(170);
+                UcMessageDialog ucMessage = new UcMessageDialog("抱歉,只有文件夹才可以放进来哦", MyEnum.MessageDialogState.Info);
+                baseDialog.SetContent(ucMessage);
+            }
             baseDialog.ShowDialog();
+        }
+
+
+        /// <summary>
+        /// 移除临时文件夹
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveTempDir_Click(object sender, RoutedEventArgs e)
+        {
+            String? dirPath = sender.GetType().GetProperty("CommandParameter").GetValue(sender).ToString();
+            Messenger.Default.Send<String>(dirPath, "RemoveTempDir");
         }
     }
 }

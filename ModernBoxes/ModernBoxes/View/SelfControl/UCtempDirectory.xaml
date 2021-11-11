@@ -39,6 +39,15 @@
                                         <Button.ContextMenu>
                                             <ContextMenu>
                                                 <MenuItem
+                                                    Icon="&#xe61b;"
+                                                    Name="RemoveTempDir"
+                                                    Click="RemoveTempDir_Click"
+                                                    FontFamily="/Resource/#iconfont"
+                                                    CommandParameter="{Binding TempDirPath}"
+                                                    VerticalContentAlignment="Center"
+                                                    Header="移除"
+                                                    />
+                                                <MenuItem
                                                 Icon="&#xe617;"
                                                 VerticalAlignment="Center"
                                                 Click="MenuItem_Click"

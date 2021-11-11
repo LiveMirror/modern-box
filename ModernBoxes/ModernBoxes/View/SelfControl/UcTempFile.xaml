@@ -6,6 +6,8 @@
              xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              mc:Ignorable="d"
+             AllowDrop="True"
+             Drop="UserControl_Drop"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -35,6 +37,13 @@
                                 CommandParameter="{Binding FilePath}">
                                         <Button.ContextMenu>
                                             <ContextMenu>
+                                                <MenuItem
+                                                    Header="移除"
+                                                    Click="RemoveFile_Click"
+                                                    Icon="&#xe61b;"
+                                                    CommandParameter="{Binding FilePath}"
+                                                    Name="RemoveFile"
+                                                    FontFamily="/Resource/#iconfont"/>
                                                 <MenuItem
                                                 Icon="&#xe617;"
                                                 VerticalAlignment="Center"

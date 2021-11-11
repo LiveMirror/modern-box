@@ -16,5 +16,5 @@ D:\WareHoues\modern-box\ModernBoxes\ModernBoxes\App.xaml
 219780170801
 Resource\dictionary\AddMenuDialogDictionary.xaml;Resource\dictionary\AddTempDirDialogDictionary.xaml;Resource\dictionary\MainWindowResource.xaml;Resource\dictionary\TempDirectoryDictionary.xaml;Resource\dictionary\tempFileDictionary.xaml;Resource\dictionary\UcAddCardAppDialogDictionary.xaml;Resource\dictionary\UCusedApplicationDictionary.xaml;View\AddMenuDialog.xaml;View\BaseDialog.xaml;View\MainWindow.xaml;View\SelfControl\dialog\AddTempDirDialog.xaml;View\SelfControl\dialog\AddTempFileDialog.xaml;View\SelfControl\dialog\DirInformationDialog.xaml;View\SelfControl\dialog\FilePropertyDialog.xaml;View\SelfControl\dialog\UcAddCardApplicationDialog.xaml;View\SelfControl\dialog\UcMessageDialog.xaml;View\SelfControl\dialog\UCSetDialog.xaml;View\SelfControl\UCAddApplicationDialog.xaml;View\SelfControl\UcCompotent.xaml;View\SelfControl\UcManagerCardApplication.xaml;View\SelfControl\UCnotes.xaml;View\SelfControl\UCOneWord.xaml;View\SelfControl\UCtempDirectory.xaml;View\SelfControl\UcTempFile.xaml;View\SelfControl\UCusedApplications.xaml;
 
-False
+True
 

@@ -105,10 +105,24 @@ namespace ModernBoxes.ViewModel
         public UCTempDirectoryViewModel()
         {
             Messenger.Default.Register<String>(this, "detempdir", DoDeleteTempDir);
+            Messenger.Default.Register<String>(this, "RemoveTempDir", RemoveTempDir);
             RefershDataEvent += RefershData;
             AddTempDirEvent += UCTempDirectoryViewModel_AddTempDirEvent;
             init();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        public void RemoveTempDir(String path)
+        {
+            TempDirs.Remove(TempDirs.FirstOrDefault(o=>o.TempDirPath==path));
+            String newJson = JsonConvert.SerializeObject(TempDirs);
+            File.Delete($"{Environment.CurrentDirectory}\\TempDirConfig.json");
+            FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempDirConfig.json", newJson);
+        }
+
 
         /// <summary>
         /// 添加临时文件夹
@@ -132,6 +146,7 @@ namespace ModernBoxes.ViewModel
         {
             TempDirModel? tempDirModel = TempDirs.FirstOrDefault(x => x.TempDirPath == path);
             TempDirs.Remove(tempDirModel);
+            Directory.Delete(tempDirModel.TempDirPath, true);
             String json = JsonConvert.SerializeObject(TempDirs);
             File.Delete($"{Environment.CurrentDirectory}\\TempDirConfig.json");
             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempDirConfig.json", json);

@@ -123,5 +123,10 @@ namespace ModernBoxes.ViewModel
         public UCAddApplicationDialogViewModel()
         {
         }
+
+        public UCAddApplicationDialogViewModel(String ApplicationPath)
+        {
+            AppModel.AppPath = ApplicationPath;
+        }
     }
 }

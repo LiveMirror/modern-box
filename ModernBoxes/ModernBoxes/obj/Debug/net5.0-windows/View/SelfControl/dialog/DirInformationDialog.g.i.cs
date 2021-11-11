@@ -67,7 +67,8 @@ namespace ModernBoxes.View.SelfControl.dialog {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ModernBoxes;component/view/selfcontrol/dialog/dirinformationdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ModernBoxes;V1.0.0.0;component/view/selfcontrol/dialog/dirinformationdialog.xaml" +
+                    "", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\View\SelfControl\dialog\DirInformationDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

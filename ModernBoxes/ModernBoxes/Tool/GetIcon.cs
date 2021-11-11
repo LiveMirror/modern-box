@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IWshRuntimeLibrary;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -8,6 +9,12 @@ namespace ModernBoxes.Tool
 {
     public class GetIcon
     {
+        /// <summary>
+        /// 获取图标
+        /// </summary>
+        /// <param name="FilePath">文件地址</param>
+        /// <param name="savePath">保存地址</param>
+        /// <param name="FileName">文件名称</param>
         [STAThread]
         public static void getFileIcon(String FilePath, String savePath, String FileName)
         {
@@ -62,6 +69,23 @@ namespace ModernBoxes.Tool
                 //内存回收
                 DestroyIcon(hicon);
             }
+        }
+
+
+        /// <summary>
+        /// 获取快捷方式的目标地址
+        /// </summary>
+        /// <param name="kinkPath"></param>
+        /// <returns></returns>
+        public static String getLinkTarget(String kinkPath)
+        {
+            if (System.IO.File.Exists(kinkPath))
+            {
+                WshShell wshShell = new WshShell();
+                IWshShortcut wshShortcut = wshShell.CreateShortcut(kinkPath);
+                return wshShortcut.TargetPath;
+            }else
+                return String.Empty;
         }
 
         //details: https://msdn.microsoft.com/en-us/library/windows/desktop/ms648075(v=vs.85).aspx

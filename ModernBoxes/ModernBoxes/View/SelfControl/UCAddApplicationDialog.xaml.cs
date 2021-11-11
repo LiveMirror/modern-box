@@ -13,5 +13,12 @@ namespace ModernBoxes.View.SelfControl
             InitializeComponent();
             this.DataContext = new UCAddApplicationDialogViewModel();
         }
+
+        public UCAddApplicationDialog(string ApplicationPath)
+        {
+            InitializeComponent();
+            this.DataContext = new UCAddApplicationDialogViewModel(ApplicationPath);
+        }
+
     }
 }

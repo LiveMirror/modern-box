@@ -35,7 +35,7 @@
                 <Grid Margin="5"  Grid.Column="1">
                     <!--左侧内容-->
                     <hc:Card
-                        hc:BorderElement.CornerRadius="16"
+                        hc:BorderElement.CornerRadius="8"
                         Name="MiddleWindow"
                         Width="{Binding ElementName=Toggle,Path=IsChecked,Converter={StaticResource toconvert}}"
                         Background="White" Effect="{StaticResource EffectShadow1}">
@@ -123,12 +123,12 @@
                 </Grid>
 
                 <!--左侧内容区-->
-                <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="0" Name="compontentLayoutLeft" Visibility="Hidden">
+                <hc:TransitioningContentControl Margin="10 5 10 10" Width="440" Grid.Column="0" Name="compontentLayoutLeft" Visibility="Hidden">
                     <ContentControl x:Name="LeftContent" />
                 </hc:TransitioningContentControl>
 
                 <!--右侧内容区-->
-                <hc:TransitioningContentControl Margin="10" Width="440" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
+                <hc:TransitioningContentControl Margin="10 5 10 10" Width="440" Grid.Column="2" Name="compontentLayoutRight" Visibility="Hidden">
                     <ContentControl x:Name="RightContent" />
                 </hc:TransitioningContentControl>
 

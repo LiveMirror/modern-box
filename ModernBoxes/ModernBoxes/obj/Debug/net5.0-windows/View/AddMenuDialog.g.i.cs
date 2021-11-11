@@ -73,7 +73,7 @@ namespace ModernBoxes.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ModernBoxes;component/view/addmenudialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ModernBoxes;V1.0.0.0;component/view/addmenudialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AddMenuDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
