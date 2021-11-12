@@ -84,7 +84,7 @@ namespace ModernBoxes.Tool
             }
 
             //创建桌面快捷方式
-            this.CreateDesktopQuick(desktopPath, quickName, appAllPath);
+            //this.CreateDesktopQuick(desktopPath, quickName, appAllPath);
         }
 
         /// <summary>

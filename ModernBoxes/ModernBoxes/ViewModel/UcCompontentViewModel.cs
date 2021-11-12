@@ -14,11 +14,15 @@ namespace ModernBoxes.ViewModel
 
     public delegate void ChangeCardAppHeightHandler(int CardId, Double height);
 
+    public delegate void CheckedCardAppHandler(int CardID, bool isShow);
+
     public class UcCompontentViewModel : ViewModelBase
     {
         public static event RefershCardContentsHandler RefershCardContentsEvent;
 
         public static event ChangeCardAppHeightHandler ChangeCardAppHeightEvent;
+
+        public static event CheckedCardAppHandler CheckedCardAppEvent;
 
         /// <summary>
         /// 卡片内容集合
@@ -36,14 +40,39 @@ namespace ModernBoxes.ViewModel
         {
             RefershCardContentsEvent += UcCompontentViewModel_RefershCardContentsEvent;
             ChangeCardAppHeightEvent += UcCompontentViewModel_ChangeCardAppHeightEvent;
+            CheckedCardAppEvent += UcCompontentViewModel_CheckedCardAppEvent;
             loadCardContent();
         }
 
-        private void UcCompontentViewModel_ChangeCardAppHeightEvent(int CardId, double height)
+        private void UcCompontentViewModel_CheckedCardAppEvent(int CardID, bool isShow)
         {
-            CardContents.FirstOrDefault(o => o.CardID == CardId).CardHeight = height;
+            CardContents.FirstOrDefault(o => o.CardID == CardID).IsChecked = isShow;
+        }
+        /// <summary>
+        /// 是否显示卡片
+        /// </summary>
+        /// <param name="CardID"></param>
+        /// <param name="isShow"></param>
+        public static void DoCheckedCardApp(int CardID, bool isShow)
+        {
+            CheckedCardAppEvent(CardID,isShow);
         }
 
+
+        private void UcCompontentViewModel_ChangeCardAppHeightEvent(int CardId, double height)
+        {
+            CardContentModel? cardContentModel = CardContents.FirstOrDefault(o => o.CardID == CardId);
+            if (cardContentModel != null)
+            {
+                cardContentModel.CardHeight = height;
+            }
+        }
+
+        /// <summary>
+        /// 修改卡片高度
+        /// </summary>
+        /// <param name="CardId"></param>
+        /// <param name="height"></param>
         public static void DoChangeCardAppHeight(int CardId, Double height)
         {
             ChangeCardAppHeightEvent(CardId, height);
@@ -74,30 +103,27 @@ namespace ModernBoxes.ViewModel
                 String json = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json");
                 JArray.Parse(json).Children().ToList().ForEach(o =>
                 {
-                    if (o.ToObject<CardContentModel>().IsChecked)
+                    switch (o.ToObject<CardContentModel>().CardID)
                     {
-                        switch (o.ToObject<CardContentModel>().CardID)
-                        {
-                            case 0:
-                                CardContents.Add(new CardContentModel() { CardName = "一言", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCOneWord() });
-                                break;
+                        case 0:
+                            CardContents.Add(new CardContentModel() { CardName = "一言", IsChecked = o.ToObject<CardContentModel>().IsChecked, CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCOneWord() });
+                            break;
 
-                            case 1:
-                                CardContents.Add(new CardContentModel() { CardName = "应用", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCusedApplications() });
-                                break;
+                        case 1:
+                            CardContents.Add(new CardContentModel() { CardName = "应用", IsChecked = o.ToObject<CardContentModel>().IsChecked, CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCusedApplications() });
+                            break;
 
-                            case 2:
-                                CardContents.Add(new CardContentModel() { CardName = "文件夹", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCtempDirectory() });
-                                break;
+                        case 2:
+                            CardContents.Add(new CardContentModel() { CardName = "文件夹", IsChecked = o.ToObject<CardContentModel>().IsChecked, CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCtempDirectory() });
+                            break;
 
-                            case 3:
-                                CardContents.Add(new CardContentModel() { CardName = "文件", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UcTempFile() });
-                                break;
+                        case 3:
+                            CardContents.Add(new CardContentModel() { CardName = "文件", IsChecked = o.ToObject<CardContentModel>().IsChecked, CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UcTempFile() });
+                            break;
 
-                            case 4:
-                                CardContents.Add(new CardContentModel() { CardName = "便签", CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCnotes() });
-                                break;
-                        }
+                        case 4:
+                            CardContents.Add(new CardContentModel() { CardName = "便签", IsChecked = o.ToObject<CardContentModel>().IsChecked, CardID = o.ToObject<CardContentModel>().CardID, CardHeight = o.ToObject<CardContentModel>().CardHeight, CardContent = new UCnotes() });
+                            break;
                     }
                 });
             }

@@ -25,7 +25,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox IsChecked="{Binding IsChecked}" Style="{StaticResource CbCardAppStyle}" />
+                        <CheckBox IsChecked="{Binding IsChecked}" Tag="{Binding CardID}"  Name="CB_ChangeCardApp" Click="CB_ChangeCardApp_Click"  Style="{StaticResource CbCardAppStyle}" />
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

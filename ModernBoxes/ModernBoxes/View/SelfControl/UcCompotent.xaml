@@ -27,7 +27,7 @@
                 <ItemsControl.ItemTemplate>
                     <!--内容区数据模板-->
                     <DataTemplate>
-                        <hc:Card hc:BorderElement.CornerRadius="8" Margin="0 0 0 10">
+                        <hc:Card hc:BorderElement.CornerRadius="8" Margin="0 0 0 10" Visibility="{Binding IsChecked,Converter={StaticResource isShowCardWithChecked}}">
                             <hc:Card.Header>
                                 <TextBlock Margin="11" Text="{Binding CardName}">
                                     <i:Interaction.Triggers>
@@ -39,7 +39,7 @@
                                 </TextBlock>
                             </hc:Card.Header>
                             <!--卡片内容-->
-                            <ContentControl  Content="{Binding CardContent}" Height="{Binding CardHeight}" />
+                            <ContentControl  Content="{Binding CardContent}"  Height="{Binding CardHeight}" />
                         </hc:Card>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

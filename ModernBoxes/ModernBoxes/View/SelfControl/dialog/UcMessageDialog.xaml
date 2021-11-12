@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Margin="10">
                 <TextBlock Text="&#xe618;" FontFamily="/Resource/#iconfont" FontSize="25" Name="TB_Icon" VerticalAlignment="Center" />
-                <TextBlock Width="710" Text="" TextWrapping="Wrap" Margin="10 0 0 0" Name="TB_Content" VerticalAlignment="Center" />
+                <TextBlock Width="710" MaxWidth="300" Text="" TextWrapping="Wrap" Margin="10 0 0 0" Name="TB_Content" VerticalAlignment="Center" />
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal"  HorizontalAlignment="Center">
                 <Button Content="取消" Style="{DynamicResource ButtonPrimary}" Name="Btn_Canel" Click="Btn_Canel_Click" />

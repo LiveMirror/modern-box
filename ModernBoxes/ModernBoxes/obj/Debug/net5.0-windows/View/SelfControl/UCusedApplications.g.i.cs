@@ -66,7 +66,7 @@ namespace ModernBoxes.View.SelfControl {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ModernBoxes;V1.0.0.0;component/view/selfcontrol/ucusedapplications.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ModernBoxes;component/view/selfcontrol/ucusedapplications.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\SelfControl\UCusedApplications.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

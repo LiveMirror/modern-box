@@ -35,13 +35,17 @@ namespace ModernBoxes.View.SelfControl.dialog
             S_CompontentWidth.Maximum = 420;
             S_CompontentWidth.Value = MainWindow.DoGetCompontentWidth();
 
-            if (Boolean.Parse(ConfigHelper.getConfig("autoOpen")))
+            String autoOpen = ConfigHelper.getConfig("autoOpen");
+            if (autoOpen != null&&autoOpen!=String.Empty)
             {
-                RB_AutoOpen.IsChecked = true;
-            }
-            else
-            {
-                RB_NotAutoOpen.IsChecked = true;
+                if (Boolean.Parse(autoOpen))
+                {
+                    RB_AutoOpen.IsChecked = true;
+                }
+                else
+                {
+                    RB_NotAutoOpen.IsChecked = true;
+                }
             }
         }
 

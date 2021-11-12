@@ -90,7 +90,9 @@ namespace ModernBoxes
         /// </summary>
         private async void initConfig()
         {
-            if ((ConfigHelper.getConfig("isFirst")) == String.Empty)
+            String config = await FileHelper.ReadFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json");
+            //当配置文件被误删之后重新生成卡片配置文件
+            if ((ConfigHelper.getConfig("isFirst")) == String.Empty||config.Length<8)
             {
                 ConfigHelper.setConfig("isFirst", "true");
                 //默认展开的地方在右侧

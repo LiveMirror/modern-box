@@ -46,7 +46,7 @@
                         Text="{Binding Menu.Target}"
                         hc:InfoElement.Title="路径"
                         hc:InfoElement.TitleWidth="70"
-                        ToolTip="应用,文件,文件夹的路径"
+                        ToolTip="应用,文件,文件夹的路径;组件应用"
                         hc:InfoElement.TitlePlacement="Left"
                         hc:InfoElement.Necessary="True"
                         Style="{StaticResource TextBoxExtend}"

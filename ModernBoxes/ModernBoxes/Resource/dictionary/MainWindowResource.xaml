@@ -7,6 +7,7 @@
     <tool:LevelConvert x:Key="levelConvert" />
     <convert:MenuIconEnumptyConvert x:Key="menuConvert" />
     <convert:ContentEmptyBackgroundImageConvert x:Key="IsShowContextMenu" />
+    <convert:CardIsShowWithCheckedConvert x:Key="isShowCardWithChecked"/>
 
     <!--主按钮悬浮样式-->
     <Style x:Key="MainButtonStyle" TargetType="TextBlock">

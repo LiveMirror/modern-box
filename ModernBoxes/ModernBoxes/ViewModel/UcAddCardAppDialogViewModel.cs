@@ -22,6 +22,9 @@ namespace ModernBoxes.ViewModel
             set { cards = value; RaisePropertyChanged("Cards"); }
         }
 
+        /// <summary>
+        /// 修改卡片的高度
+        /// </summary>
         public RelayCommand CardHeightChange
         {
             get
@@ -43,8 +46,16 @@ namespace ModernBoxes.ViewModel
         {
             //注册消息，用于关闭保存信息
             Messenger.Default.Register<Boolean>(this, "ClosingDialog", SaveData);
+            //当点击单个卡片的时候进行保存
+            Messenger.Default.Register<CardContentModel>(this, "AddACardApp", AddCardApplication);
             init();
         }
+
+        public void AddCardApplication(CardContentModel cardContentModel)
+        {
+
+        }
+             
 
         private async void init()
         {
@@ -60,6 +71,7 @@ namespace ModernBoxes.ViewModel
             {
                 File.Delete($"{Environment.CurrentDirectory}\\AllCardsConfig.json");
             }
+
             string newJson = JsonConvert.SerializeObject(CardApps);
             await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\AllCardsConfig.json", newJson);
             UcCompontentViewModel.DoloadCardContent();

@@ -176,10 +176,10 @@ namespace ModernBoxes.ViewModel
                 TempFileModel? tempFileModel = TempFiles.FirstOrDefault(o => o.FilePath == FilePath);
                 if (tempFileModel != null)
                 {
-                    TempFiles.Remove(tempFileModel);
                     File.Delete(FilePath);
                     String json = JsonConvert.SerializeObject(TempFiles);
                     File.Delete($"{Environment.CurrentDirectory}\\TempFileConfig.json");
+                    TempFiles.Remove(tempFileModel);
                     await FileHelper.WriteFile($"{Environment.CurrentDirectory}\\TempFileConfig.json", json);
                 }
             }
