@@ -113,6 +113,11 @@ namespace ModernBoxes.ViewModel
         /// <param name="menuName"></param>
         private async void MainViewModel_DeleteMenuItemEvent(string menuName)
         {
+            //当删除组件应用菜单后关闭卡片
+            if(menuName == "组件应用")
+            {
+                MainWindow.DoCloseCompontentLayout();
+            }
             MenuList.Remove(MenuList.FirstOrDefault(o => o.MenuName == menuName));
             if (File.Exists($"{Environment.CurrentDirectory}\\MenuConfig.json"))
             {
